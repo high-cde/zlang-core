@@ -1,0 +1,33 @@
+// ZDOS Sovereign Web & API Server - Stage 4
+// Erogazione nativa dei servizi webOS e delle rotte DEX/TokenAI
+
+module ZDOSWebServer {
+
+    node WebServer {
+        field host: string;
+        field port: int;
+        field active_connections: int;
+
+        function init(h: string, p: int) {
+            this.host = h;
+            this.port = p;
+            this.active_connections = 0;
+            print("[ZWEB SERVER]: Inizializzazione listener su " + this.host + ":" + string(this.port));
+        }
+
+        function handle_request(endpoint: string) -> string {
+            print("[HTTP REQ]: Ricevuta richiesta per rotta -> " + endpoint);
+            if (endpoint == "/") {
+                return "HTTP/1.1 200 OK\r\nContent-Type: text/html\r\n\r\n<h1>ZDOS Sovereign WebOS // Live Engine</h1>";
+            } else if (endpoint == "/api/dex") {
+                return "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\n\r\n{\"status\": \"active\", \"pair\": \"DSN/TokenAI\"}";
+            } else {
+                return "HTTP/1.1 404 Not Found\r\n\r\n404 - Route Not Found in ZLang Core";
+            }
+        }
+    }
+}
+
+entrypoint {
+    print("⚡ [ZDOS WEB SERVER]: Modulo server HTTP nativo pronto all'avvio.");
+}
