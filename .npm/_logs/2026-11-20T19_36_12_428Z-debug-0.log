@@ -1,0 +1,41 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.9.9
+2 info using node@v22.23.4
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 warn config production Use `--omit=dev` instead.
+5 silly config load:file:/root/zdos/.npmrc
+6 silly config load:file:/root/.npmrc
+7 silly config load:file:/usr/etc/npmrc
+8 verbose title npm install
+9 verbose argv "install" "--production"
+10 verbose logfile logs-max:10 dir:/root/.npm/_logs/2026-11-20T19_36_12_428Z-
+11 verbose logfile /root/.npm/_logs/2026-11-20T19_36_12_428Z-debug-0.log
+12 silly logfile start cleaning logs, removing 1 files
+13 silly packumentCache heap:2197815296 maxSize:549453824 maxEntrySize:274726912
+14 silly logfile done cleaning log files
+15 silly idealTree buildDeps
+16 silly reify moves {}
+17 verbose stack Error: Could not read package.json: Error: ENOENT: no such file or directory, open '/root/zdos/package.json'
+17 verbose stack     at async open (node:internal/fs/promises:639:25)
+17 verbose stack     at async readFile (node:internal/fs/promises:1252:14)
+17 verbose stack     at async read (/usr/lib/node_modules/npm/node_modules/@npmcli/package-json/lib/read-package.js:9:18)
+17 verbose stack     at async PackageJson.load (/usr/lib/node_modules/npm/node_modules/@npmcli/package-json/lib/index.js:132:31)
+17 verbose stack     at async PackageJson.normalize (/usr/lib/node_modules/npm/node_modules/@npmcli/package-json/lib/index.js:118:5)
+17 verbose stack     at async runScript (/usr/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/run-script.js:11:28)
+17 verbose stack     at async Install.exec (/usr/lib/node_modules/npm/lib/commands/install.js:163:9)
+17 verbose stack     at async Npm.exec (/usr/lib/node_modules/npm/lib/npm.js:207:9)
+17 verbose stack     at async module.exports (/usr/lib/node_modules/npm/lib/cli/entry.js:74:5)
+18 error code ENOENT
+19 error syscall open
+20 error path /root/zdos/package.json
+21 error errno -2
+22 error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/root/zdos/package.json'
+23 error enoent This is related to npm not being able to find a file.
+23 error enoent
+24 verbose cwd /root/zdos
+25 verbose os Linux 5.15.0-198-generic
+26 verbose node v22.23.4
+27 verbose npm  v10.9.9
+28 verbose exit -2
+29 verbose code -2
+30 error A complete log of this run can be found in: /root/.npm/_logs/2026-11-20T19_36_12_428Z-debug-0.log

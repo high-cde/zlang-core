@@ -1,0 +1,458 @@
+try { process.loadEnvFile("/root/velvet-daemon/.env"); } catch (_) {}
+
+const {
+  Client,
+  GatewayIntentBits,
+  EmbedBuilder,
+  ActionRowBuilder,
+  ButtonBuilder,
+  ButtonStyle,
+  PermissionFlagsBits,
+  ChannelType
+} = require("discord.js");
+
+const TOKEN = (process.env.DISCORD_ZXSOLANA_TOKEN || "").trim();
+const NEXUS_URL = "http://127.0.0.1:8899";
+const PORTAL_URL = "https://velvet.x-zdos.it/";
+
+const BDSM_HIERARCHY = {
+  MISTRESS_SUPREMA: { name: "👑 Mistress Suprema · Loggia BDSM (NSWT-T)", color: 0xe5e4e2, admin: true },
+  MASTER_SOVEREIGN: { name: "⚡ Master Sovereign · Architetto ZDOS", color: 0x9945ff, admin: true },
+  AGI_NODE:         { name: "🤖 Nodo AGI · Velvet & z-xSOLANA Core", color: 0x00e5ff, admin: false },
+  MISTRESS:         { name: "🔥 Mistress della Loggia 18+", color: 0xc41e3a, admin: false },
+  MASTER:           { name: "⛓️ Master & Dom 18+", color: 0x8b0000, admin: false },
+  SLAVE:            { name: "🩸 Slave · Sottomesso Verificato 18+", color: 0x4a0404, admin: false }
+};
+
+const TIER_TO_ROLE = {
+  PLATINUM_SUPREMO: BDSM_HIERARCHY.MISTRESS_SUPREMA,
+  SOVEREIGN_FOUNDER: BDSM_HIERARCHY.MASTER_SOVEREIGN,
+  VIP_LOGGIA: BDSM_HIERARCHY.MISTRESS,
+  GOLD_MEMBER: BDSM_HIERARCHY.MASTER,
+  DEFAULT: BDSM_HIERARCHY.SLAVE
+};
+
+const BDSM_DECREES = [
+  "In ginocchio nella Red Room: silenzio assoluto e attenzione rivolta esclusivamente alla Mistress Suprema e al Master Sovereign.",
+  "Protocollo di sottomissione attivo: verifica il tuo stato nel Registro della Loggia e attendi il prossimo ordine senza replicare.",
+  "Sessione di addestramento avviata: postura impeccabile, rispetto della gerarchia e safeword ROSSO sempre riconosciuta.",
+  "Tributo digitale richiesto: conferma la tua presenza nella Sala Ordini e mantieni attiva la connessione con i nodi AGI."
+];
+
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages
+  ]
+});
+
+client.once("clientReady", (c) => {
+  console.log(`[z-xSOLANA AGI-BDSM] Connesso come ${c.user.tag}! Gerarchia Mistress/Master/Slave & Nodi AGI attivi.`);
+  c.user.setPresence({
+    activities: [{ name: "👑 La Loggia BDSM // Mistress · Master · Slave · AGI", type: 3 }],
+    status: "online"
+  });
+});
+
+async function ensureRole(guild, spec, isAdmin = false) {
+  let role = guild.roles.cache.find((r) => r.name === spec.name);
+  const perms = isAdmin ? [PermissionFlagsBits.Administrator] : [];
+  if (!role) {
+    role = await guild.roles.create({
+      name: spec.name,
+      color: spec.color,
+      hoist: true,
+      mentionable: true,
+      permissions: perms,
+      reason: "Attivazione Gerarchia Reale BDSM & Nodi AGI"
+    });
+  } else if (isAdmin && !role.permissions.has(PermissionFlagsBits.Administrator)) {
+    await role.setPermissions([PermissionFlagsBits.Administrator]).catch(() => {});
+  }
+  return role;
+}
+
+async function activateFullEcosystem(message) {
+  const guild = message.guild;
+  if (!guild) return message.reply("⚠️ Esegui questo comando dentro il server Discord.");
+
+  const me = guild.members.me;
+  if (!me || (!me.permissions.has(PermissionFlagsBits.Administrator) && !me.permissions.has(PermissionFlagsBits.ManageRoles))) {
+    return message.reply("⚠️ Dai prima il permesso **Amministratore** al ruolo `z-xSOLANA` nelle Impostazioni del Server, poi rilancia.");
+  }
+
+  // 1. Crea tutti i ruoli reali della gerarchia BDSM & AGI
+  const roles = {};
+  for (const [key, spec] of Object.entries(BDSM_HIERARCHY)) {
+    roles[key] = await ensureRole(guild, spec, Boolean(spec.admin));
+  }
+
+  // 2. Identifica tutti gli AGI (bot presenti nel server) e assegna loro il ruolo Nodo AGI
+  const agiNodes = [];
+  for (const [, m] of guild.members.cache) {
+    if (m.user.bot) {
+      await m.roles.add(roles.AGI_NODE, "Sincronizzazione Nodo AGI").catch(() => {});
+      agiNodes.push(`<@${m.id}> (${m.user.tag})`);
+    }
+  }
+
+  // 3. Assegna i ruoli supremi ai due amministratori (autore + primo menzionato)
+  const adminTargets = [];
+  if (message.member) adminTargets.push(message.member);
+  for (const [id, user] of message.mentions.users) {
+    if (user.bot || id === message.author.id) continue;
+    const m = await guild.members.fetch(id).catch(() => null);
+    if (m) adminTargets.push(m);
+  }
+
+  for (const m of adminTargets) {
+    await m.roles.add([roles.MISTRESS_SUPREMA, roles.MASTER_SOVEREIGN], "Attivazione Suprema Loggia BDSM").catch(() => {});
+  }
+
+  // 4. Crea e configura le stanze operative reali
+  const vipOverwrites = [
+    { id: guild.roles.everyone.id, deny: [PermissionFlagsBits.ViewChannel] },
+    { id: me.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.ManageChannels, PermissionFlagsBits.ManageMessages] },
+    { id: roles.AGI_NODE.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.ManageMessages] },
+    { id: roles.MISTRESS_SUPREMA.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.ManageChannels, PermissionFlagsBits.ManageMessages] },
+    { id: roles.MASTER_SOVEREIGN.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.ManageChannels, PermissionFlagsBits.ManageMessages] }
+  ];
+
+  const loggiaOverwrites = [
+    { id: guild.roles.everyone.id, deny: [PermissionFlagsBits.ViewChannel] },
+    { id: me.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.ManageMessages] },
+    { id: roles.AGI_NODE.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages] },
+    { id: roles.MISTRESS_SUPREMA.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.ManageMessages] },
+    { id: roles.MASTER_SOVEREIGN.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.ManageMessages] },
+    { id: roles.MISTRESS.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.ManageMessages] },
+    { id: roles.MASTER.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.ManageMessages] },
+    { id: roles.SLAVE.id, allow: [PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages, PermissionFlagsBits.ReadMessageHistory] }
+  ];
+
+  const catName = "👑 LA LOGGIA BDSM // REALE & AGI CORE";
+  let cat = guild.channels.cache.find((c) => c.type === ChannelType.GuildCategory && c.name === catName);
+  if (!cat) {
+    cat = await guild.channels.create({ name: catName, type: ChannelType.GuildCategory, permissionOverwrites: loggiaOverwrites });
+  }
+
+  const rooms = [
+    { name: "🔒-trono-supremo-nswt-t", topic: "Sala Privata Mistress Suprema & Master Sovereign", perms: vipOverwrites },
+    { name: "🤖-matrice-nodi-agi", topic: "Telemetria AGI · Zara Lsd, z-xSOLANA & K.I.R.A.", perms: vipOverwrites },
+    { name: "⛓️-red-room-ordini-18plus", topic: "Sessioni Reali Mistress · Master · Slave | Safeword: ROSSO", perms: loggiaOverwrites },
+    { name: "🩸-registro-sottomissioni", topic: "Assegnazione Ruoli, Giuramenti & Pass 18+ Verificati", perms: loggiaOverwrites }
+  ];
+
+  const roomLinks = [];
+  for (const r of rooms) {
+    let ch = guild.channels.cache.find((c) => c.type === ChannelType.GuildText && c.name === r.name);
+    if (!ch) {
+      ch = await guild.channels.create({
+        name: r.name,
+        type: ChannelType.GuildText,
+        parent: cat.id,
+        topic: r.topic,
+        permissionOverwrites: r.perms
+      });
+    } else {
+      await ch.setParent(cat.id).catch(() => {});
+      await ch.permissionOverwrites.set(r.perms).catch(() => {});
+    }
+    roomLinks.push(`<#${ch.id}>`);
+  }
+
+  // Sblocca tutti gli altri canali esistenti ai ruoli supremi
+  for (const [, ch] of guild.channels.cache) {
+    await ch.permissionOverwrites.edit(roles.MISTRESS_SUPREMA.id, { ViewChannel: true, SendMessages: true, ManageMessages: true }).catch(() => {});
+    await ch.permissionOverwrites.edit(roles.MASTER_SOVEREIGN.id, { ViewChannel: true, SendMessages: true, ManageMessages: true }).catch(() => {});
+  }
+
+  const embed = new EmbedBuilder()
+    .setColor(0xc41e3a)
+    .setTitle("👑 LA LOGGIA BDSM & MATRICE AGI — ATTIVAZIONE COMPLETA")
+    .setDescription("Gerarchia reale, permessi amministratori, nodi AGI e stanze operative sincronizzati.")
+    .addFields(
+      { name: "👑 Vertice Supremo (Admin)", value: adminTargets.map((m) => `<@${m.id}>`).join(", ") || "Attivo", inline: false },
+      { name: "🤖 Nodi AGI Rilevati & Attivati", value: agiNodes.length ? agiNodes.join("\n") : "• z-xSOLANA#1934", inline: false },
+      { name: "⛓️ Gerarchia Ruoli Creata", value: Object.values(roles).map((r) => `• **${r.name}**`).join("\n"), inline: false },
+      { name: "🚪 Stanze Attive", value: roomLinks.join("\n"), inline: false },
+      { name: "⚡ Comandi Interazione Reale", value: "`@z-xSOLANA ruolo <mistress|master|slave> @utente`\n`@z-xSOLANA ordina @utente [testo]`\n`@z-xSOLANA sottometti @utente`\n`@z-xSOLANA agi_scan`", inline: false }
+    );
+
+  await message.reply({ embeds: [embed] });
+}
+
+
+async function broadcastWelcomeEverywhere(message) {
+  const guild = message.guild;
+  if (!guild) return message.reply("⚠️ Esegui questo comando dentro un canale del server Discord.");
+
+  const me = guild.members.me;
+  const textChannels = guild.channels.cache.filter(
+    (c) => c.type === ChannelType.GuildText && c.permissionsFor(me)?.has([PermissionFlagsBits.ViewChannel, PermissionFlagsBits.SendMessages])
+  );
+
+  // 1. Crea link invito permanente senza scadenza
+  let inviteUrl = "https://velvet.x-zdos.it/";
+  const targetForInvite =
+    guild.systemChannel ||
+    textChannels.find((c) => /benvenut|welcome|general|generale|ingresso/i.test(c.name)) ||
+    textChannels.first();
+
+  if (targetForInvite && targetForInvite.permissionsFor(me)?.has(PermissionFlagsBits.CreateInstantInvite)) {
+    const inv = await targetForInvite.createInvite({
+      maxAge: 0,
+      maxUses: 0,
+      unique: false,
+      reason: "Invito permanente La Loggia BDSM & VelvetHub 18+"
+    }).catch(() => null);
+    if (inv) inviteUrl = inv.url;
+  }
+
+  // 2. Embed di Presentazione & Benvenuto Ufficiale
+  const welcomeEmbed = new EmbedBuilder()
+    .setColor(0xc41e3a)
+    .setTitle("👑 BENVENUTI NELLA LOGGIA BDSM & VELVET CITY 18+ // ECOSISTEMA ZDOS")
+    .setDescription(
+      "**Il portale autonomo dell'ecosistema ZDOS · z-xSOLANA · OurVelvet è ufficialmente aperto.**\n\n" +
+      "Qui convivono la gerarchia reale della **Loggia BDSM** (*Mistress Suprema, Master Sovereign, Mistress, Master, Slave*), i **Nodi AGI** (`Zara Lsd`, `z-xSOLANA`, `K.I.R.A.`) e l'economia on-chain **$OV (VELVET)** & **$DSN**.\n\n" +
+      "📜 **REGOLAMENTO & PROTOCOLLO:**\n" +
+      "• **Solo Adulti 18+** — Consenso assoluto e rispetto rigoroso della gerarchia\n" +
+      "• **Safeword Universale:** `ROSSO` (interruzione immediata e incondizionata)\n" +
+      "• **Pass & Ruoli Reali:** Verifica il tuo wallet Phantom con `@z-xSOLANA pass <wallet>` o entra da VelvetHub\n\n" +
+      `🔗 **INVITO UFFICIALE DA CONDIVIDERE OVUNQUE:**\n${inviteUrl}`
+    )
+    .addFields(
+      { name: "👑 Vertice Supremo", value: "Mistress Suprema (NSWT-T) & Master Sovereign (ZDOS-PRIME)", inline: true },
+      { name: "💎 Token & Utility", value: "$OV · $DSN · Pass Certificati 18+", inline: true }
+    )
+    .setFooter({ text: "OurVelvet & La Loggia BDSM · Solo 18+ · Consenso · Safeword ROSSO" });
+
+  const row = new ActionRowBuilder().addComponents(
+    new ButtonBuilder().setLabel("Entra su VelvetHub 18+").setStyle(ButtonStyle.Link).setURL("https://velvet.x-zdos.it/"),
+    new ButtonBuilder().setLabel("Telegram @RedVelvetHub").setStyle(ButtonStyle.Link).setURL("https://t.me/RedVelvetHub"),
+    new ButtonBuilder().setLabel("WhatsApp Our Velvet").setStyle(ButtonStyle.Link).setURL("https://whatsapp.com/channel/0029Vb9Rbee89inrYLhdem1n")
+  );
+
+  // 3. Pubblica in tutti i canali pubblici / visibili a @everyone (escludendo stanze private bloccate)
+  let postedCount = 0;
+  for (const [, ch] of textChannels) {
+    const everyonePerms = ch.permissionsFor(guild.roles.everyone);
+    const isPublic = everyonePerms && everyonePerms.has(PermissionFlagsBits.ViewChannel);
+    const isWelcomeRoom = /benvenut|welcome|annunci|bacheca|generale|general|regole|presentazion/i.test(ch.name);
+    if (isPublic || isWelcomeRoom) {
+      await ch.send({
+        content: `@everyone 🔥 **INVITO & PRESENTAZIONE UFFICIALE — CONVIDI CON TUTTI I MEMBRI!**\n${inviteUrl}`,
+        embeds: [welcomeEmbed],
+        components: [row]
+      }).then(() => { postedCount++; }).catch(() => {});
+    }
+  }
+
+  // 4. Propaga anche su Telegram (@RedVelvetHub) e WhatsApp tramite zdos-omni-nexus
+  const secret = (process.env.NEXUS_SECRET || "ZDOS2026").trim();
+  const crossText =
+    `👑 BENVENUTI NELLA LOGGIA BDSM & VELVET CITY 18+ // ZDOS & z-xSOLANA\n\n` +
+    `Il tempio digitale 18+ per Mistress, Master, Slave, Studio Creator, Contest Carne e Lattice e Pass Certificati ($OV / $DSN) è aperto!\n\n` +
+    `🔗 Invito Diretto Discord: ${inviteUrl}\n` +
+    `🌐 Portale Web & Pass 18+: https://velvet.x-zdos.it/\n` +
+    `📣 Telegram: https://t.me/RedVelvetHub\n` +
+    `💬 WhatsApp: https://whatsapp.com/channel/0029Vb9Rbee89inrYLhdem1n\n\n` +
+    `Solo 18+ · Consenso · Safeword ROSSO`;
+
+  let nexusOk = false;
+  try {
+    const r = await fetch(`${NEXUS_URL}/api/amplify`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ secret, text: crossText })
+    });
+    const j = await r.json();
+    nexusOk = Boolean(j.ok);
+  } catch (_) {}
+
+  await message.reply(
+    `✅ **PRESENTAZIONE & INVITO LANCIATI OVUNQUE!**\n` +
+    `• **Link Invito Permanente:** ${inviteUrl}\n` +
+    `• **Canali Discord raggiunti:** ${postedCount}\n` +
+    `• **Broadcast Telegram & WhatsApp:** ${nexusOk ? "✅ Inviato" : "⚠️ Verifica canale"}`
+  );
+}
+
+client.on("messageCreate", async (message) => {
+  if (message.author.bot) return;
+
+  const cleaned = message.content
+    .replace(new RegExp(`^<@!?${client.user.id}>\\s*`, "i"), "")
+    .trim();
+
+  if (!cleaned && message.mentions.has(client.user)) {
+    return sendStatusEmbed(message);
+  }
+
+  const parts = cleaned.split(/\s+/);
+  const cmd = (parts[0] || "").toLowerCase().replace(/^!/, "");
+
+  // 1. ATTIVAZIONE TOTALE RUOLI + AGI + STANZE
+  if (["lancia_benvenuto", "benvenuto_ovunque", "invita_tutti", "presentazione"].includes(cmd)) {
+    return broadcastWelcomeEverywhere(message);
+  }
+
+  if (["attiva_tutto", "setup_loggia", "setup_admin", "attiva_bdsm"].includes(cmd)) {
+    return activateFullEcosystem(message);
+  }
+
+  // 2. SCANSIONE NODI AGI NEL SERVER
+  if (cmd === "agi_scan" || cmd === "cerca_agi") {
+    const guild = message.guild;
+    if (!guild) return;
+    const bots = guild.members.cache.filter((m) => m.user.bot);
+    const list = bots.map((b) => `• 🤖 **${b.user.tag}** — Stato: **ATTIVO** | ID: \`${b.id}\``).join("\n");
+    const embed = new EmbedBuilder()
+      .setColor(0x00e5ff)
+      .setTitle("🧠 SCANSIONE NODI AGI & BOT NELLA MATRICE")
+      .setDescription(list || "Nessun altro nodo rilevato oltre a z-xSOLANA#1934.")
+      .addFields({ name: "Bridge Backend", value: "ZDOS Omni-Nexus (`127.0.0.1:8899`) + VelvetHub (`velvet.x-zdos.it`)", inline: false });
+    return message.reply({ embeds: [embed] });
+  }
+
+  // 3. ASSEGNAZIONE RUOLO REALE MISTRESS / MASTER / SLAVE
+  if (cmd === "ruolo" && parts[1]) {
+    if (!message.guild) return;
+    const targetRoleKey = parts[1].toLowerCase();
+    const map = {
+      mistress: BDSM_HIERARCHY.MISTRESS,
+      master: BDSM_HIERARCHY.MASTER,
+      slave: BDSM_HIERARCHY.SLAVE,
+      suprema: BDSM_HIERARCHY.MISTRESS_SUPREMA,
+      sovereign: BDSM_HIERARCHY.MASTER_SOVEREIGN
+    };
+    const spec = map[targetRoleKey];
+    if (!spec) {
+      return message.reply("⚠️ Specifica un ruolo valido: `mistress`, `master`, `slave`, `suprema` o `sovereign` seguiti da `@utente`.");
+    }
+    const targetUser = message.mentions.users.find((u) => !u.bot && u.id !== client.user.id);
+    if (!targetUser) return message.reply("⚠️ Menziona l'utente a cui assegnare il ruolo.");
+    const member = await message.guild.members.fetch(targetUser.id).catch(() => null);
+    if (!member) return;
+
+    const role = await ensureRole(message.guild, spec, Boolean(spec.admin));
+    await member.roles.add(role, `Assegnato da ${message.author.tag}`);
+    const embed = new EmbedBuilder()
+      .setColor(spec.color)
+      .setTitle("⛓️ INVESTITURA UFFICIALE · LA LOGGIA BDSM")
+      .setDescription(`<@${member.id}> ha ricevuto ufficialmente il grado **${role.name}** per decreto di <@${message.author.id}>.\n\n*Consenso attivo · Safeword: ROSSO*`);
+    return message.reply({ embeds: [embed] });
+  }
+
+  // 4. INTERPRETAZIONE REALE: ORDINA / SOTTOMETTI
+  if (cmd === "ordina" || cmd === "sottometti") {
+    const targetUser = message.mentions.users.find((u) => !u.bot && u.id !== client.user.id);
+    if (!targetUser) return message.reply("⚠️ Menziona il destinatario dell'ordine (`@utente`).");
+
+    if (cmd === "sottometti" && message.guild) {
+      const member = await message.guild.members.fetch(targetUser.id).catch(() => null);
+      if (member) {
+        const slaveRole = await ensureRole(message.guild, BDSM_HIERARCHY.SLAVE, false);
+        await member.roles.add(slaveRole, "Sottomissione registrata nella Loggia BDSM").catch(() => {});
+      }
+    }
+
+    const customText = cleaned
+      .replace(/^[^\s]+\s+/, "")
+      .replace(/<@!?\d+>/g, "")
+      .trim();
+    const decree = customText || BDSM_DECREES[Math.floor(Math.random() * BDSM_DECREES.length)];
+
+    const embed = new EmbedBuilder()
+      .setColor(0x8b0000)
+      .setTitle(cmd === "sottometti" ? "🩸 SOTTOMISSIONE REGISTRATA · LA LOGGIA BDSM" : "👑 DECRETO DI COMANDO · RED ROOM")
+      .setDescription(`**Autorità:** <@${message.author.id}>\n**Destinatario:** <@${targetUser.id}>\n\n> *${decree}*`)
+      .setFooter({ text: "Protocollo 18+ Consensuale · Safeword: ROSSO" });
+    return message.reply({ embeds: [embed] });
+  }
+
+  // 5. VERIFICA PASS & SALDI SOLANA
+  if (cmd === "pass" && parts[1]) {
+    const wallet = parts[1].trim();
+    try {
+      const r = await fetch(`${NEXUS_URL}/api/access/badge`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ wallet })
+      });
+      const b = await r.json();
+      if (!b.ok || !b.found) {
+        return message.reply(`❌ Nessun Pass 18+ certificato trovato per \`${wallet}\`. Collegati su ${PORTAL_URL}`);
+      }
+      let roleText = "Verificato";
+      if (message.guild && message.member) {
+        const spec = TIER_TO_ROLE[b.tier] || TIER_TO_ROLE.DEFAULT;
+        const role = await ensureRole(message.guild, spec, Boolean(spec.admin));
+        await message.member.roles.add(role).catch(() => {});
+        roleText = `✅ **${role.name}**`;
+      }
+      const embed = new EmbedBuilder()
+        .setColor(b.tier === "PLATINUM_SUPREMO" ? 0xe5e4e2 : 0x9945ff)
+        .setTitle(`👑 PASS CERTIFICATO · ${b.tier} (${b.badgeCode || "18+"})`)
+        .addFields(
+          { name: "Titolare", value: b.memberTag || "Verificato 18+", inline: true },
+          { name: "Struttura", value: b.venue || "La Loggia BDSM", inline: true },
+          { name: "Firma Ed25519", value: b.signatureVerified ? "✅ Verificata" : "⏳ In attesa", inline: true },
+          { name: "Ruolo Reale", value: roleText, inline: false },
+          { name: "Wallet", value: `\`${wallet}\``, inline: false }
+        );
+      return message.reply({ embeds: [embed] });
+    } catch (e) {
+      return message.reply(`⚠️ Errore verifica pass: ${e.message}`);
+    }
+  }
+
+  if (cmd === "saldo" && parts[1]) {
+    const wallet = parts[1].trim();
+    try {
+      const r = await fetch(`${NEXUS_URL}/api/solana/balances`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ wallet })
+      });
+      const d = await r.json();
+      if (!d.ok) return message.reply(`❌ Errore lettura wallet: ${d.error || "non valido"}`);
+      const embed = new EmbedBuilder()
+        .setColor(0x14f195)
+        .setTitle("💎 SALDO ON-CHAIN z-xSOLANA")
+        .setDescription(`Wallet: \`${wallet}\``)
+        .addFields(
+          { name: "SOL", value: `${Number(d.sol || 0).toFixed(4)} SOL`, inline: true },
+          { name: "$OV", value: `${Number(d.ov || 0).toLocaleString("it-IT", { maximumFractionDigits: 2 })} $OV`, inline: true },
+          { name: "$DSN", value: `${Number(d.dsn || 0).toLocaleString("it-IT", { maximumFractionDigits: 2 })} $DSN`, inline: true }
+        );
+      return message.reply({ embeds: [embed] });
+    } catch (e) {
+      return message.reply(`⚠️ Errore RPC Solana: ${e.message}`);
+    }
+  }
+
+  if (cmd === "zxsolana" || cmd === "status" || cmd === "help") {
+    return sendStatusEmbed(message);
+  }
+});
+
+async function sendStatusEmbed(message) {
+  const embed = new EmbedBuilder()
+    .setColor(0xc41e3a)
+    .setTitle("👑 LA LOGGIA BDSM & MATRICE AGI — COMANDI ATTIVI")
+    .setDescription(
+      "• `@z-xSOLANA attiva_tutto @AltroAdmin` — Attiva ruoli supremi, rileva tutti i nodi AGI e crea le stanze reali\n" +
+      "• `@z-xSOLANA agi_scan` — Scansiona tutti i bot e nodi AGI attivi nel server\n" +
+      "• `@z-xSOLANA ruolo <mistress|master|slave> @utente` — Investitura ufficiale di ruolo reale\n" +
+      "• `@z-xSOLANA ordina @utente [testo]` — Emette un decreto reale nella Red Room\n" +
+      "• `@z-xSOLANA sottometti @utente` — Registra la sottomissione e assegna il ruolo Slave 18+\n" +
+      "• `@z-xSOLANA pass <wallet>` / `@z-xSOLANA saldo <wallet>` — Verifica pass `NSWT-T` e saldi `$OV`/`$DSN`"
+    );
+  const row = new ActionRowBuilder().addComponents(
+    new ButtonBuilder().setLabel("Apri VelvetHub 18+").setStyle(ButtonStyle.Link).setURL(PORTAL_URL)
+  );
+  await message.reply({ embeds: [embed], components: [row] });
+}
+
+client.login(TOKEN);

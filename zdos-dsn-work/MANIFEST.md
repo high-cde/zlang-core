@@ -1,0 +1,41 @@
+# MANIFEST · zdos-dsn-align v1
+
+- Data: 2026-11-07 12:21 CET
+- Modo: **DRY-RUN**
+- Contratto: `0xfc90516a1f736FaC557e09D8853dB80dA192c296` (Polygon PoS) — on-chain: confermato via https://polygon-bor-rpc.publicnode.com: symbol=$DSN name=NETkali decimals=18
+- Branch di lavoro: `zdos/dsn-align` (mai il branch di default, mai force-push)
+
+## Repo
+| Repo | Default | Stato | File |
+|---|---|---|---|
+| `ZDOS` | main | da aggiornare (4 file) | README.md docs/assets/dsn-badge.svg docs/DSN.md distro/rootfs/etc/zdos/dsn-release |
+| `zdos-core` | main | da aggiornare (4 file) | README.md docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release |
+| `xCLOUD-by-zdos` | main | da aggiornare (4 file) | README.md docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release |
+| `Zlang` | main | da aggiornare (4 file) | README.md docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release |
+| `zlang-core` | main | da aggiornare (3 file) | docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release — README.md assente: saltato (usa --create-missing) |
+| `zBAG` | — | escluso: fork con README upstream | usa --include-forks se è ormai tuo |
+| `x-zdos.it` | main | da aggiornare (3 file) | docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release — README.md assente: saltato (usa --create-missing) |
+| `xzdos-unified-webapp` | main | da aggiornare (4 file) | README.md docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release |
+| `Z-GENESIS-OS` | main | da aggiornare (4 file) | README.md docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release |
+| `aesir` | main | da aggiornare (4 file) | README.md docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release |
+| `Zdos-K.I.R.A` | main | da aggiornare (4 file) | README.md docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release |
+| `zclipper` | — | escluso: fork con README upstream | usa --include-forks se è ormai tuo |
+| `zdos-hybrid` | feat/zdos-hybrid-security-20261001-230859 | da aggiornare (4 file) | README.md docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release |
+| `z-valut` | main | da aggiornare (3 file) | docs/assets/dsn-badge.svg docs/DSN.md .zdos/dsn-release — README.md assente: saltato (usa --create-missing) |
+| `high-cde` | main | da aggiornare (2 file) | README.md docs/assets/dsn-badge.svg |
+
+## Audit (segnalazioni, nessuna correzione automatica)
+- `zdos-core` · «DSN» con significato diverso dal token: ./README.md:5:![DSN Security](https://img.shields.io/badge/DSN-Immutable_Ledger-success?style=for-the-badge&logo=shield)
+- `xCLOUD-by-zdos` · «DSN» con significato diverso dal token: ./README.md:5:![DSN Security](https://img.shields.io/badge/DSN-Immutable_Ledger-success?style=for-the-badge&logo=shield)
+- `xCLOUD-by-zdos` · «DSN» con significato diverso dal token: ./README.md:11:Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-metal e cloud distribuiti, questo modulo elimina completamente qualsiasi dipendenza da librerie di terze parti o simulazioni legacy, adottando un approccio strict-sovereign basato su **ZLang** e la Data Sovereignty Network (**DSN**).
+- `xCLOUD-by-zdos` · RPC pubblico ora con API key obbligatoria (risponde errore): ./config/chain.config.js:4:  rpcUrl: "https://polygon-rpc.com",
+- `xCLOUD-by-zdos` · RPC pubblico ora con API key obbligatoria (risponde errore): ./update.sh:4:Type "help" for available commands.</div><div class="terminal-input-line"><span class="terminal-prompt">cloudx@xdos:~$</span><input id="terminal-input" class="terminal-input" autocomplete="off"/></div><de /div></div><div class="nexus-wrapper"><a class="nexus-button" id="nexus" href="https://x-zdos.it"><span class="nexus-core"></span><span class="nexus-label">ENTER CLOUDX</span></a></div><div class="repo-card"><a href="https://github.com/high-cde/xCLOUD-by-zdos" target="_blank" class="repo-card-inner"><div class="repo-card-header"><div class="repo-dot"></div><span>xCLOUD · Enterprise Repo</span></div><div class="repo-card-body"><p>Fork potenziato · CloudX × ZDOS · DSN Ready · Business Layer modulare.</p><div class="repo-badges"><span class="badge">MIT</span><span class="badge">Enterprise</span><span class="badge">Blockchain Ready</span><span class="badge">CloudX Native</span></div></div></a></div><div class="modules-grid"><div class="module-card"><strong>CRM</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Gestione clienti, pipeline, integrazione DSN per audit.</div></div><div class="module-card"><strong>Billing</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Fatturazione, integrazione gateway, tracciabilità transazioni.</div></div><div class="module-card"><strong>Inventory</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Magazzino, lotti, seriali e audit chain‑ready.</div></div></div></section><section id="about" style="margin-top:22px"><div style="max-width:900px;margin:0 auto;padding:18px;border-radius:12px;background:linear-gradient(180deg,#07101a,#050509);border:1px solid rgba(255,255,255,0.04)"><h2 style="color:var(--accent);margin:0 0 8px">About CloudX</h2><p style="color:var(--text-soft);margin:0 0 8px">xCLOUD è progettato per aziende che richiedono interoperabilità, audit e governance. Architettura modulare, API first, DSN‑ready per registrare eventi critici in modo immutabile.</p><ul style="color:var(--muted);margin:8px 0 0;padding-left:18px"><li>Moduli plug‑and‑play</li><li>Audit e tracciabilità su DSN</li><li>CI/CD ready per deploy enterprise</li></ul></div></section><footer>xCLOUD · ZDOS Ecosystem · Enterprise Premium — Auditabile, modulare, DSN‑ready.</footer></main><div class="admin-bar"><button class="admin-btn" id="btn-deploy">Deploy</button><button class="admin-btn" id="btn-logs">Logs</button><button class="admin-btn" id="btn-settings">Chain</button></div><div class="modal" id="modal-settings"><div class="modal-card"><h3 style="margin:0 0 8px;color:var(--accent)">Impostazioni Blockchain</h3><div style="color:var(--muted);font-size:13px;margin-bottom:12px">Configura la rete DSN e i riferimenti aziendali (salvati in locale per questa istanza).</div><div class="form-row"><label>Abilita</label><select id="chain-enabled"><option value="true">Sì</option><option value="false">No</option></select></div><div class="form-row"><label>Rete</label><select id="chain-network"><option value="polygon">Polygon</option><option value="mumbai">Mumbai (test)</option></select></div><div class="form-row"><label>RPC URL</label><input id="chain-rpc" placeholder="https://polygon-rpc.com"/></div><div class="form-row"><label>DSN Token</label><input id="chain-token" placeholder="0x..."/></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button id="save-chain" class="admin-btn">Salva</button><button id="close-chain" class="admin-btn">Chiudi</button></div></div></div>
+- `xzdos-unified-webapp` · «DSN» con significato diverso dal token: ./README.md:5:![DSN Security](https://img.shields.io/badge/DSN-Immutable_Ledger-success?style=for-the-badge&logo=shield)
+- `Z-GENESIS-OS` · «DSN» con significato diverso dal token: ./README.md:5:![DSN Security](https://img.shields.io/badge/DSN-Immutable_Ledger-success?style=for-the-badge&logo=shield)
+- `Z-GENESIS-OS` · «DSN» con significato diverso dal token: ./README.md:11:Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-metal e cloud distribuiti, questo modulo elimina completamente qualsiasi dipendenza da librerie di terze parti o simulazioni legacy, adottando un approccio strict-sovereign basato su **ZLang** e la Data Sovereignty Network (**DSN**).
+- `aesir` · RPC pubblico ora con API key obbligatoria (risponde errore): ./dsn_gate.py:31:# rpc.ankr.com/polygon and polygon-rpc.com now require an API key and answer
+- `aesir` · RPC pubblico ora con API key obbligatoria (risponde errore): ./aesir-advance.sh:41:# rpc.ankr.com/polygon and polygon-rpc.com now require an API key and answer
+- `zdos-hybrid` · «DSN» con significato diverso dal token: ./README.md:5:![DSN Security](https://img.shields.io/badge/DSN-Immutable_Ledger-success?style=for-the-badge&logo=shield)
+
+## Prossimi passi
+- rivedi i diff qui sopra, poi rilancia con `--apply`

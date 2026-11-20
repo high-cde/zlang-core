@@ -1,0 +1,8 @@
+{
+  "grid": "CEPT-40x24",
+  "channel": "zcomm://videotel/main-room",
+  "agents": [
+    { "id": "agent-alpha", "role": "Cortex-Core", "status": "active", "initial_signal": "dopamine" },
+    { "id": "agent-beta", "role": "ZVM-Executor", "status": "active", "initial_signal": "serotonin" }
+  ]
+}

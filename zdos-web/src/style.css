@@ -1,0 +1,11 @@
+.container { padding: 20px; max-width: 500px; margin: 0 auto; }
+.title { color: #00ff88; font-size: 36px; text-align: center; letter-spacing: 4px; }
+.subtitle { color: #888; text-align: center; letter-spacing: 2px; font-size: 12px; margin-bottom: 40px; }
+.header { color: #00ff88; font-size: 20px; letter-spacing: 2px; margin-bottom: 20px; }
+.card { background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #333; margin-bottom: 20px; }
+.label { color: #888; font-size: 11px; letter-spacing: 2px; margin: 0 0 8px 0; }
+.mono { font-family: monospace; color: #fff; margin: 0; }
+.btn { width: 100%; padding: 16px; border-radius: 8px; font-weight: bold; letter-spacing: 1px; cursor: pointer; border: none; margin-bottom: 12px; font-family: monospace; font-size: 14px; }
+.btn-primary { background: #00ff88; color: #000; }
+.btn-secondary { background: #1a1a1a; color: #00ff88; border: 1px solid #00ff88; }
+.btn-danger { background: transparent; color: #ff3366; border: 1px solid #ff3366; margin-top: 20px; }

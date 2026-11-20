@@ -1,0 +1,907 @@
+2026-11-17T16:06:21: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T16:06:21: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T16:06:21: PM2 log: pid=2735591 msg=process tree killed (1 pids)
+2026-11-17T16:06:21: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T16:06:21: PM2 log: App [velvet-daemon:0] online
+2026-11-17T19:38:46: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T19:38:46: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T19:38:47: PM2 log: pid=2737743 msg=process tree killed (1 pids)
+2026-11-17T19:38:47: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T19:38:47: PM2 log: App [velvet-daemon:0] online
+2026-11-17T19:55:46: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T19:55:46: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T19:55:46: PM2 log: pid=2786129 msg=process tree killed (1 pids)
+2026-11-17T19:55:46: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T19:55:46: PM2 log: App [velvet-daemon:0] online
+2026-11-17T19:57:03: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T19:57:03: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T19:57:04: PM2 log: pid=2790044 msg=process tree killed (1 pids)
+2026-11-17T19:57:04: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T19:57:04: PM2 log: App [velvet-daemon:0] online
+2026-11-17T21:13:23: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T21:13:23: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T21:13:23: PM2 log: pid=2790350 msg=process tree killed (1 pids)
+2026-11-17T21:13:23: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T21:13:23: PM2 log: App [velvet-daemon:0] online
+2026-11-17T21:26:12: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T21:26:12: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T21:26:13: PM2 log: pid=2807316 msg=process tree killed (1 pids)
+2026-11-17T21:26:13: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T21:26:13: PM2 log: App [velvet-daemon:0] online
+2026-11-17T21:56:43: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T21:56:44: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T21:56:44: PM2 log: pid=2810170 msg=process tree killed (1 pids)
+2026-11-17T21:56:44: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T21:56:44: PM2 log: App [velvet-daemon:0] online
+2026-11-17T22:40:57: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T22:40:57: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T22:40:57: PM2 log: pid=2816743 msg=process tree killed (1 pids)
+2026-11-17T22:40:57: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T22:40:57: PM2 log: App [velvet-daemon:0] online
+2026-11-17T22:47:43: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T22:47:43: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T22:47:44: PM2 log: pid=2826589 msg=process tree killed (1 pids)
+2026-11-17T22:47:44: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T22:47:44: PM2 log: App [velvet-daemon:0] online
+2026-11-17T22:54:51: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T22:54:51: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T22:54:51: PM2 log: pid=2828085 msg=process tree killed (1 pids)
+2026-11-17T22:54:51: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T22:54:51: PM2 log: App [velvet-daemon:0] online
+2026-11-17T22:58:11: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T22:58:11: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T22:58:11: PM2 log: pid=2829683 msg=process tree killed (1 pids)
+2026-11-17T22:58:11: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T22:58:11: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:00:24: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:00:24: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:00:24: PM2 log: pid=2830448 msg=process tree killed (1 pids)
+2026-11-17T23:00:24: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:00:24: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:02:06: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:02:06: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:02:06: PM2 log: pid=2830964 msg=process tree killed (1 pids)
+2026-11-17T23:02:06: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:02:06: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:03:36: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:03:36: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:03:36: PM2 log: pid=2831357 msg=process tree killed (1 pids)
+2026-11-17T23:03:36: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:03:36: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:04:20: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:04:20: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:04:20: PM2 log: pid=2831752 msg=process tree killed (1 pids)
+2026-11-17T23:04:20: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:04:20: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:04:54: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:04:54: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:04:54: PM2 log: pid=2831952 msg=process tree killed (1 pids)
+2026-11-17T23:04:54: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:04:54: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:05:36: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:05:36: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:05:36: PM2 log: pid=2832118 msg=process tree killed (1 pids)
+2026-11-17T23:05:36: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:05:36: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:07:00: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:07:00: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:07:00: PM2 log: pid=2832326 msg=process tree killed (1 pids)
+2026-11-17T23:07:00: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:07:00: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:07:47: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:07:47: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:07:47: PM2 log: pid=2832782 msg=process tree killed (1 pids)
+2026-11-17T23:07:47: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:07:47: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:08:41: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:08:41: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:08:41: PM2 log: pid=2833004 msg=process tree killed (1 pids)
+2026-11-17T23:08:42: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:08:42: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:09:16: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:09:17: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:09:17: PM2 log: pid=2833258 msg=process tree killed (1 pids)
+2026-11-17T23:09:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:09:17: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:09:46: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:09:46: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:09:46: PM2 log: pid=2833475 msg=process tree killed (1 pids)
+2026-11-17T23:09:47: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:09:47: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:10:29: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:10:29: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:10:29: PM2 log: pid=2833649 msg=process tree killed (1 pids)
+2026-11-17T23:10:29: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:10:29: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:11:06: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:11:06: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:11:06: PM2 log: pid=2833850 msg=process tree killed (1 pids)
+2026-11-17T23:11:06: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:11:06: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:13:04: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:13:04: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:13:05: PM2 log: pid=2834032 msg=process tree killed (1 pids)
+2026-11-17T23:13:05: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:13:05: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:19:53: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:19:53: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:19:53: PM2 log: pid=2834542 msg=process tree killed (1 pids)
+2026-11-17T23:19:53: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:19:53: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:28:06: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:28:06: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:28:06: PM2 log: pid=2836121 msg=process tree killed (1 pids)
+2026-11-17T23:28:07: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:28:07: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:31:09: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:31:09: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:31:09: PM2 log: pid=2838074 msg=process tree killed (1 pids)
+2026-11-17T23:31:10: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:31:10: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:34:20: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:34:20: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:34:20: PM2 log: pid=2838792 msg=process tree killed (1 pids)
+2026-11-17T23:34:21: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:34:21: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:36:32: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:36:32: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:36:32: PM2 log: pid=2839537 msg=process tree killed (1 pids)
+2026-11-17T23:36:33: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:36:33: PM2 log: App [velvet-daemon:0] online
+2026-11-17T23:52:16: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-17T23:52:16: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-17T23:52:16: PM2 log: pid=2840070 msg=process tree killed (1 pids)
+2026-11-17T23:52:16: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-17T23:52:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:10:02: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T00:10:02: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T00:10:02: PM2 log: pid=2843744 msg=process tree killed (1 pids)
+2026-11-18T00:10:02: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:10:02: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:12:25: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T00:12:25: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T00:12:25: PM2 log: pid=2848122 msg=process tree killed (1 pids)
+2026-11-18T00:12:26: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:12:26: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:13:34: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T00:13:34: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T00:13:34: PM2 log: pid=2848793 msg=process tree killed (1 pids)
+2026-11-18T00:13:35: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:13:35: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:14:08: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T00:14:08: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:14:08: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:15:12: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T00:15:12: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T00:15:12: PM2 log: pid=2849262 msg=process tree killed (1 pids)
+2026-11-18T00:15:12: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:15:12: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:40: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T00:22:40: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T00:22:40: PM2 log: pid=2849532 msg=process tree killed (1 pids)
+2026-11-18T00:22:40: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:40: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:41: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:22:42: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:22:42: PM2 log: Script /root/velvet-daemon/zara_agi_core.js had too many unstable restarts (16). Stopped. "errored"
+2026-11-18T00:24:17: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T00:24:17: PM2 error: app=velvet-daemon id=0 does not have a pid
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:19: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:19: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:19: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:19: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:19: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:19: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:19: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:19: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:19: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:24:19: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T00:24:19: PM2 log: Script /root/velvet-daemon/zara_agi_core.js had too many unstable restarts (16). Stopped. "errored"
+2026-11-18T00:24:44: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:24:44: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:28:08: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T00:28:08: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T00:28:08: PM2 log: pid=2852274 msg=process tree killed (1 pids)
+2026-11-18T00:28:08: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:28:08: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:29:04: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T00:29:04: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T00:29:04: PM2 log: pid=2853078 msg=process tree killed (1 pids)
+2026-11-18T00:29:04: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:29:04: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:32:25: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T00:32:25: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T00:32:25: PM2 log: pid=2853339 msg=process tree killed (1 pids)
+2026-11-18T00:32:25: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:32:25: PM2 log: App [velvet-daemon:0] online
+2026-11-18T00:34:12: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T00:34:12: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T00:34:12: PM2 log: pid=2854133 msg=process tree killed (1 pids)
+2026-11-18T00:34:12: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T00:34:12: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:04:29: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:04:29: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:04:29: PM2 log: pid=2854563 msg=process tree killed (1 pids)
+2026-11-18T01:04:31: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:04:31: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:05:19: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:05:19: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:05:19: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:06:40: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:06:40: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:06:41: PM2 log: pid=2861812 msg=process tree killed (1 pids)
+2026-11-18T01:06:49: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:06:49: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:09:09: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:09:09: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:09:09: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:09:38: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:09:38: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:09:38: PM2 log: pid=2862762 msg=process tree killed (1 pids)
+2026-11-18T01:09:38: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:09:38: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:10:37: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:10:37: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:10:37: PM2 log: pid=2862903 msg=process tree killed (1 pids)
+2026-11-18T01:10:37: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:10:37: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:10:53: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:10:53: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:10:53: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:11:13: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:11:13: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:11:13: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:12:18: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:12:18: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:12:18: PM2 log: pid=2863318 msg=process tree killed (1 pids)
+2026-11-18T01:12:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:12:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:15:01: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:15:01: PM2 log: pid=2863658 msg=failed to kill - retrying in 100ms
+2026-11-18T01:15:01: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:15:01: PM2 log: pid=2863658 msg=process tree killed (1 pids)
+2026-11-18T01:16:03: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:16:03: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:29:49: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:29:49: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:29:49: PM2 log: pid=2864596 msg=process tree killed (1 pids)
+2026-11-18T01:29:49: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:29:49: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:31:21: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:31:21: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:31:21: PM2 log: pid=2867739 msg=process tree killed (1 pids)
+2026-11-18T01:31:21: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:31:21: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:35:23: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:35:23: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:35:23: PM2 log: pid=2868103 msg=process tree killed (1 pids)
+2026-11-18T01:35:23: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:35:23: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:36:23: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:36:23: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:36:23: PM2 log: pid=2869052 msg=process tree killed (1 pids)
+2026-11-18T01:36:23: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:36:23: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:39:03: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:39:03: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:39:03: PM2 log: pid=2869308 msg=process tree killed (1 pids)
+2026-11-18T01:39:03: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:39:03: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:40:11: PM2 log: [PM2] This PM2 is not UP TO DATE
+2026-11-18T01:40:11: PM2 log: [PM2] Upgrade to version 7.1.2
+2026-11-18T01:41:02: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:41:02: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:41:02: PM2 log: pid=2869976 msg=process tree killed (1 pids)
+2026-11-18T01:41:02: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:41:02: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:44:21: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:44:21: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:44:21: PM2 log: pid=2870451 msg=process tree killed (1 pids)
+2026-11-18T01:44:21: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:44:21: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:00: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:46:00: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:46:00: PM2 log: pid=2871221 msg=process tree killed (1 pids)
+2026-11-18T01:46:00: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:00: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:00: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:00: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:00: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:01: PM2 error: Error caught while calling pidusage
+2026-11-18T01:46:01: PM2 error: Error: ESRCH: no such process, read
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:01: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:02: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:46:03: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:46:04: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:46:04: PM2 log: Script /root/velvet-daemon/sovereign_master.js had too many unstable restarts (16). Stopped. "errored"
+2026-11-18T01:47:21: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:47:21: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:56: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T01:53:57: PM2 log: pid=2872141 msg=process tree killed (1 pids)
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:57: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:58: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:59: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:59: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:53:59: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:53:59: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:53:59: PM2 log: Script /root/velvet-daemon/sovereign_master.js had too many unstable restarts (16). Stopped. "errored"
+2026-11-18T01:54:12: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:12: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:13: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:13: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:13: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:14: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:14: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:14: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:15: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:15: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:15: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:15: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:15: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:15: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:16: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:16: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:16: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:19: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:19: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:19: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:19: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:19: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:19: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:20: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:20: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:20: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:20: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:20: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:20: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:21: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:21: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:21: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:22: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:22: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:22: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:22: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:22: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:54:22: PM2 log: App [velvet-daemon:0] online
+2026-11-18T01:54:23: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T01:54:23: PM2 log: Script /root/velvet-daemon/sovereign_master.js had too many unstable restarts (16). Stopped. "errored"
+2026-11-18T01:54:51: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T01:54:51: PM2 error: app=velvet-daemon id=0 does not have a pid
+2026-11-18T01:57:19: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T01:57:19: PM2 log: App [velvet-daemon:0] online
+2026-11-18T02:03:54: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T02:03:54: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T02:03:54: PM2 log: pid=2875385 msg=process tree killed (1 pids)
+2026-11-18T02:03:54: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T02:03:54: PM2 log: App [velvet-daemon:0] online
+2026-11-18T02:05:06: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T02:05:06: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T02:05:06: PM2 log: pid=2877109 msg=process tree killed (1 pids)
+2026-11-18T02:05:06: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T02:05:06: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:34:15: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T14:34:15: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T14:34:15: PM2 log: pid=2877610 msg=process tree killed (1 pids)
+2026-11-18T14:34:15: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:34:15: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:34:45: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:34:45: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:34:45: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:35:41: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:35:41: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:35:41: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:36:41: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T14:36:41: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T14:36:41: PM2 log: pid=3049920 msg=process tree killed (1 pids)
+2026-11-18T14:36:41: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:36:41: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:36:44: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T14:36:45: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T14:36:45: PM2 log: pid=3050186 msg=process tree killed (1 pids)
+2026-11-18T14:36:45: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:36:45: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:14: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T14:40:14: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T14:40:14: PM2 log: pid=3050212 msg=process tree killed (1 pids)
+2026-11-18T14:40:14: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:14: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:14: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:14: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:14: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:14: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:14: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:14: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:15: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:15: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:15: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:15: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:15: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:15: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:15: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:15: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:15: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:16: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:40:17: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:40:18: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:40:18: PM2 log: Script /root/velvet-daemon/sovereign_master.js had too many unstable restarts (16). Stopped. "errored"
+2026-11-18T14:42:20: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:42:20: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:42:48: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:42:48: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:42:48: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:43:10: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:43:10: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:43:10: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:44:26: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T14:44:26: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T14:44:26: PM2 log: pid=3051967 msg=process tree killed (1 pids)
+2026-11-18T14:44:26: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:44:26: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:45:02: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:45:02: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:45:02: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:46:03: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:46:03: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:46:03: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:47:21: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:47:21: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:47:21: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:56:28: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T14:56:28: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T14:56:29: PM2 log: pid=3053388 msg=process tree killed (1 pids)
+2026-11-18T14:56:29: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:56:29: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:18: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T14:58:18: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T14:58:18: PM2 log: pid=3055470 msg=process tree killed (1 pids)
+2026-11-18T14:58:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:19: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:19: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:19: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:20: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:20: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:20: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:21: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:21: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:21: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:21: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:21: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:21: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:22: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:22: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:22: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:23: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:23: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:23: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:23: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:23: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:23: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:24: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:24: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:24: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:25: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:25: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:25: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:26: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:26: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:26: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:26: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:26: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:26: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:27: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:27: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:27: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:28: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:28: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:28: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:29: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:29: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:29: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:29: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:29: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:58:29: PM2 log: App [velvet-daemon:0] online
+2026-11-18T14:58:30: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T14:58:30: PM2 log: Script /root/velvet-daemon/sovereign_master.js had too many unstable restarts (16). Stopped. "errored"
+2026-11-18T14:59:30: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T14:59:30: PM2 error: app=velvet-daemon id=0 does not have a pid
+2026-11-18T14:59:31: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T14:59:31: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:01:18: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:01:18: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:01:18: PM2 log: pid=3056425 msg=process tree killed (1 pids)
+2026-11-18T15:01:19: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:01:19: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:03:34: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:03:34: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:03:34: PM2 log: pid=3056866 msg=process tree killed (1 pids)
+2026-11-18T15:03:35: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:03:35: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:04:33: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:04:33: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:04:33: PM2 log: pid=3057399 msg=process tree killed (1 pids)
+2026-11-18T15:04:33: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:04:33: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:09:31: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:31: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:31: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:31: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:31: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:32: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] starting in -fork mode-
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] online
+2026-11-18T15:09:33: PM2 log: App [autonomous-core:1] exited with code [1] via signal [SIGINT]
+2026-11-18T15:09:33: PM2 log: Script /root/z-autonomous-fleet/autonomous_core.js had too many unstable restarts (16). Stopped. "errored"
+2026-11-18T15:12:28: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:12:28: PM2 log: Stopping app:autonomous-core id:1
+2026-11-18T15:12:28: PM2 error: app=autonomous-core id=1 does not have a pid
+2026-11-18T15:12:29: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:12:29: PM2 log: pid=3057671 msg=process tree killed (1 pids)
+2026-11-18T15:12:29: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:12:29: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:16:04: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:16:04: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:16:04: PM2 log: pid=3059701 msg=process tree killed (1 pids)
+2026-11-18T15:16:04: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:16:04: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:31:02: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:31:02: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:31:02: PM2 log: pid=3060527 msg=process tree killed (1 pids)
+2026-11-18T15:31:02: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:31:02: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:36:22: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:36:22: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:36:22: PM2 log: pid=3063926 msg=process tree killed (1 pids)
+2026-11-18T15:36:22: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:36:22: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:39:51: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:39:51: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:39:51: PM2 log: pid=3065123 msg=process tree killed (1 pids)
+2026-11-18T15:39:51: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:39:51: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:46:03: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:46:03: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:46:03: PM2 log: pid=3065986 msg=process tree killed (1 pids)
+2026-11-18T15:46:04: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:46:04: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:47:15: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T15:47:16: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:47:16: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:47:36: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T15:47:36: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:47:36: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:48:13: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:48:13: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:48:13: PM2 log: pid=3068028 msg=process tree killed (1 pids)
+2026-11-18T15:48:13: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:48:13: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:50:03: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:50:03: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:50:03: PM2 log: pid=3068198 msg=process tree killed (1 pids)
+2026-11-18T15:50:03: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:50:03: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:50:35: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:50:35: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:50:35: PM2 log: pid=3068670 msg=process tree killed (1 pids)
+2026-11-18T15:50:36: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:50:36: PM2 log: App [velvet-daemon:0] online
+2026-11-18T15:52:18: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T15:52:18: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T15:52:18: PM2 log: pid=3068821 msg=process tree killed (1 pids)
+2026-11-18T15:52:18: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T15:52:18: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:21:44: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T16:21:44: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T16:21:44: PM2 log: pid=3069250 msg=process tree killed (1 pids)
+2026-11-18T16:21:44: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:21:44: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:29:23: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T16:29:24: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T16:29:24: PM2 log: pid=3075847 msg=process tree killed (1 pids)
+2026-11-18T16:29:24: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:29:24: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:34:38: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T16:34:38: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T16:34:38: PM2 log: pid=3077569 msg=process tree killed (1 pids)
+2026-11-18T16:34:38: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:34:38: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:35:55: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T16:35:55: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T16:35:56: PM2 log: pid=3078791 msg=process tree killed (1 pids)
+2026-11-18T16:35:56: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:35:56: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:45:57: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T16:45:57: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T16:45:57: PM2 log: pid=3079127 msg=process tree killed (1 pids)
+2026-11-18T16:45:57: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:45:57: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:47:35: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T16:47:35: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:47:35: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:50:06: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T16:50:06: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T16:50:06: PM2 log: pid=3081775 msg=process tree killed (1 pids)
+2026-11-18T16:50:06: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:50:06: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:56:37: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T16:56:37: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T16:56:37: PM2 log: pid=3082340 msg=process tree killed (1 pids)
+2026-11-18T16:56:37: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:56:37: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:57:54: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T16:57:54: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T16:57:54: PM2 log: pid=3083775 msg=process tree killed (1 pids)
+2026-11-18T16:57:54: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:57:54: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:58:09: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T16:58:09: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:58:09: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:58:58: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T16:58:58: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T16:58:58: PM2 log: pid=3084182 msg=process tree killed (1 pids)
+2026-11-18T16:58:58: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:58:58: PM2 log: App [velvet-daemon:0] online
+2026-11-18T16:59:47: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T16:59:47: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T16:59:47: PM2 log: App [velvet-daemon:0] online
+2026-11-18T17:00:51: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T17:00:51: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T17:00:51: PM2 log: pid=3084562 msg=process tree killed (1 pids)
+2026-11-18T17:00:51: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T17:00:51: PM2 log: App [velvet-daemon:0] online
+2026-11-18T17:05:05: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T17:05:05: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T17:05:05: PM2 log: pid=3084811 msg=process tree killed (1 pids)
+2026-11-18T17:05:05: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T17:05:05: PM2 log: App [velvet-daemon:0] online
+2026-11-18T17:11:49: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T17:11:49: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T17:11:49: PM2 log: App [velvet-daemon:0] online
+2026-11-18T17:11:59: PM2 log: App [velvet-daemon:0] exited with code [1] via signal [SIGINT]
+2026-11-18T17:11:59: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T17:11:59: PM2 log: App [velvet-daemon:0] online
+2026-11-18T17:12:47: PM2 log: Stopping app:velvet-daemon id:0
+2026-11-18T17:12:47: PM2 log: App [velvet-daemon:0] exited with code [0] via signal [SIGINT]
+2026-11-18T17:12:47: PM2 log: pid=3087283 msg=process tree killed (1 pids)
+2026-11-18T17:12:47: PM2 log: App [velvet-daemon:0] starting in -fork mode-
+2026-11-18T17:12:47: PM2 log: App [velvet-daemon:0] online

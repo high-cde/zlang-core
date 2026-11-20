@@ -1,0 +1,54 @@
+server {
+    server_name x-zdos.it www.x-zdos.it;
+    location /kira/ {
+        proxy_pass http://127.0.0.1:8081/;
+        proxy_set_header Host $host;
+        add_header Access-Control-Allow-Origin *;
+    }
+    root /var/www/x-zdos-portal/current;
+    index index.html;
+    server_tokens off;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/x-zdos.it/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/x-zdos.it/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+}
+server {
+    if ($host = www.x-zdos.it) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = x-zdos.it) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    listen 80;
+    server_name x-zdos.it www.x-zdos.it;
+    location /kira/ {
+        proxy_pass http://127.0.0.1:8081/;
+        proxy_set_header Host $host;
+        add_header Access-Control-Allow-Origin *;
+    }
+    return 404; # managed by Certbot
+
+
+
+
+}

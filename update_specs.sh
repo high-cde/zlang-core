@@ -1,0 +1,193 @@
+#!/usr/bin/env bash
+# ==============================================================================
+# ZDOS & ZCLIPPER SPECIFICHE AUTOBUILD (SAFE & ADDITIVE)
+# Regola ferrea: Modifica esclusivamente la pagina specs.html senza toccare altro.
+# ==============================================================================
+
+TARGET_FILE="specs.html"
+BACKUP_DIR="master_backup"
+
+echo "[+] Avvio autobuild mirato per $TARGET_FILE..."
+
+# 1. Creazione di una cartella di backup sicura per il file esistente (se presente)
+mkdir -p "$BACKUP_DIR"
+if [ -f "$TARGET_FILE" ]; then
+    TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+    cp "$TARGET_FILE" "$BACKUP_DIR/specs.html.bak_$TIMESTAMP"
+    echo "[ok] Backup di sicurezza di $TARGET_FILE creato in $BACKUP_DIR."
+fi
+
+# 2. Generazione e scrittura del nuovo contenuto completo per specs.html
+# (Incorpora le specifiche tecniche, l'organigramma, i quattro pilastri e le funzioni di Zclipper)
+cat << 'EOF' > "$TARGET_FILE"
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zclipper & ZDOS - AI Agent Orchestration Specs</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #3b82f6;
+            --accent-glow: rgba(59, 130, 246, 0.2);
+            --border: #1f2937;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        h2 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            margin-top: 0;
+            color: #60a5fa;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .pillar-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .pillar-item h3 {
+            margin-top: 0;
+            color: #a78bfa;
+            font-size: 1.1rem;
+        }
+        .cta-box {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+        .btn:hover {
+            background-color: #2563eb;
+        }
+        footer {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 50px;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Zclipper Core Specs</h1>
+            <p class="subtitle">L'orchestratore AI avanzato basato sull'ecosistema ZDOS / Paperclip</p>
+        </header>
+
+        <div class="card">
+            <h2>Cos'è Zclipper?</h2>
+            <p>Se OpenClaw è un assistente singolo, <strong>Zclipper</strong> è la piattaforma aziendale integrata. Progettato come evoluzione e fork orientato ai servizi media, social e ads, gestisce team di agenti IA autonomi con organigrammi, budget, governance e flussi di lavoro persistenti.</p>
+        </div>
+
+        <div class="card">
+            <h2>I Quattro Pilastri del Sistema</h2>
+            <div class="pillars-grid">
+                <div class="pillar-item">
+                    <h3>1. Task Manager Agentico</h3>
+                    <p>Gestione ticket, approvazioni, code di esecuzione atomiche e verifiche tramite diff, screenshot e test.</p>
+                </div>
+                <div class="pillar-item">
+                    <h3>2. Organigramma AI</h3>
+                    <p>Ruoli misti umani e bot, confini aziendali, deleghe strutturate, permessi granulari e segreti protetti.</p>
+                </div>
+                <div class="pillar-item">
+                    <h3>3. Training ed Evals</h3>
+                    <p>Skill Studio condiviso, versionamento delle competenze, test con input salvati e cicli di apprendimento attivo.</p>
+                </div>
+                <div class="pillar-item">
+                    <h3>4. OS Infrastrutturale</h3>
+                    <p>Runtime multi-provider (Claude, Codex, Cursor, Pi, ecc.), sandboxing, controlli di costo e MCP Gateway.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Funzionalità Motore Principali</h2>
+            <ul>
+                <li><strong>Allineamento degli Obiettivi:</strong> Le attività ereditano il contesto strategico aziendale in modo che ogni agente sappia sempre il "perché" di ciò che fa.</li>
+                <li><strong>Heartbeat ed Esecuzione:</strong> Risvegli intelligenti basati su eventi, code di messaggi, routine pianificate e webhook.</li>
+                <li><strong>Controllo dei Costi e Budget:</strong> Tracciamento dei token e della spesa per progetto, agente e modello con stop automatici configurabili.</li>
+                <li><strong>Store AI Media & Ads:</strong> Moduli integrati per la generazione multimediale, l'automazione social e l'ottimizzazione delle campagne pubblicitarie.</li>
+            </ul>
+        </div>
+
+        <div class="cta-box">
+            <a href="https://x-zdos.it/zclipper" class="btn">Accedi a Zclipper Store</a>
+        </div>
+
+        <footer>
+            <p>ZDOS Ecosystem &middot; Powered by Zclipper Architecture</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+EOF
+
+echo "[ok] File $TARGET_FILE aggiornato con successo."
+echo "[ok] Nessun altro file o indice esterno è stato modificato o rimosso."
+echo "=============================================================================="

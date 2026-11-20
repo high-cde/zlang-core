@@ -1,0 +1,11 @@
+server {
+    listen 80;
+    server_name velvethub.art www.velvethub.art;
+
+    root /var/www/ourvelvet;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

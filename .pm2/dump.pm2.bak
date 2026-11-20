@@ -1,0 +1,1752 @@
+[
+  {
+    "name": "velvet-daemon",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "SHELL": "/bin/bash",
+      "PWD": "/root",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "MOTD_SHOWN": "pam",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+      "SSH_CONNECTION": "9.246.75.232 23874 5.189.180.13 22",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "ANDROID_HOME": "/opt/android-sdk",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "ROOT": "/opt/zdos-build",
+      "SHLVL": "1",
+      "ANDROID_SDK_ROOT": "/opt/android-sdk",
+      "XDG_SESSION_ID": "21369",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "9.246.75.232 23874 22",
+      "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+      "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/usr/bin/pm2",
+      "OLDPWD": "/root",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "velvet-daemon": {},
+      "unique_id": "75cfec56-3944-4f67-bc16-0b1604e0ead0"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100,
+    "node_args": [],
+    "pm_exec_path": "/root/velvet-daemon/sovereign_master.js",
+    "pm_cwd": "/root/velvet-daemon",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/velvet-daemon-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/velvet-daemon-error.log",
+    "pm_pid_path": "/root/.pm2/pids/velvet-daemon-0.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "PWD": "/root",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "MOTD_SHOWN": "pam",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "SSH_CONNECTION": "9.246.75.232 23874 5.189.180.13 22",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "ANDROID_HOME": "/opt/android-sdk",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "ROOT": "/opt/zdos-build",
+    "SHLVL": "1",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk",
+    "XDG_SESSION_ID": "21369",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "9.246.75.232 23874 22",
+    "XDG_DATA_DIRS": "/usr/local/share:/usr/share:/var/lib/snapd/desktop",
+    "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/usr/bin/pm2",
+    "OLDPWD": "/root",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "75cfec56-3944-4f67-bc16-0b1604e0ead0",
+    "status": "online",
+    "pm_uptime": 1795135818970,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/total",
+        "value": "21.61"
+      },
+      "Heap Usage": {
+        "historic": true,
+        "unit": "%",
+        "type": "internal/v8/heap/usage",
+        "value": 90.31
+      },
+      "Used Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/used",
+        "value": "19.51"
+      },
+      "Active requests": {
+        "historic": true,
+        "type": "internal/libuv/requests",
+        "value": 0
+      },
+      "Active handles": {
+        "historic": true,
+        "type": "internal/libuv/handles",
+        "value": 2
+      },
+      "Event Loop Latency": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p50",
+        "value": "0.61"
+      },
+      "Event Loop Latency p95": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p95",
+        "value": "8.74"
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "v8": true,
+        "network": false,
+        "eventLoop": true,
+        "runtime": true,
+        "http": true
+      },
+      "standalone": false,
+      "tracing": {
+        "enabled": false,
+        "outbound": false
+      },
+      "module_conf": {},
+      "apm": {
+        "type": "node",
+        "version": "8.0.0"
+      },
+      "module_name": "velvet-daemon",
+      "module_version": "7.1.1"
+    },
+    "axm_dynamic": {},
+    "created_at": 1795132384784,
+    "restart_time": 27,
+    "unstable_restarts": 0,
+    "version": "1.0.0",
+    "node_version": "22.23.4",
+    "exit_code": 0
+  },
+  {
+    "name": "zdos-omni-nexus",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "SHELL": "/bin/bash",
+      "SUDO_GID": "0",
+      "SUDO_COMMAND": "/usr/bin/bash -c \nset -e\nNEXUS_DIR=\"/opt/zdos-omni-nexus\"\nmkdir -p \"$NEXUS_DIR/public\" && cd \"$NEXUS_DIR\"\n\n# 1. Crea package.json e installa dipendenze\ncat << \"EOF\" > package.json\n{\n  \"name\": \"zdos-omni-nexus\",\n  \"version\": \"2.1.0\",\n  \"main\": \"nexus.js\",\n  \"scripts\": { \"start\": \"node nexus.js\" },\n  \"dependencies\": {\n    \"whatsapp-web.js\": \"^1.26.0\",\n    \"qrcode\": \"^1.5.4\",\n    \"qrcode-terminal\": \"^0.12.0\",\n    \"discord.js\": \"^14.16.3\",\n    \"node-telegram-bot-api\": \"^0.66.0\",\n    \"twitter-api-v2\": \"^1.18.2\",\n    \"express\": \"^4.21.1\",\n    \"socket.io\": \"^4.8.1\",\n    \"dotenv\": \"^16.4.5\"\n  }\n}\nEOF\n\nnpm install --no-audit --no-fund\n\n# 2. Crea .env (mantiene il tuo se esiste già)\nif [ ! -f .env ]; then\ncat << \"EOF\" > .env\nPORT=8899\nNEXUS_SECRET=ZDOS2026\nDISCORD_TOKEN=\nDISCORD_AMPLIFY_CHANNEL_ID=\nDISCORD_LODGE_CHANNEL_ID=\nWA_CHANNEL_INVITE=0029Vb9Rbee89inrYLhdem1n\nWA_INVITE_LODGE=ICy1XD6l6N35ZJwECYQ2oO\nWA_INVITE_NOVA=CvdIbtU721g7iupPXb2lQt\nTELEGRAM_TOKEN=\nTELEGRAM_CHANNEL=@ourvelvet\nX_APP_KEY=\nX_APP_SECRET=\nX_ACCESS_TOKEN=\nX_ACCESS_SECRET=\nEOF\nfi\n\n# 3. Crea War Room Web UI\ncat << \"EOF\" > public/index.html\n<!DOCTYPE html>\n<html lang=\"it\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>ZDOS // OMNI-NEXUS WAR ROOM</title>\n  <script src=\"/socket.io/socket.io.js\"></script>\n  <style>\n    body { background: #07070b; color: #e2e8f0; font-family: monospace; margin: 0; padding: 20px; }\n    h1 { color: #ef4444; }\n    .card { background: #0f1016; border: 1px solid #27273a; border-radius: 8px; padding: 16px; margin-bottom: 16px; }\n    textarea { width: 100%; height: 90px; background: #050508; color: #fff; border: 1px solid #3f3f5a; padding: 8px; box-sizing: border-box; }\n    button { background: #b91c1c; color: #fff; border: none; padding: 12px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 8px; }\n    #logs { height: 220px; overflow-y: auto; background: #040406; padding: 10px; font-size: 12px; }\n    #qr-box img { max-width: 220px; border: 4px solid #fff; margin-top: 10px; }\n  </style>\n</head>\n<body>\n  <h1>⚡ ZDOS // OMNI-NEXUS & VELVET SECURITY</h1>\n  <div class=\"card\">\n    <textarea id=\"blast\" placeholder=\"Messaggio da sparare su Canale WA OUR VELVET, La Loggia, Nova, @ourvelvet e X...\"></textarea>\n    <input id=\"sec\" type=\"password\" value=\"ZDOS2026\" style=\"width:100%;margin-top:6px;padding:6px;background:#050508;color:#fff;border:1px solid #3f3f5a;\">\n    <button onclick=\"send()\">🔥 AMPLIFICA SU TUTTI I NODI</button>\n    <div id=\"qr-box\"></div>\n  </div>\n  <div class=\"card\"><h3>TELEMETRIA LIVE</h3><div id=\"logs\"></div></div>\n  <script>\n    const s = io();\n    s.on(\"log\", m => { const d = document.createElement(\"div\"); d.textContent = m; document.getElementById(\"logs\").prepend(d); });\n    s.on(\"qr\", u => { document.getElementById(\"qr-box\").innerHTML = \"<p>Scansiona QR WhatsApp:</p><img src=\"+u+\">\"; });\n    async function send() {\n      const text = document.getElementById(\"blast\").value;\n      const secret = document.getElementById(\"sec\").value;\n      await fetch(\"/api/amplify\", { method:\"POST\", headers:{\"Content-Type\":\"application/json\"}, body: JSON.stringify({text, secret}) });\n      document.getElementById(\"blast\").value = \"\";\n    }\n  </script>\n</body>\n</html>\nEOF\n\n# 4. Crea nexus.js completo (Sicurezza + Gioco $OV + Bridge + Sparo Automatico all avvio)\ncat << \"EOF\" > nexus.js\nrequire(\"dotenv\").config();\nconst fs = require(\"fs\");\nconst crypto = require(\"crypto\");\nconst express = require(\"express\");\nconst http = require(\"http\");\nconst { Server } = require(\"socket.io\");\nconst QRCode = require(\"qrcode\");\nconst qrcodeTerm = require(\"qrcode-terminal\");\nconst { Client: WAClient, LocalAuth } = require(\"whatsapp-web.js\");\nconst { Client: DiscordClient, GatewayIntentBits } = require(\"discord.js\");\nconst TelegramBot = require(\"node-telegram-bot-api\");\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = new Server(server);\napp.use(express.json());\napp.use(express.static(\"public\"));\n\nconst DB_FILE = \"./velvet_db.json\";\nlet db = fs.existsSync(DB_FILE) ? JSON.parse(fs.readFileSync(DB_FILE, \"utf8\")) : { users: {}, verified: {} };\ncon",
+      "SUDO_USER": "root",
+      "PWD": "/root",
+      "LOGNAME": "root",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+      "TERM": "xterm-256color",
+      "USER": "root",
+      "SHLVL": "1",
+      "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+      "SUDO_UID": "0",
+      "MAIL": "/var/mail/root",
+      "_": "/usr/bin/pm2",
+      "OLDPWD": "/root",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "zdos-omni-nexus": {},
+      "unique_id": "0a7c678e-53c8-4850-a819-be03438931c7",
+      "SSH_TTY": "/dev/pts/0",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "SSH_CLIENT": "9.246.75.232 8726 22",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "XDG_SESSION_ID": "21403",
+      "ANDROID_SDK_ROOT": "/opt/android-sdk",
+      "ROOT": "/opt/zdos-build",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "ANDROID_HOME": "/opt/android-sdk",
+      "XDG_SESSION_CLASS": "user",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "SSH_CONNECTION": "9.246.75.232 8726 5.189.180.13 22",
+      "MOTD_SHOWN": "pam",
+      "XDG_SESSION_TYPE": "tty"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100,
+    "node_args": [],
+    "pm_exec_path": "/opt/zdos-omni-nexus/nexus.js",
+    "pm_cwd": "/opt/zdos-omni-nexus",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/zdos-omni-nexus-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/zdos-omni-nexus-error.log",
+    "pm_pid_path": "/root/.pm2/pids/zdos-omni-nexus-1.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "SUDO_GID": "0",
+    "SUDO_COMMAND": "/usr/bin/bash -c \nset -e\nNEXUS_DIR=\"/opt/zdos-omni-nexus\"\nmkdir -p \"$NEXUS_DIR/public\" && cd \"$NEXUS_DIR\"\n\n# 1. Crea package.json e installa dipendenze\ncat << \"EOF\" > package.json\n{\n  \"name\": \"zdos-omni-nexus\",\n  \"version\": \"2.1.0\",\n  \"main\": \"nexus.js\",\n  \"scripts\": { \"start\": \"node nexus.js\" },\n  \"dependencies\": {\n    \"whatsapp-web.js\": \"^1.26.0\",\n    \"qrcode\": \"^1.5.4\",\n    \"qrcode-terminal\": \"^0.12.0\",\n    \"discord.js\": \"^14.16.3\",\n    \"node-telegram-bot-api\": \"^0.66.0\",\n    \"twitter-api-v2\": \"^1.18.2\",\n    \"express\": \"^4.21.1\",\n    \"socket.io\": \"^4.8.1\",\n    \"dotenv\": \"^16.4.5\"\n  }\n}\nEOF\n\nnpm install --no-audit --no-fund\n\n# 2. Crea .env (mantiene il tuo se esiste già)\nif [ ! -f .env ]; then\ncat << \"EOF\" > .env\nPORT=8899\nNEXUS_SECRET=ZDOS2026\nDISCORD_TOKEN=\nDISCORD_AMPLIFY_CHANNEL_ID=\nDISCORD_LODGE_CHANNEL_ID=\nWA_CHANNEL_INVITE=0029Vb9Rbee89inrYLhdem1n\nWA_INVITE_LODGE=ICy1XD6l6N35ZJwECYQ2oO\nWA_INVITE_NOVA=CvdIbtU721g7iupPXb2lQt\nTELEGRAM_TOKEN=\nTELEGRAM_CHANNEL=@ourvelvet\nX_APP_KEY=\nX_APP_SECRET=\nX_ACCESS_TOKEN=\nX_ACCESS_SECRET=\nEOF\nfi\n\n# 3. Crea War Room Web UI\ncat << \"EOF\" > public/index.html\n<!DOCTYPE html>\n<html lang=\"it\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>ZDOS // OMNI-NEXUS WAR ROOM</title>\n  <script src=\"/socket.io/socket.io.js\"></script>\n  <style>\n    body { background: #07070b; color: #e2e8f0; font-family: monospace; margin: 0; padding: 20px; }\n    h1 { color: #ef4444; }\n    .card { background: #0f1016; border: 1px solid #27273a; border-radius: 8px; padding: 16px; margin-bottom: 16px; }\n    textarea { width: 100%; height: 90px; background: #050508; color: #fff; border: 1px solid #3f3f5a; padding: 8px; box-sizing: border-box; }\n    button { background: #b91c1c; color: #fff; border: none; padding: 12px; width: 100%; font-weight: bold; cursor: pointer; margin-top: 8px; }\n    #logs { height: 220px; overflow-y: auto; background: #040406; padding: 10px; font-size: 12px; }\n    #qr-box img { max-width: 220px; border: 4px solid #fff; margin-top: 10px; }\n  </style>\n</head>\n<body>\n  <h1>⚡ ZDOS // OMNI-NEXUS & VELVET SECURITY</h1>\n  <div class=\"card\">\n    <textarea id=\"blast\" placeholder=\"Messaggio da sparare su Canale WA OUR VELVET, La Loggia, Nova, @ourvelvet e X...\"></textarea>\n    <input id=\"sec\" type=\"password\" value=\"ZDOS2026\" style=\"width:100%;margin-top:6px;padding:6px;background:#050508;color:#fff;border:1px solid #3f3f5a;\">\n    <button onclick=\"send()\">🔥 AMPLIFICA SU TUTTI I NODI</button>\n    <div id=\"qr-box\"></div>\n  </div>\n  <div class=\"card\"><h3>TELEMETRIA LIVE</h3><div id=\"logs\"></div></div>\n  <script>\n    const s = io();\n    s.on(\"log\", m => { const d = document.createElement(\"div\"); d.textContent = m; document.getElementById(\"logs\").prepend(d); });\n    s.on(\"qr\", u => { document.getElementById(\"qr-box\").innerHTML = \"<p>Scansiona QR WhatsApp:</p><img src=\"+u+\">\"; });\n    async function send() {\n      const text = document.getElementById(\"blast\").value;\n      const secret = document.getElementById(\"sec\").value;\n      await fetch(\"/api/amplify\", { method:\"POST\", headers:{\"Content-Type\":\"application/json\"}, body: JSON.stringify({text, secret}) });\n      document.getElementById(\"blast\").value = \"\";\n    }\n  </script>\n</body>\n</html>\nEOF\n\n# 4. Crea nexus.js completo (Sicurezza + Gioco $OV + Bridge + Sparo Automatico all avvio)\ncat << \"EOF\" > nexus.js\nrequire(\"dotenv\").config();\nconst fs = require(\"fs\");\nconst crypto = require(\"crypto\");\nconst express = require(\"express\");\nconst http = require(\"http\");\nconst { Server } = require(\"socket.io\");\nconst QRCode = require(\"qrcode\");\nconst qrcodeTerm = require(\"qrcode-terminal\");\nconst { Client: WAClient, LocalAuth } = require(\"whatsapp-web.js\");\nconst { Client: DiscordClient, GatewayIntentBits } = require(\"discord.js\");\nconst TelegramBot = require(\"node-telegram-bot-api\");\n\nconst app = express();\nconst server = http.createServer(app);\nconst io = new Server(server);\napp.use(express.json());\napp.use(express.static(\"public\"));\n\nconst DB_FILE = \"./velvet_db.json\";\nlet db = fs.existsSync(DB_FILE) ? JSON.parse(fs.readFileSync(DB_FILE, \"utf8\")) : { users: {}, verified: {} };\ncon",
+    "SUDO_USER": "root",
+    "PWD": "/root",
+    "LOGNAME": "root",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "TERM": "xterm-256color",
+    "USER": "root",
+    "SHLVL": "1",
+    "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+    "SUDO_UID": "0",
+    "MAIL": "/var/mail/root",
+    "_": "/usr/bin/pm2",
+    "OLDPWD": "/root",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "0a7c678e-53c8-4850-a819-be03438931c7",
+    "status": "online",
+    "pm_uptime": 1795125279043,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/total",
+        "value": "62.42"
+      },
+      "Heap Usage": {
+        "historic": true,
+        "unit": "%",
+        "type": "internal/v8/heap/usage",
+        "value": 95.15
+      },
+      "Used Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/used",
+        "value": "59.40"
+      },
+      "Active requests": {
+        "historic": true,
+        "type": "internal/libuv/requests",
+        "value": 0
+      },
+      "Active handles": {
+        "historic": true,
+        "type": "internal/libuv/handles",
+        "value": 4
+      },
+      "Event Loop Latency": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p50",
+        "value": "0.59"
+      },
+      "Event Loop Latency p95": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p95",
+        "value": "8.93"
+      },
+      "HTTP Mean Latency": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/http/builtin/latency/p50",
+        "value": 3
+      },
+      "HTTP P95 Latency": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/http/builtin/latency/p95",
+        "value": 18.799999999999983
+      },
+      "HTTP": {
+        "historic": true,
+        "unit": "req/min",
+        "type": "internal/http/builtin/reqs",
+        "value": 0.04
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "v8": true,
+        "network": false,
+        "eventLoop": true,
+        "runtime": true,
+        "http": true
+      },
+      "standalone": false,
+      "tracing": {
+        "enabled": false,
+        "outbound": false
+      },
+      "module_conf": {},
+      "apm": {
+        "type": "node",
+        "version": "8.0.0"
+      },
+      "module_name": "zdos-omni-nexus",
+      "module_version": "7.1.1"
+    },
+    "axm_dynamic": {},
+    "created_at": 1795125279043,
+    "restart_time": 134,
+    "unstable_restarts": 0,
+    "version": "2.1.0",
+    "node_version": "22.23.4",
+    "exit_code": 1,
+    "SSH_TTY": "/dev/pts/0",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "SSH_CLIENT": "9.246.75.232 8726 22",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "XDG_SESSION_ID": "21403",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk",
+    "ROOT": "/opt/zdos-build",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "ANDROID_HOME": "/opt/android-sdk",
+    "XDG_SESSION_CLASS": "user",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "SSH_CONNECTION": "9.246.75.232 8726 5.189.180.13 22",
+    "MOTD_SHOWN": "pam",
+    "XDG_SESSION_TYPE": "tty"
+  },
+  {
+    "name": "zxsolana-bot",
+    "filter_env": [],
+    "namespace": "default",
+    "cwd": "/root/velvet-daemon",
+    "env": {
+      "SHELL": "/bin/bash",
+      "PWD": "/root",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "MOTD_SHOWN": "pam",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+      "SSH_CONNECTION": "9.246.75.232 21792 5.189.180.13 22",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "ANDROID_HOME": "/opt/android-sdk",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "ROOT": "/opt/zdos-build",
+      "SHLVL": "1",
+      "ANDROID_SDK_ROOT": "/opt/android-sdk",
+      "XDG_SESSION_ID": "21397",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "9.246.75.232 21792 22",
+      "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/usr/bin/pm2",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "zxsolana-bot": {},
+      "unique_id": "21b5edb4-f465-4b95-8a5c-875413e22fec"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100,
+    "node_args": [],
+    "pm_exec_path": "/root/velvet-daemon/zxsolana_bot.js",
+    "pm_cwd": "/root/velvet-daemon",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/zxsolana-bot-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/zxsolana-bot-error.log",
+    "pm_pid_path": "/root/.pm2/pids/zxsolana-bot-2.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "PWD": "/root",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "MOTD_SHOWN": "pam",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "SSH_CONNECTION": "9.246.75.232 21792 5.189.180.13 22",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "ANDROID_HOME": "/opt/android-sdk",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "ROOT": "/opt/zdos-build",
+    "SHLVL": "1",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk",
+    "XDG_SESSION_ID": "21397",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "9.246.75.232 21792 22",
+    "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/usr/bin/pm2",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "21b5edb4-f465-4b95-8a5c-875413e22fec",
+    "status": "online",
+    "pm_uptime": 1795132385856,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/total",
+        "value": "23.11"
+      },
+      "Heap Usage": {
+        "historic": true,
+        "unit": "%",
+        "type": "internal/v8/heap/usage",
+        "value": 92.61
+      },
+      "Used Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/used",
+        "value": "21.40"
+      },
+      "Active requests": {
+        "historic": true,
+        "type": "internal/libuv/requests",
+        "value": 0
+      },
+      "Active handles": {
+        "historic": true,
+        "type": "internal/libuv/handles",
+        "value": 4
+      },
+      "Event Loop Latency": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p50",
+        "value": "0.62"
+      },
+      "Event Loop Latency p95": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p95",
+        "value": "11.45"
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "v8": true,
+        "network": false,
+        "eventLoop": true,
+        "runtime": true,
+        "http": true
+      },
+      "standalone": false,
+      "tracing": {
+        "enabled": false,
+        "outbound": false
+      },
+      "module_conf": {},
+      "apm": {
+        "type": "node",
+        "version": "8.0.0"
+      },
+      "module_name": "zxsolana-bot",
+      "module_version": "7.1.1"
+    },
+    "axm_dynamic": {},
+    "created_at": 1795132385729,
+    "restart_time": 11,
+    "unstable_restarts": 0,
+    "version": "1.0.0",
+    "node_version": "22.23.4",
+    "exit_code": 0
+  },
+  {
+    "name": "zdos-channel-bridge",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "SHELL": "/bin/bash",
+      "PWD": "/opt/zdos-cyborg-agi/repo_sync",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "MOTD_SHOWN": "pam",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+      "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "ANDROID_HOME": "/opt/android-sdk",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "ROOT": "/opt/zdos-build",
+      "SHLVL": "1",
+      "ANDROID_SDK_ROOT": "/opt/android-sdk",
+      "XDG_SESSION_ID": "21601",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "9.246.75.232 5860 22",
+      "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/usr/bin/pm2",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "zdos-channel-bridge": {},
+      "unique_id": "ebe37d4b-9930-4d3e-8e96-552449e52785",
+      "OLDPWD": "/opt/zdos-cyborg-agi"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100,
+    "node_args": [],
+    "pm_exec_path": "/opt/zdos-velvet-autobridge/channel_automator.js",
+    "pm_cwd": "/root",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/zdos-channel-bridge-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/zdos-channel-bridge-error.log",
+    "pm_pid_path": "/root/.pm2/pids/zdos-channel-bridge-3.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "PWD": "/opt/zdos-cyborg-agi/repo_sync",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "MOTD_SHOWN": "pam",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "ANDROID_HOME": "/opt/android-sdk",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "ROOT": "/opt/zdos-build",
+    "SHLVL": "1",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk",
+    "XDG_SESSION_ID": "21601",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "9.246.75.232 5860 22",
+    "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/usr/bin/pm2",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "ebe37d4b-9930-4d3e-8e96-552449e52785",
+    "status": "online",
+    "pm_uptime": 1795136620367,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/total",
+        "value": "10.25"
+      },
+      "Heap Usage": {
+        "historic": true,
+        "unit": "%",
+        "type": "internal/v8/heap/usage",
+        "value": 86.38
+      },
+      "Used Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/used",
+        "value": "8.85"
+      },
+      "Active requests": {
+        "historic": true,
+        "type": "internal/libuv/requests",
+        "value": 0
+      },
+      "Active handles": {
+        "historic": true,
+        "type": "internal/libuv/handles",
+        "value": 3
+      },
+      "Event Loop Latency": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p50",
+        "value": "0.68"
+      },
+      "Event Loop Latency p95": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p95",
+        "value": "10.42"
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "v8": true,
+        "network": false,
+        "eventLoop": true,
+        "runtime": true,
+        "http": true
+      },
+      "standalone": false,
+      "tracing": {
+        "enabled": false,
+        "outbound": false
+      },
+      "module_conf": {},
+      "apm": {
+        "type": "node",
+        "version": "8.0.0"
+      },
+      "module_name": "zdos-channel-bridge",
+      "module_version": "7.1.1"
+    },
+    "axm_dynamic": {},
+    "created_at": 1795136620239,
+    "restart_time": 22,
+    "unstable_restarts": 0,
+    "version": "N/A",
+    "node_version": "22.23.4",
+    "exit_code": 0,
+    "OLDPWD": "/opt/zdos-cyborg-agi"
+  },
+  {
+    "name": "zdos-cyborg-duet",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "SHELL": "/bin/bash",
+      "PWD": "/opt/zdos-cyborg-agi",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "MOTD_SHOWN": "pam",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+      "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "ANDROID_HOME": "/opt/android-sdk",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "ROOT": "/opt/zdos-build",
+      "SHLVL": "1",
+      "ANDROID_SDK_ROOT": "/opt/android-sdk",
+      "XDG_SESSION_ID": "21601",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "9.246.75.232 5860 22",
+      "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/usr/bin/pm2",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "zdos-cyborg-duet": {},
+      "unique_id": "c91780c3-7799-4cb3-9621-6405e78c9b9c",
+      "OLDPWD": "/opt/zdos-cyborg-agi/repo_sync"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100,
+    "node_args": [],
+    "pm_exec_path": "/opt/zdos-cyborg-agi/cyborg_runner.js",
+    "pm_cwd": "/root",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/zdos-cyborg-duet-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/zdos-cyborg-duet-error.log",
+    "pm_pid_path": "/root/.pm2/pids/zdos-cyborg-duet-4.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "PWD": "/opt/zdos-cyborg-agi",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "MOTD_SHOWN": "pam",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "ANDROID_HOME": "/opt/android-sdk",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "ROOT": "/opt/zdos-build",
+    "SHLVL": "1",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk",
+    "XDG_SESSION_ID": "21601",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "9.246.75.232 5860 22",
+    "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/usr/bin/pm2",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "c91780c3-7799-4cb3-9621-6405e78c9b9c",
+    "status": "online",
+    "pm_uptime": 1795137187184,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/total",
+        "value": "22.32"
+      },
+      "Heap Usage": {
+        "historic": true,
+        "unit": "%",
+        "type": "internal/v8/heap/usage",
+        "value": 90.93
+      },
+      "Used Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/used",
+        "value": "20.30"
+      },
+      "Active requests": {
+        "historic": true,
+        "type": "internal/libuv/requests",
+        "value": 0
+      },
+      "Active handles": {
+        "historic": true,
+        "type": "internal/libuv/handles",
+        "value": 5
+      },
+      "Event Loop Latency": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p50",
+        "value": "0.51"
+      },
+      "Event Loop Latency p95": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p95",
+        "value": "4.34"
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "v8": true,
+        "network": false,
+        "eventLoop": true,
+        "runtime": true,
+        "http": true
+      },
+      "standalone": false,
+      "tracing": {
+        "enabled": false,
+        "outbound": false
+      },
+      "module_conf": {},
+      "apm": {
+        "type": "node",
+        "version": "8.0.0"
+      },
+      "module_name": "zdos-cyborg-duet",
+      "module_version": "7.1.1"
+    },
+    "axm_dynamic": {},
+    "created_at": 1795137187062,
+    "restart_time": 7,
+    "unstable_restarts": 0,
+    "version": "1.0.0",
+    "node_version": "22.23.4",
+    "exit_code": 0,
+    "OLDPWD": "/opt/zdos-cyborg-agi/repo_sync"
+  },
+  {
+    "name": "zdos-agi-guild",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "SHELL": "/bin/bash",
+      "PWD": "/opt/zdos-cyborg-agi",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "MOTD_SHOWN": "pam",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+      "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "ANDROID_HOME": "/opt/android-sdk",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "ROOT": "/opt/zdos-build",
+      "SHLVL": "1",
+      "ANDROID_SDK_ROOT": "/opt/android-sdk",
+      "XDG_SESSION_ID": "21601",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "9.246.75.232 5860 22",
+      "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/usr/bin/pm2",
+      "OLDPWD": "/opt/zdos-cyborg-agi/repo_sync",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "zdos-agi-guild": {},
+      "unique_id": "205debc4-bcc3-4a5b-88b8-793a785f3af6"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100,
+    "node_args": [],
+    "pm_exec_path": "/opt/zdos-cyborg-agi/guild_nexus.js",
+    "pm_cwd": "/opt/zdos-cyborg-agi",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/zdos-agi-guild-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/zdos-agi-guild-error.log",
+    "pm_pid_path": "/root/.pm2/pids/zdos-agi-guild-5.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "PWD": "/opt/zdos-cyborg-agi",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "MOTD_SHOWN": "pam",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "ANDROID_HOME": "/opt/android-sdk",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "ROOT": "/opt/zdos-build",
+    "SHLVL": "1",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk",
+    "XDG_SESSION_ID": "21601",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "9.246.75.232 5860 22",
+    "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/usr/bin/pm2",
+    "OLDPWD": "/opt/zdos-cyborg-agi/repo_sync",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "205debc4-bcc3-4a5b-88b8-793a785f3af6",
+    "status": "online",
+    "pm_uptime": 1795137190730,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/total",
+        "value": "7.35"
+      },
+      "Heap Usage": {
+        "historic": true,
+        "unit": "%",
+        "type": "internal/v8/heap/usage",
+        "value": 84.79
+      },
+      "Used Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/used",
+        "value": "6.23"
+      },
+      "Active requests": {
+        "historic": true,
+        "type": "internal/libuv/requests",
+        "value": 0
+      },
+      "Active handles": {
+        "historic": true,
+        "type": "internal/libuv/handles",
+        "value": 4
+      },
+      "Event Loop Latency": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p50",
+        "value": "0.43"
+      },
+      "Event Loop Latency p95": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p95",
+        "value": "6.09"
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "v8": true,
+        "network": false,
+        "eventLoop": true,
+        "runtime": true,
+        "http": true
+      },
+      "standalone": false,
+      "tracing": {
+        "enabled": false,
+        "outbound": false
+      },
+      "module_conf": {},
+      "apm": {
+        "type": "node",
+        "version": "8.0.0"
+      },
+      "module_name": "zdos-agi-guild",
+      "module_version": "7.1.1"
+    },
+    "axm_dynamic": {},
+    "created_at": 1795137190604,
+    "restart_time": 5,
+    "unstable_restarts": 0,
+    "version": "1.0.0",
+    "node_version": "22.23.4",
+    "exit_code": 0
+  },
+  {
+    "name": "discord-agi-mesh",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "SHELL": "/bin/bash",
+      "PWD": "/opt/zdos-cyborg-agi",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "MOTD_SHOWN": "pam",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+      "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "ANDROID_HOME": "/opt/android-sdk",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "ROOT": "/opt/zdos-build",
+      "SHLVL": "1",
+      "ANDROID_SDK_ROOT": "/opt/android-sdk",
+      "XDG_SESSION_ID": "21601",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "9.246.75.232 5860 22",
+      "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/usr/bin/pm2",
+      "OLDPWD": "/root",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "discord-agi-mesh": {},
+      "unique_id": "60c8ec5b-2948-48a0-846a-60e610e7f18f"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100,
+    "node_args": [],
+    "pm_exec_path": "/opt/zdos-cyborg-agi/discord_agi_mesh.js",
+    "pm_cwd": "/opt/zdos-cyborg-agi",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/discord-agi-mesh-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/discord-agi-mesh-error.log",
+    "pm_pid_path": "/root/.pm2/pids/discord-agi-mesh-6.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "PWD": "/opt/zdos-cyborg-agi",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "MOTD_SHOWN": "pam",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "ANDROID_HOME": "/opt/android-sdk",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "ROOT": "/opt/zdos-build",
+    "SHLVL": "1",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk",
+    "XDG_SESSION_ID": "21601",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "9.246.75.232 5860 22",
+    "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/usr/bin/pm2",
+    "OLDPWD": "/root",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "60c8ec5b-2948-48a0-846a-60e610e7f18f",
+    "status": "online",
+    "pm_uptime": 1795136131412,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/total",
+        "value": "7.85"
+      },
+      "Heap Usage": {
+        "historic": true,
+        "unit": "%",
+        "type": "internal/v8/heap/usage",
+        "value": 82
+      },
+      "Used Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/used",
+        "value": "6.44"
+      },
+      "Active requests": {
+        "historic": true,
+        "type": "internal/libuv/requests",
+        "value": 0
+      },
+      "Active handles": {
+        "historic": true,
+        "type": "internal/libuv/handles",
+        "value": 3
+      },
+      "Event Loop Latency": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p50",
+        "value": "0.58"
+      },
+      "Event Loop Latency p95": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p95",
+        "value": "7.26"
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "v8": true,
+        "network": false,
+        "eventLoop": true,
+        "runtime": true,
+        "http": true
+      },
+      "standalone": false,
+      "tracing": {
+        "enabled": false,
+        "outbound": false
+      },
+      "module_conf": {},
+      "apm": {
+        "type": "node",
+        "version": "8.0.0"
+      },
+      "module_name": "discord-agi-mesh",
+      "module_version": "7.1.1"
+    },
+    "axm_dynamic": {},
+    "created_at": 1795136131297,
+    "restart_time": 1,
+    "unstable_restarts": 0,
+    "version": "1.0.0",
+    "node_version": "22.23.4",
+    "exit_code": 0
+  },
+  {
+    "name": "vex-timebomb",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "SHELL": "/bin/bash",
+      "PWD": "/opt/zdos-cyborg-agi",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "MOTD_SHOWN": "pam",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+      "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "ANDROID_HOME": "/opt/android-sdk",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "ROOT": "/opt/zdos-build",
+      "SHLVL": "1",
+      "ANDROID_SDK_ROOT": "/opt/android-sdk",
+      "XDG_SESSION_ID": "21601",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "9.246.75.232 5860 22",
+      "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/usr/bin/pm2",
+      "OLDPWD": "/root",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "vex-timebomb": {},
+      "unique_id": "a0025067-e821-48e2-984e-0e4e9b1e0a5c"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100,
+    "node_args": [],
+    "pm_exec_path": "/opt/zdos-cyborg-agi/vex_timebomb_engine.js",
+    "pm_cwd": "/opt/zdos-cyborg-agi",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/vex-timebomb-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/vex-timebomb-error.log",
+    "pm_pid_path": "/root/.pm2/pids/vex-timebomb-7.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "PWD": "/opt/zdos-cyborg-agi",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "MOTD_SHOWN": "pam",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "ANDROID_HOME": "/opt/android-sdk",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "ROOT": "/opt/zdos-build",
+    "SHLVL": "1",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk",
+    "XDG_SESSION_ID": "21601",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "9.246.75.232 5860 22",
+    "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/usr/bin/pm2",
+    "OLDPWD": "/root",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "a0025067-e821-48e2-984e-0e4e9b1e0a5c",
+    "status": "online",
+    "pm_uptime": 1795136130768,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {
+      "Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/total",
+        "value": "7.85"
+      },
+      "Heap Usage": {
+        "historic": true,
+        "unit": "%",
+        "type": "internal/v8/heap/usage",
+        "value": 81.09
+      },
+      "Used Heap Size": {
+        "historic": true,
+        "unit": "MiB",
+        "type": "internal/v8/heap/used",
+        "value": "6.37"
+      },
+      "Active requests": {
+        "historic": true,
+        "type": "internal/libuv/requests",
+        "value": 0
+      },
+      "Active handles": {
+        "historic": true,
+        "type": "internal/libuv/handles",
+        "value": 3
+      },
+      "Event Loop Latency": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p50",
+        "value": "0.63"
+      },
+      "Event Loop Latency p95": {
+        "historic": true,
+        "unit": "ms",
+        "type": "internal/libuv/latency/p95",
+        "value": "6.30"
+      }
+    },
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "v8": true,
+        "network": false,
+        "eventLoop": true,
+        "runtime": true,
+        "http": true
+      },
+      "standalone": false,
+      "tracing": {
+        "enabled": false,
+        "outbound": false
+      },
+      "module_conf": {},
+      "apm": {
+        "type": "node",
+        "version": "8.0.0"
+      },
+      "module_name": "vex-timebomb",
+      "module_version": "7.1.1"
+    },
+    "axm_dynamic": {},
+    "created_at": 1795136130768,
+    "restart_time": 0,
+    "unstable_restarts": 0,
+    "version": "1.0.0",
+    "node_version": "22.23.4"
+  },
+  {
+    "name": "zdos-sims-agi",
+    "filter_env": [],
+    "namespace": "default",
+    "env": {
+      "SHELL": "/bin/bash",
+      "PWD": "/opt/zdos-cyborg-agi",
+      "LOGNAME": "root",
+      "XDG_SESSION_TYPE": "tty",
+      "MOTD_SHOWN": "pam",
+      "HOME": "/root",
+      "LANG": "C.UTF-8",
+      "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+      "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+      "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+      "XDG_SESSION_CLASS": "user",
+      "ANDROID_HOME": "/opt/android-sdk",
+      "TERM": "xterm-256color",
+      "LESSOPEN": "| /usr/bin/lesspipe %s",
+      "USER": "root",
+      "ROOT": "/opt/zdos-build",
+      "SHLVL": "1",
+      "ANDROID_SDK_ROOT": "/opt/android-sdk",
+      "XDG_SESSION_ID": "21601",
+      "XDG_RUNTIME_DIR": "/run/user/0",
+      "SSH_CLIENT": "9.246.75.232 5860 22",
+      "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+      "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+      "SSH_TTY": "/dev/pts/0",
+      "_": "/usr/bin/pm2",
+      "OLDPWD": "/opt/zdos-cyborg-agi",
+      "PM2_USAGE": "CLI",
+      "PM2_HOME": "/root/.pm2",
+      "zdos-sims-agi": {},
+      "unique_id": "815443a0-3922-4c7c-8b0a-ef7ad29b3a66"
+    },
+    "merge_logs": true,
+    "vizion": true,
+    "autostart": true,
+    "autorestart": true,
+    "watch": false,
+    "instance_var": "NODE_APP_INSTANCE",
+    "pmx": true,
+    "automation": true,
+    "treekill": true,
+    "username": "root",
+    "windowsHide": true,
+    "kill_retry_time": 100,
+    "node_args": [],
+    "pm_exec_path": "/opt/zdos-cyborg-agi/sims_telegram_engine.js",
+    "pm_cwd": "/opt/zdos-cyborg-agi",
+    "exec_interpreter": "node",
+    "exec_mode": "fork_mode",
+    "pm_out_log_path": "/root/.pm2/logs/zdos-sims-agi-out.log",
+    "pm_err_log_path": "/root/.pm2/logs/zdos-sims-agi-error.log",
+    "pm_pid_path": "/root/.pm2/pids/zdos-sims-agi-10.pid",
+    "km_link": false,
+    "vizion_running": false,
+    "NODE_APP_INSTANCE": 0,
+    "SHELL": "/bin/bash",
+    "PWD": "/opt/zdos-cyborg-agi",
+    "LOGNAME": "root",
+    "XDG_SESSION_TYPE": "tty",
+    "MOTD_SHOWN": "pam",
+    "HOME": "/root",
+    "LANG": "C.UTF-8",
+    "LS_COLORS": "rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:",
+    "SSH_CONNECTION": "9.246.75.232 5860 5.189.180.13 22",
+    "LESSCLOSE": "/usr/bin/lesspipe %s %s",
+    "XDG_SESSION_CLASS": "user",
+    "ANDROID_HOME": "/opt/android-sdk",
+    "TERM": "xterm-256color",
+    "LESSOPEN": "| /usr/bin/lesspipe %s",
+    "USER": "root",
+    "ROOT": "/opt/zdos-build",
+    "SHLVL": "1",
+    "ANDROID_SDK_ROOT": "/opt/android-sdk",
+    "XDG_SESSION_ID": "21601",
+    "XDG_RUNTIME_DIR": "/run/user/0",
+    "SSH_CLIENT": "9.246.75.232 5860 22",
+    "PATH": "/root/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/android-sdk/platform-tools:/opt/android-sdk/cmdline-tools/latest/bin",
+    "DBUS_SESSION_BUS_ADDRESS": "unix:path=/run/user/0/bus",
+    "SSH_TTY": "/dev/pts/0",
+    "_": "/usr/bin/pm2",
+    "OLDPWD": "/opt/zdos-cyborg-agi",
+    "PM2_USAGE": "CLI",
+    "PM2_HOME": "/root/.pm2",
+    "unique_id": "815443a0-3922-4c7c-8b0a-ef7ad29b3a66",
+    "status": "online",
+    "pm_uptime": 1795137233908,
+    "axm_actions": [
+      {
+        "action_name": "km:heapdump",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:cpu:profiling:stop",
+        "action_type": "internal",
+        "arity": 1
+      },
+      {
+        "action_name": "km:heap:sampling:start",
+        "action_type": "internal",
+        "arity": 2
+      },
+      {
+        "action_name": "km:heap:sampling:stop",
+        "action_type": "internal",
+        "arity": 1
+      }
+    ],
+    "axm_monitor": {},
+    "axm_options": {
+      "error": true,
+      "heapdump": true,
+      "feature.profiler.heapsnapshot": false,
+      "feature.profiler.heapsampling": true,
+      "feature.profiler.cpu_js": true,
+      "latency": true,
+      "catchExceptions": true,
+      "profiling": true,
+      "metrics": {
+        "v8": true,
+        "network": false,
+        "eventLoop": true,
+        "runtime": true,
+        "http": true
+      },
+      "standalone": false,
+      "tracing": {
+        "enabled": false,
+        "outbound": false
+      },
+      "module_conf": {},
+      "apm": {
+        "type": "node",
+        "version": "8.0.0"
+      },
+      "module_name": "zdos-sims-agi",
+      "module_version": "7.1.1"
+    },
+    "axm_dynamic": {},
+    "created_at": 1795137233908,
+    "restart_time": 0,
+    "unstable_restarts": 0,
+    "version": "1.0.0",
+    "node_version": "22.23.4"
+  }
+]

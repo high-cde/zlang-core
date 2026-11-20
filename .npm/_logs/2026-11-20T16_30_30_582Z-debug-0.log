@@ -1,0 +1,20 @@
+0 verbose cli /usr/bin/node /usr/bin/npm
+1 info using npm@10.9.9
+2 info using node@v22.23.4
+3 silly config load:file:/usr/lib/node_modules/npm/npmrc
+4 silly config load:file:/opt/zdos/agi-collective/.npmrc
+5 silly config load:file:/root/.npmrc
+6 silly config load:file:/usr/etc/npmrc
+7 verbose title npm cache clean
+8 verbose argv "cache" "clean" "--force"
+9 verbose logfile logs-max:10 dir:/root/.npm/_logs/2026-11-20T16_30_30_582Z-
+10 verbose logfile /root/.npm/_logs/2026-11-20T16_30_30_582Z-debug-0.log
+11 warn using --force Recommended protections disabled.
+12 silly logfile start cleaning logs, removing 1 files
+13 silly logfile done cleaning log files
+14 verbose cwd /opt/zdos/agi-collective
+15 verbose os Linux 5.15.0-198-generic
+16 verbose node v22.23.4
+17 verbose npm  v10.9.9
+18 verbose exit 0
+19 info ok

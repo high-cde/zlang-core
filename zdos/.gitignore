@@ -1,0 +1,7 @@
+.gradle/
+.rustup/
+node_modules/
+*.aar
+*.jar
+*.so
+*.rmeta

@@ -1,0 +1,405 @@
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+SyntaxError: Expected ':' after property name in JSON at position 89 (line 3 column 24)
+    at JSON.parse (<anonymous>)
+    at Object.<anonymous> (/opt/zdos-velvet-autobridge/channel_automator.js:45:18)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+[QUEUE ERROR] Telegram API error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+[QUEUE ERROR] Telegram API error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+[QUEUE ERROR] Telegram API error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+[QUEUE ERROR] Telegram API error: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 29","parameters":{"retry_after":29}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 29","parameters":{"retry_after":29}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 29","parameters":{"retry_after":29}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendPoll error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 30","parameters":{"retry_after":30}}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] fetch failed
+[QUEUE ERROR] fetch failed
+[QUEUE ERROR] fetch failed
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 5","parameters":{"retry_after":5}}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 5","parameters":{"retry_after":5}}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 5","parameters":{"retry_after":5}}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 5","parameters":{"retry_after":5}}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] fetch failed
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] fetch failed
+[QUEUE ERROR] fetch failed
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":504,"description":"Gateway Timeout"}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 5","parameters":{"retry_after":5}}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 5","parameters":{"retry_after":5}}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 5","parameters":{"retry_after":5}}
+[QUEUE ERROR] Telegram sendMessage error: {"ok":false,"error_code":429,"description":"Too Many Requests: retry after 5","parameters":{"retry_after":5}}

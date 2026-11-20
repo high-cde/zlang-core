@@ -1,0 +1,110 @@
+# MANIFEST — zdos-dsn-code-align v1
+
+- data: 2026-11-07 12:21 CET
+- modo: dry-run
+- contratto: 0xfc90516a1f736FaC557e09D8853dB80dA192c296 (chain 137, 18 decimali)
+- RPC: https://polygon-bor-rpc.publicnode.com · https://polygon.drpc.org
+
+## aesir
+
+- base: `origin/zdos/dsn-code-align` @ c7f97d7
+- file modificati: 0
+
+## ZDOS
+
+- base: `origin/zdos/dsn-code-align` @ 36bd1fc
+- file modificati: 0
+
+## xCLOUD-by-zdos
+
+- base: `origin/zdos/dsn-code-align` @ 6771abc · fork: regole generiche disattivate
+- file modificati: 0
+
+## zdos-hybrid
+
+- base: `origin/zdos/dsn-code-align` @ 5fc0912
+- file modificati: 0
+
+## Z-GENESIS-OS
+
+- base: `origin/zdos/dsn-code-align` @ db6949b · fork: regole generiche disattivate
+- file modificati: 0
+
+## Zlang
+
+- base: `origin/zdos/dsn-code-align` @ 0e85988
+- file modificati: 0
+
+## Zdos-K.I.R.A
+
+- base: `origin/zdos/dsn-code-align` @ 711eca3
+- file modificati: 0
+
+## zdos-organism
+
+- base: `origin/zdos/dsn-code-align` @ 54bac31
+- file modificati: 0
+
+## z-valut
+
+- base: `origin/zdos/dsn-code-align` @ 6970b29
+- file modificati: 0
+
+## zBAG
+
+- base: `origin/zdos/dsn-code-align` @ c75f80390 · fork: regole generiche disattivate
+- file modificati: 0
+
+## zdos-core
+
+- base: `origin/zdos/dsn-code-align` @ df8cd81
+- file modificati: 0
+
+## xzdos-unified-webapp
+
+- base: `origin/zdos/dsn-code-align` @ 39f032e
+- file modificati: 0
+
+## x-zdos.it
+
+- base: `origin/main` @ 422dc6c
+- file modificati: 0
+
+## zlang-core
+
+- base: `origin/main` @ 11b7680
+- file modificati: 0
+
+## AUDIT — non automatizzabile in modo sicuro (serve una persona o un cloud agent)
+
+- [HIGH] **zdos-hybrid** `zdos_omni_os.py` risposta 'AUTHORIZED' senza verifica balanceOf: gate finto, da collegare a un vero controllo
+- [HIGH] **z-valut** `src/valut_core.zl` balance_dsn hardcoded (54000) e tipo u64: non rappresenta un saldo reale
+- [MED] **ZDOS** logica simulata (non on-chain): core/memory/docs/index.html(1), core/memory/mempalace/general_extractor.py(1), evidence/test_attest_zlang.py(1), microcosm/catalog.json(1), zlang_core/zdos_engine.zl(1)
+- [MED] **xCLOUD-by-zdos** `config/chain.config.js` businessRegistryAddress è un placeholder: nessun contratto reale noto, NON inventato
+- [MED] **xCLOUD-by-zdos** `services/chainAdapter.js` recordOnChain è uno stub (solo log): nessuna scrittura on-chain reale
+- [MED] **xCLOUD-by-zdos** logica simulata (non on-chain): README.md(1), update.sh(1), zlang_core/xcloud-by-zdos_engine.zl(1)
+- [MED] **xCLOUD-by-zdos** placeholder di indirizzo senza valore reale: config/chain.config.js(1)
+- [MED] **zdos-hybrid** logica simulata (non on-chain): README.md(1), docs/wiki/Architecture.md(1), llm-mock.py(1), z_kali_megadrive.py(1), zlang_core/zdos-hybrid_engine.zl(1)
+- [MED] **Z-GENESIS-OS** logica simulata (non on-chain): README.md(1), index.html(2), zlang_core/z-genesis-os_engine.zl(1)
+- [MED] **Zlang** logica simulata (non on-chain): docs/index.html(1), docs/web_cli/index.html(1), index.html(1), src/main.rs(1), zlang_core/zlang_engine.zl(1)
+- [MED] **zdos-organism** logica simulata (non on-chain): .zdos_hashmap(1), docs/wiki/Architecture.md(1), llm-mock.py(1), zlang_core/zdos-organism_engine.zl(1)
+- [MED] **zBAG** logica simulata (non on-chain): 123 file, es. .github/actions/ios-build/action.yaml(1), CHANGELOG.md(2), README.md(1), config/test/native.ts(14)
+- [MED] **zBAG** chain 7777 ≠ Polygon 137 dove vive $DSN: src/chain_client.zl(1)
+- [MED] **zdos-core** logica simulata (non on-chain): README.md(1), zlang_core/zdos-core_engine.zl(1)
+- [MED] **xzdos-unified-webapp** logica simulata (non on-chain): README.md(1), zlang_core/xzdos-unified-webapp_engine.zl(1)
+- [MED] **zlang-core** logica simulata (non on-chain): compiler/zlang_pipeline.zlang(1), security/zlang_test_runner.zlang(1)
+- [LOW] **ZDOS** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: ARCHITECTURE.md(2), core/cortex/cortex/utils/config.py(1), core/cortex/cortex/utils/palace.py(1), core/cortex/zgen-flyrouter-backend.py(1), core/cortex/zgen-flyrouter-panel.html(2), core/memory/CHANGELOG.md(1), core/memory/README.md(2), core/memory/scripts/zgen-activate-all.sh(1) (+6)
+- [LOW] **xCLOUD-by-zdos** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: README.md(1), zlang_core/xcloud-by-zdos_engine.zl(2)
+- [LOW] **zdos-hybrid** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: README.md(1), zlang_core/zdos-hybrid_engine.zl(2)
+- [LOW] **zdos-hybrid** ticker di prezzo: tono/area finanziaria, decisione umana: zdos-autobuild.sh(1), zdos_omni_os.py(1)
+- [LOW] **Z-GENESIS-OS** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: README.md(1), zlang_core/z-genesis-os_engine.zl(2)
+- [LOW] **Z-GENESIS-OS** ticker di prezzo: tono/area finanziaria, decisione umana: index.html(1)
+- [LOW] **Zlang** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: zlang_core/zlang_engine.zl(2)
+- [LOW] **Zdos-K.I.R.A** `backend/` il backend non legge ancora DSN_*: il gate va implementato (lavoro di sviluppo, non meccanico)
+- [LOW] **zdos-organism** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: zlang_core/zdos-organism_engine.zl(2)
+- [LOW] **zBAG** ticker di prezzo: tono/area finanziaria, decisione umana: CHANGELOG.md(1)
+- [LOW] **zBAG** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: zlang_core/zbag_engine.zl(2)
+- [LOW] **zdos-core** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: README.md(1), zlang_core/zdos-core_engine.zl(2)
+- [LOW] **xzdos-unified-webapp** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: README.md(1), zlang_core/xzdos-unified-webapp_engine.zl(2)
+
+Totale file modificati: 0 · repo: nessuno

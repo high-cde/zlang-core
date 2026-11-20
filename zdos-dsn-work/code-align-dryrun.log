@@ -1,0 +1,805 @@
+[1;32m[ ok ][0m on-chain: symbol=$DSN name=NETkali decimals=18 via https://polygon-bor-rpc.publicnode.com
+[1;36m[dsn-code][0m == aesir
+ .gitignore            |  4 +++
+ aesir-advance.sh      | 78 +++++++++++++++++++++++++++++++++++++++++----------
+ dsn.env               | 11 +++++++-
+ dsn_gate.py           | 78 +++++++++++++++++++++++++++++++++++++++++----------
+ hybrid/hybrid_core.py |  1 +
+ status_server.py      |  2 ++
+ zlang_dsn_helper.py   |  2 ++
+ 7 files changed, 145 insertions(+), 31 deletions(-)
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..37f3c3e
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,4 @@
++# zdos-dsn-code-align v1: artefatti di build
++__pycache__/
++*.pyc
++policy/target/
+diff --git a/aesir-advance.sh b/aesir-advance.sh
+index e33fe95..b693a05 100644
+--- a/aesir-advance.sh
++++ b/aesir-advance.sh
+@@ -9,46 +9,94 @@ cd "$AESIR"
+ echo "=== 1/5 Multi-RPC Fallback ==="
+ cat > dsn_gate.py << 'EOF'
+ #!/usr/bin/env python3
++# ZDOS:DSN-CODE-ALIGN v1 — managed by zdos-dsn-code-align.sh (aesir plugin).
++# $DSN / NETkali: ERC-20 on Polygon PoS (chain id 137), 18 decimals.
++# Contract 0xfc90516a1f736FaC557e09D8853dB80dA192c296 · portal https://x-zdos.it/dsn
++# Access layer only: read-only balanceOf, no keys, no transactions.
+ import os, requests, time
+ from pathlib import Path
+ 
+-ENV_PATH = Path("/root/zdos-aesir/aesir/dsn.env")
+-if ENV_PATH.exists():
++_HERE = Path(__file__).resolve().parent
++
++
++def _readable(p: Path) -> bool:
++    try:
++        return p.is_file() and os.access(p, os.R_OK)
++    except OSError:  # e.g. /root not traversable for non-root users
++        return False
++
++_LEGACY_ENV = Path("/root/zdos-aesir/aesir/dsn.env")
++ENV_PATH = Path(os.getenv("DSN_ENV", str(_HERE / "dsn.env")))
++if not _readable(ENV_PATH) and _readable(_LEGACY_ENV):
++    ENV_PATH = _LEGACY_ENV
++if _readable(ENV_PATH):
+     for line in ENV_PATH.read_text().splitlines():
++        line = line.strip()
+         if "=" in line and not line.startswith("#"):
+-            k, v = line.strip().split("=", 1)
+-            os.environ.setdefault(k, v)
++            k, v = line.split("=", 1)
++            os.environ.setdefault(k.strip(), v.strip())
+ 
+ DSN = os.getenv("DSN_CONTRACT", "0xfc90516a1f736FaC557e09D8853dB80dA192c296")
+-RPCS = [
+-    os.getenv("POLYGON_RPC", "https://rpc.ankr.com/polygon"),
+-    "https://polygon.llamarpc.com",
+-    "https://1rpc.io/matic",
++CHAIN_ID = int(os.getenv("DSN_CHAIN_ID", "137"))
++# rpc.ankr.com/polygon and polygon-rpc.com now require an API key and answer
++# with a JSON-RPC error (ankr even with HTTP 200): never use them as defaults.
++_RPC_CANDIDATES = [
++    os.getenv("POLYGON_RPC", "https://polygon-bor-rpc.publicnode.com"),
++    os.getenv("POLYGON_RPC_FALLBACK", "https://polygon.drpc.org"),
+     "https://polygon-bor-rpc.publicnode.com",
+-    "https://polygon-rpc.com",
++    "https://polygon.drpc.org",
+ ]
++RPCS = list(dict.fromkeys(u for u in _RPC_CANDIDATES if u))
+ MIN_WEI = int(os.getenv("DSN_MIN_BALANCE_WEI", "1000000000000000000"))
+ HIGH_WEI = int(os.getenv("DSN_HIGH_LIMIT_WEI", "10000000000000000000"))
++_CHAIN_OK = {}
++
++
++class RPCError(Exception):
++    pass
++
+ 
+ def _call(rpc, method, params):
+-    r = requests.post(rpc, json={"jsonrpc":"2.0","id":1,"method":method,"params":params}, timeout=6)
++    r = requests.post(rpc, json={"jsonrpc": "2.0", "id": 1, "method": method, "params": params}, timeout=6)
+     r.raise_for_status()
+-    return r.json()
++    body = r.json()
++    # A JSON-RPC error must NOT be read as "balance 0": try the next endpoint.
++    if not isinstance(body, dict) or "error" in body or "result" not in body:
++        raise RPCError(f"{rpc}: {body.get('error') if isinstance(body, dict) else body}")
++    return body["result"]
++
++
++def _chain_ok(rpc) -> bool:
++    if rpc not in _CHAIN_OK:
++        try:
++            _CHAIN_OK[rpc] = int(_call(rpc, "eth_chainId", []), 16) == CHAIN_ID
++        except Exception:
++            return False
++    return _CHAIN_OK[rpc]
++
+ 
+ def get_balance(address: str) -> int:
+-    if not address.startswith("0x") or len(address) != 42:
++    """balanceOf(address) in wei; 0 if the address is malformed or every RPC fails (fail-closed)."""
++    if not isinstance(address, str) or not address.startswith("0x") or len(address) != 42:
++        return 0
++    try:
++        int(address[2:], 16)
++    except ValueError:
+         return 0
+     data = "0x70a08231" + address[2:].lower().zfill(64)
+     for rpc in RPCS:
++        if not _chain_ok(rpc):
++            continue
+         try:
+-            result = _call(rpc, "eth_call", [{"to": DSN, "data": data}, "latest"])
+-            return int(result.get("result", "0x0"), 16)
++            return int(_call(rpc, "eth_call", [{"to": DSN, "data": data}, "latest"]), 16)
+         except Exception:
+             continue
+     return 0
+ 
++
+ def has_min_dsn(address: str, min_wei=None) -> bool:
+-    return get_balance(address) >= (min_wei or MIN_WEI)
++    return get_balance(address) >= (MIN_WEI if min_wei is None else min_wei)
++
+ 
+ def get_limit_for(address: str) -> int:
+     bal = get_balance(address)
+diff --git a/dsn.env b/dsn.env
+index d1f3e82..f357e6c 100644
+--- a/dsn.env
++++ b/dsn.env
+@@ -1,6 +1,15 @@
+ DSN_CONTRACT=0xfc90516a1f736FaC557e09D8853dB80dA192c296
+-POLYGON_RPC=https://rpc.ankr.com/polygon
++# zdos-dsn-code-align v1: endpoint precedente richiede API key / non risponde più
++POLYGON_RPC=https://polygon-bor-rpc.publicnode.com
+ DSN_MIN_BALANCE_WEI=1000000000000000000
+ DSN_HIGH_LIMIT_WEI=10000000000000000000
+ DSN_HOURLY_BASE=500000000
+ DSN_HOURLY_BOOSTED=5000000000
++
++# >>> ZDOS:DSN-CODE-ALIGN v1 — $DSN / NETkali (access layer). Generato da zdos-dsn-code-align.sh
++# Riferimento: https://x-zdos.it/dsn · https://polygonscan.com/token/0xfc90516a1f736FaC557e09D8853dB80dA192c296
++DSN_CHAIN_ID=137
++DSN_DECIMALS=18
++POLYGON_RPC_FALLBACK=https://polygon.drpc.org
++DSN_PORTAL_URL=https://x-zdos.it/dsn
++# <<< ZDOS:DSN-CODE-ALIGN
+diff --git a/dsn_gate.py b/dsn_gate.py
+index 465b143..d03b128 100755
+--- a/dsn_gate.py
++++ b/dsn_gate.py
+@@ -1,44 +1,92 @@
+ #!/usr/bin/env python3
++# ZDOS:DSN-CODE-ALIGN v1 — managed by zdos-dsn-code-align.sh (aesir plugin).
++# $DSN / NETkali: ERC-20 on Polygon PoS (chain id 137), 18 decimals.
++# Contract 0xfc90516a1f736FaC557e09D8853dB80dA192c296 · portal https://x-zdos.it/dsn
++# Access layer only: read-only balanceOf, no keys, no transactions.
+ import os, requests, time
+ from pathlib import Path
+ 
+-ENV_PATH = Path("/root/zdos-aesir/aesir/dsn.env")
+-if ENV_PATH.exists():
++_HERE = Path(__file__).resolve().parent
++
++
++def _readable(p: Path) -> bool:
++    try:
++        return p.is_file() and os.access(p, os.R_OK)
++    except OSError:  # e.g. /root not traversable for non-root users
++        return False
++
++_LEGACY_ENV = Path("/root/zdos-aesir/aesir/dsn.env")
++ENV_PATH = Path(os.getenv("DSN_ENV", str(_HERE / "dsn.env")))
++if not _readable(ENV_PATH) and _readable(_LEGACY_ENV):
++    ENV_PATH = _LEGACY_ENV
++if _readable(ENV_PATH):
+     for line in ENV_PATH.read_text().splitlines():
++        line = line.strip()
+         if "=" in line and not line.startswith("#"):
+-            k, v = line.strip().split("=", 1)
+-            os.environ.setdefault(k, v)
++            k, v = line.split("=", 1)
++            os.environ.setdefault(k.strip(), v.strip())
+ 
+ DSN = os.getenv("DSN_CONTRACT", "0xfc90516a1f736FaC557e09D8853dB80dA192c296")
+-RPCS = [
+-    os.getenv("POLYGON_RPC", "https://rpc.ankr.com/polygon"),
+-    "https://polygon.llamarpc.com",
+-    "https://1rpc.io/matic",
++CHAIN_ID = int(os.getenv("DSN_CHAIN_ID", "137"))
++# rpc.ankr.com/polygon and polygon-rpc.com now require an API key and answer
++# with a JSON-RPC error (ankr even with HTTP 200): never use them as defaults.
++_RPC_CANDIDATES = [
++    os.getenv("POLYGON_RPC", "https://polygon-bor-rpc.publicnode.com"),
++    os.getenv("POLYGON_RPC_FALLBACK", "https://polygon.drpc.org"),
+     "https://polygon-bor-rpc.publicnode.com",
+-    "https://polygon-rpc.com",
++    "https://polygon.drpc.org",
+ ]
++RPCS = list(dict.fromkeys(u for u in _RPC_CANDIDATES if u))
+ MIN_WEI = int(os.getenv("DSN_MIN_BALANCE_WEI", "1000000000000000000"))
+ HIGH_WEI = int(os.getenv("DSN_HIGH_LIMIT_WEI", "10000000000000000000"))
++_CHAIN_OK = {}
++
++
++class RPCError(Exception):
++    pass
++
+ 
+ def _call(rpc, method, params):
+-    r = requests.post(rpc, json={"jsonrpc":"2.0","id":1,"method":method,"params":params}, timeout=6)
++    r = requests.post(rpc, json={"jsonrpc": "2.0", "id": 1, "method": method, "params": params}, timeout=6)
+     r.raise_for_status()
+-    return r.json()
++    body = r.json()
++    # A JSON-RPC error must NOT be read as "balance 0": try the next endpoint.
++    if not isinstance(body, dict) or "error" in body or "result" not in body:
++        raise RPCError(f"{rpc}: {body.get('error') if isinstance(body, dict) else body}")
++    return body["result"]
++
++
++def _chain_ok(rpc) -> bool:
++    if rpc not in _CHAIN_OK:
++        try:
++            _CHAIN_OK[rpc] = int(_call(rpc, "eth_chainId", []), 16) == CHAIN_ID
++        except Exception:
++            return False
++    return _CHAIN_OK[rpc]
++
+ 
+ def get_balance(address: str) -> int:
+-    if not address.startswith("0x") or len(address) != 42:
++    """balanceOf(address) in wei; 0 if the address is malformed or every RPC fails (fail-closed)."""
++    if not isinstance(address, str) or not address.startswith("0x") or len(address) != 42:
++        return 0
++    try:
++        int(address[2:], 16)
++    except ValueError:
+         return 0
+     data = "0x70a08231" + address[2:].lower().zfill(64)
+     for rpc in RPCS:
++        if not _chain_ok(rpc):
++            continue
+         try:
+-            result = _call(rpc, "eth_call", [{"to": DSN, "data": data}, "latest"])
+-            return int(result.get("result", "0x0"), 16)
++            return int(_call(rpc, "eth_call", [{"to": DSN, "data": data}, "latest"]), 16)
+         except Exception:
+             continue
+     return 0
+ 
++
+ def has_min_dsn(address: str, min_wei=None) -> bool:
+-    return get_balance(address) >= (min_wei or MIN_WEI)
++    return get_balance(address) >= (MIN_WEI if min_wei is None else min_wei)
++
+ 
+ def get_limit_for(address: str) -> int:
+     bal = get_balance(address)
+diff --git a/hybrid/hybrid_core.py b/hybrid/hybrid_core.py
+index 4b1dbfd..6d980e9 100755
+--- a/hybrid/hybrid_core.py
++++ b/hybrid/hybrid_core.py
+@@ -3,6 +3,7 @@ import os, json, socket, subprocess, sys, logging
+ from pathlib import Path
+ from datetime import datetime
+ sys.path.insert(0, "/root/zdos-aesir/aesir")
++sys.path.insert(0, os.environ.get("AESIR_HOME") or str(Path(__file__).resolve().parent.parent))  # zdos-dsn-code-align v1: non solo /root
+ from dsn_gate import has_min_dsn, get_limit_for, get_balance
+ 
+ logging.basicConfig(
+diff --git a/status_server.py b/status_server.py
+index ec96308..7623ce1 100755
+--- a/status_server.py
++++ b/status_server.py
+@@ -4,6 +4,8 @@ import json, subprocess
+ from pathlib import Path
+ import sys
+ sys.path.insert(0, "/root/zdos-aesir/aesir")
++import os
++sys.path.insert(0, os.environ.get("AESIR_HOME") or str(Path(__file__).resolve().parent))  # zdos-dsn-code-align v1: non solo /root
+ from dsn_gate import get_balance
+ 
+ class Handler(BaseHTTPRequestHandler):
+diff --git a/zlang_dsn_helper.py b/zlang_dsn_helper.py
+index ecc7657..c489a22 100755
+--- a/zlang_dsn_helper.py
++++ b/zlang_dsn_helper.py
+@@ -3,6 +3,8 @@
+ import sys, json, socket
+ from pathlib import Path
+ sys.path.insert(0, "/root/zdos-aesir/aesir")
++import os
++sys.path.insert(0, os.environ.get("AESIR_HOME") or str(Path(__file__).resolve().parent))  # zdos-dsn-code-align v1: non solo /root
+ from dsn_gate import get_balance, has_min_dsn
+ 
+ if __name__ == "__main__":
+[1;36m[dsn-code][0m == ZDOS
+ distro/build.sh                    |  2 ++
+ distro/rootfs/etc/zdos/dsn-release | 19 +++++++++++++++++++
+ distro/test-dsn-release.sh         | 15 +++++++++++++++
+ tools/zdos-selftest.sh             |  1 +
+ 4 files changed, 37 insertions(+)
+diff --git a/distro/build.sh b/distro/build.sh
+index 0afa514..6f4bf50 100755
+--- a/distro/build.sh
++++ b/distro/build.sh
+@@ -148,12 +148,14 @@ cp "$DISTRO/rootfs/etc/shadow" "$ROOTFS/etc/shadow"
+ cp "$DISTRO/rootfs/etc/group" "$ROOTFS/etc/group"
+ cp "$DISTRO/rootfs/etc/profile" "$ROOTFS/etc/profile"
+ cp "$DISTRO/rootfs/etc/zdos/organism.conf" "$ROOTFS/etc/zdos/organism.conf"
++cp "$DISTRO/rootfs/etc/zdos/dsn-release" "$ROOTFS/etc/zdos/dsn-release"  # zdos-dsn-code-align v1
+ cp "$DISTRO/rootfs/usr/sbin/zdos-pkg" "$ROOTFS/usr/sbin/zdos-pkg"
+ chmod 0755 "$ROOTFS/init"
+ chmod 0755 "$ROOTFS/usr/sbin/zdos-pkg"
+ chmod 0755 "$ROOTFS/home/zdos"
+ chmod 0700 "$ROOTFS/var/lib/zdos/organism"
+ chmod 0644 "$ROOTFS/etc/inittab" "$ROOTFS/etc/motd" "$ROOTFS/etc/passwd" "$ROOTFS/etc/group" "$ROOTFS/etc/profile" "$ROOTFS/etc/zdos/organism.conf"
++chmod 0644 "$ROOTFS/etc/zdos/dsn-release"  # zdos-dsn-code-align v1
+ chmod 0600 "$ROOTFS/etc/shadow"
+ 
+ if [ "$ZDOS_BUNDLE_ORGANISM" = 1 ]; then
+diff --git a/distro/rootfs/etc/zdos/dsn-release b/distro/rootfs/etc/zdos/dsn-release
+new file mode 100644
+index 0000000..1a5008c
+--- /dev/null
++++ b/distro/rootfs/etc/zdos/dsn-release
+@@ -0,0 +1,19 @@
++# /etc/zdos/dsn-release — zdos-dsn-code-align v1. Formato os-release, solo dati pubblici.
++ZDOS_ID=zdos
++ZDOS_NAME="ZDOS Linux"
++ZDOS_VARIANT_ID=experimental
++ZDOS_HOME_URL=https://x-zdos.it
++ZDOS_IDENTITY_ROOT="did:zdos (Ed25519, local)"
++DSN_NAME=NETkali
++DSN_SYMBOL='$DSN'
++DSN_STANDARD=ERC-20
++DSN_CHAIN="Polygon PoS"
++DSN_CHAIN_ID=137
++DSN_DECIMALS=18
++DSN_CONTRACT=0xfc90516a1f736FaC557e09D8853dB80dA192c296
++DSN_PORTAL_URL=https://x-zdos.it/dsn
++DSN_EXPLORER_URL=https://polygonscan.com/token/0xfc90516a1f736FaC557e09D8853dB80dA192c296
++DSN_RPC_URL=https://polygon-bor-rpc.publicnode.com
++DSN_RPC_FALLBACK_URL=https://polygon.drpc.org
++DSN_ROLE="access,identity"
++DSN_REQUIRED_TO_BOOT=no
+diff --git a/distro/test-dsn-release.sh b/distro/test-dsn-release.sh
+new file mode 100755
+index 0000000..486c203
+--- /dev/null
++++ b/distro/test-dsn-release.sh
+@@ -0,0 +1,15 @@
++#!/usr/bin/env bash
++# zdos-dsn-code-align v1 — contract test: /etc/zdos/dsn-release è canonico e finisce nell'ISO.
++set -Eeuo pipefail
++ROOT=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
++REL="$ROOT/distro/rootfs/etc/zdos/dsn-release"
++BUILD="$ROOT/distro/build.sh"
++fail() { printf 'ZDOS_DSN_RELEASE_CONTRACT_FAILED: %s\n' "$1" >&2; exit 1; }
++test -r "$REL" || fail 'dsn-release assente'
++grep -Fqx 'DSN_CONTRACT=0xfc90516a1f736FaC557e09D8853dB80dA192c296' "$REL" || fail 'contratto non canonico'
++grep -Fqx 'DSN_CHAIN_ID=137' "$REL" || fail 'chain id non 137'
++grep -Fqx 'DSN_DECIMALS=18' "$REL" || fail 'decimali non 18'
++grep -Fqx 'DSN_REQUIRED_TO_BOOT=no' "$REL" || fail 'il boot non deve dipendere da $DSN'
++! grep -Eiq '(private|secret|mnemonic|seed)' "$REL" || fail 'materiale segreto in dsn-release'
++grep -Fq '"$DISTRO/rootfs/etc/zdos/dsn-release" "$ROOTFS/etc/zdos/dsn-release"' "$BUILD" || fail 'build.sh non copia dsn-release'
++printf 'ZDOS_DSN_RELEASE_CONTRACT_OK\n'
+diff --git a/tools/zdos-selftest.sh b/tools/zdos-selftest.sh
+index 434a02e..fce5aa9 100755
+--- a/tools/zdos-selftest.sh
++++ b/tools/zdos-selftest.sh
+@@ -77,6 +77,7 @@ run_check 'Python syntax' "$PYTHON_BIN" -m compileall -q commands evidence ident
+ run_check 'resident organism boot contract' bash distro/test-organism-boot.sh
+ run_check 'distro security contract' bash distro/test-security-contract.sh
+ run_check 'distro hardware baseline contract' bash distro/test-hardware-contract.sh
++run_check 'distro DSN release contract' bash distro/test-dsn-release.sh
+ run_check 'distro package manager' bash distro/test-package-manager.sh
+ run_check 'installer help contract' distro/install.sh --help
+ run_check 'ZRetro unit tests' "$PYTHON_BIN" -m unittest discover -s zretro/ide -p 'test_*.py'
+[1;36m[dsn-code][0m == xCLOUD-by-zdos (fork: solo plugin)
+ .env.example           | 10 ++++++++++
+ config/chain.config.js |  7 +++++--
+ update.sh              |  4 ++--
+ 3 files changed, 17 insertions(+), 4 deletions(-)
+diff --git a/.env.example b/.env.example
+index 8ee99cf..01e212e 100644
+--- a/.env.example
++++ b/.env.example
+@@ -6,3 +6,13 @@ DATABASE_URL=sqlite:///data/xcloud.db
+ LOG_LEVEL=info
+ AI_ENABLED=false
+ DSN_ENABLED=false
++
++# >>> ZDOS:DSN-CODE-ALIGN v1 — $DSN / NETkali (access layer). Generato da zdos-dsn-code-align.sh
++# Riferimento: https://x-zdos.it/dsn · https://polygonscan.com/token/0xfc90516a1f736FaC557e09D8853dB80dA192c296
++DSN_CONTRACT=0xfc90516a1f736FaC557e09D8853dB80dA192c296
++DSN_CHAIN_ID=137
++DSN_DECIMALS=18
++POLYGON_RPC=https://polygon-bor-rpc.publicnode.com
++POLYGON_RPC_FALLBACK=https://polygon.drpc.org
++DSN_PORTAL_URL=https://x-zdos.it/dsn
++# <<< ZDOS:DSN-CODE-ALIGN
+diff --git a/config/chain.config.js b/config/chain.config.js
+index fa17eb2..90c13f5 100644
+--- a/config/chain.config.js
++++ b/config/chain.config.js
+@@ -1,8 +1,11 @@
+ export const CHAIN_CONFIG = {
+   enabled: true,
+   network: "polygon",
+-  rpcUrl: "https://polygon-rpc.com",
++  chainId: 137,
++  dsnDecimals: 18,
++  dsnPortal: "https://x-zdos.it/dsn",
++  rpcUrl: "https://polygon.drpc.org",  // zdos-dsn-code-align v1
+   explorerBase: "https://polygonscan.com/tx/",
+-  dsnTokenAddress: "0xDSN_TOKEN_ADDRESS",
++  dsnTokenAddress: "0xfc90516a1f736FaC557e09D8853dB80dA192c296",
+   businessRegistryAddress: "0xBUSINESS_REGISTRY_ADDRESS"
+ };
+diff --git a/update.sh b/update.sh
+index b1a4e17..6a8091b 100755
+--- a/update.sh
++++ b/update.sh
+@@ -1,6 +1,6 @@
+ cat > index.html << 'EOT'
+ <!doctype html><html lang="it"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>xCLOUD · CloudX Portal · Enterprise Premium</title><meta name="description" content="xCLOUD by ZDOS — Business Layer enterprise, DSN/Blockchain ready, modular CRM & portal."/><meta name="theme-color" content="#000000"/><meta property="og:title" content="xCLOUD · CloudX Portal · Enterprise Premium"/><meta property="og:description" content="Enterprise-grade modular platform, DSN-ready, audit & traceability for business."/><meta property="og:image" content="https://x-zdos.it/og-image.png"/><meta property="og:url" content="https://x-zdos.it"/><meta name="twitter:card" content="summary_large_image"/><link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-WZQKSTXX');</script><style>:root{--bg:#050509;--panel:#0b0b11;--accent:#00eaff;--accent-2:#00c7d6;--muted:#9aa0b2;--text:#eaf6ff;--glass:#0b0b14;--danger:#ff5e5b;--radius:12px;--text-soft:#a0a0b0;--text-main:#f5f5f5;}*{box-sizing:border-box}html,body{height:100%}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;background:radial-gradient(circle at 10% 10%,#0f1724 0%,#050509 45%,#000 100%);color:var(--text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:transparent;overflow-x:hidden}.wrap{max-width:1200px;margin:0 auto;padding:24px}header.topbar{position:fixed;left:0;right:0;top:0;height:64px;padding:10px 28px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:linear-gradient(180deg,rgba(5,5,9,0.8),rgba(5,5,9,0.45));border-bottom:1px solid rgba(255,255,255,0.04);backdrop-filter:blur(10px);z-index:60}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:36px;height:36px;border-radius:8px;background:radial-gradient(circle at 30% 20%,#00eaff,#004b66 60%,#000 100%);box-shadow:0 0 18px #00eaff55}.brand-title{font-weight:700;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;font-size:14px}nav.topnav{display:flex;gap:10px;align-items:center}nav.topnav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:999px;font-size:13px;border:1px solid transparent;transition:.18s}nav.topnav a:hover{border-color:rgba(255,255,255,0.08);color:var(--accent);background:rgba(0,0,0,0.4)}nav.topnav a.primary{background:rgba(0,234,255,0.08);color:var(--accent);box-shadow:0 0 10px #00eaff33;border-color:rgba(0,234,255,0.25)}.actions{display:flex;gap:8px;align-items:center}.btn{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--muted);font-size:12px;font-weight:600;cursor:pointer;text-decoration:none;transition:.18s}.btn:hover{border-color:rgba(255,255,255,0.18);color:var(--accent)}
+ <div id="intro"><div style="text-align:center"><div id="introText">BOOTING XCLOUD ENTERPRISE...</div><div style="height:10px"></div><div style="color:var(--muted);font-size:12px">Initializing modules · ZDOS · DSN · Wallet</div></div></div><header class="topbar"><div class="brand"><div class="brand-mark"></div><div><div class="brand-title">xCLOUD</div><div style="font-size:11px;color:var(--muted)">by ZDOS · Business Layer</div></div></div><nav class="topnav"><a href="https://x-zdos.it" class="primary">Home</a><a href="https://x-zdos.it/zdos">ZDOS</a><a href="https://wallet.x-zdos.it">DSN Wallet</a><a href="#modules">Modules</a><a href="#about">About</a></nav><div class="actions"><a class="btn" href="https://github.com/high-cde/xCLOUD-by-zdos" target="_blank">Repo</a><button id="open-settings" class="btn">Settings</button></div></header><main class="wrap"><section class="hero"><h1>xCLOUD · Business Layer Enterprise</h1><p>Un gestionale modulare, pronto per l'integrazione blockchain (DSN), pensato per aziende che vogliono audit, tracciabilità e interoperabilità senza stravolgere i processi esistenti.</p><div class="hero-cta"><a class="btn primary" href="https://wallet.x-zdos.it" target="_blank">Apri DSN Wallet</a><a class="btn ghost" href="https://x-zdos.it/zdos" target="_blank">Vai a ZDOS</a></div><div class="social-buttons"><a class="social-btn" href="https://discord.gg/9fDdURTevG" target="_blank">Discord</a><a class="social-btn" href="https://ko-fi.com/highkali" target="_blank">Ko‑fi</a></div></section><section class="desktop" id="modules"><div class="desktop-title">CloudX Desktop · Terminal Module</div><div class="terminal-window"><div class="terminal-header"><div class="term-dots"><div class="term-dot red"></div><div class="term-dot yellow"></div><div class="term-dot green"></div></div><div style="font-weight:700">cloudx@xdos: ~</div><div style="font-size:12px;color:var(--muted)">Collapse‑OS emu (concept)</div></div><div class="terminal-body" id="terminal-body"><div id="terminal-output" class="terminal-output">xCLOUD Terminal v2.0
+-Type "help" for available commands.</div><div class="terminal-input-line"><span class="terminal-prompt">cloudx@xdos:~$</span><input id="terminal-input" class="terminal-input" autocomplete="off"/></div><de /div></div><div class="nexus-wrapper"><a class="nexus-button" id="nexus" href="https://x-zdos.it"><span class="nexus-core"></span><span class="nexus-label">ENTER CLOUDX</span></a></div><div class="repo-card"><a href="https://github.com/high-cde/xCLOUD-by-zdos" target="_blank" class="repo-card-inner"><div class="repo-card-header"><div class="repo-dot"></div><span>xCLOUD · Enterprise Repo</span></div><div class="repo-card-body"><p>Fork potenziato · CloudX × ZDOS · DSN Ready · Business Layer modulare.</p><div class="repo-badges"><span class="badge">MIT</span><span class="badge">Enterprise</span><span class="badge">Blockchain Ready</span><span class="badge">CloudX Native</span></div></div></a></div><div class="modules-grid"><div class="module-card"><strong>CRM</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Gestione clienti, pipeline, integrazione DSN per audit.</div></div><div class="module-card"><strong>Billing</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Fatturazione, integrazione gateway, tracciabilità transazioni.</div></div><div class="module-card"><strong>Inventory</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Magazzino, lotti, seriali e audit chain‑ready.</div></div></div></section><section id="about" style="margin-top:22px"><div style="max-width:900px;margin:0 auto;padding:18px;border-radius:12px;background:linear-gradient(180deg,#07101a,#050509);border:1px solid rgba(255,255,255,0.04)"><h2 style="color:var(--accent);margin:0 0 8px">About CloudX</h2><p style="color:var(--text-soft);margin:0 0 8px">xCLOUD è progettato per aziende che richiedono interoperabilità, audit e governance. Architettura modulare, API first, DSN‑ready per registrare eventi critici in modo immutabile.</p><ul style="color:var(--muted);margin:8px 0 0;padding-left:18px"><li>Moduli plug‑and‑play</li><li>Audit e tracciabilità su DSN</li><li>CI/CD ready per deploy enterprise</li></ul></div></section><footer>xCLOUD · ZDOS Ecosystem · Enterprise Premium — Auditabile, modulare, DSN‑ready.</footer></main><div class="admin-bar"><button class="admin-btn" id="btn-deploy">Deploy</button><button class="admin-btn" id="btn-logs">Logs</button><button class="admin-btn" id="btn-settings">Chain</button></div><div class="modal" id="modal-settings"><div class="modal-card"><h3 style="margin:0 0 8px;color:var(--accent)">Impostazioni Blockchain</h3><div style="color:var(--muted);font-size:13px;margin-bottom:12px">Configura la rete DSN e i riferimenti aziendali (salvati in locale per questa istanza).</div><div class="form-row"><label>Abilita</label><select id="chain-enabled"><option value="true">Sì</option><option value="false">No</option></select></div><div class="form-row"><label>Rete</label><select id="chain-network"><option value="polygon">Polygon</option><option value="mumbai">Mumbai (test)</option></select></div><div class="form-row"><label>RPC URL</label><input id="chain-rpc" placeholder="https://polygon-rpc.com"/></div><div class="form-row"><label>DSN Token</label><input id="chain-token" placeholder="0x..."/></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button id="save-chain" class="admin-btn">Salva</button><button id="close-chain" class="admin-btn">Chiudi</button></div></div></div>
+-<script>const CHAIN_CONFIG={enabled:true,network:"polygon",rpcUrl:"https://polygon-rpc.com",explorerBase:"https://polygonscan.com/tx/",dsnTokenAddress:"0xDSN_TOKEN_ADDRESS",businessRegistryAddress:""};function loadChainConfig(){try{const raw=localStorage.getItem("xcloud_chain_config");if(raw){Object.assign(CHAIN_CONFIG,JSON.parse(raw));}}catch(e){}}function saveChainConfig(){try{localStorage.setItem("xcloud_chain_config",JSON.stringify(CHAIN_CONFIG));}catch(e){}}loadChainConfig();async function recordOnChain(eventType,payload){if(!CHAIN_CONFIG.enabled)return{ok:false,reason:"disabled"};const envelope={ts:new Date().toISOString(),network:CHAIN_CONFIG.network,event:eventType,payload};console.log("[CHAIN ADAPTER]",envelope);return{ok:true,envelope}};const termOut=document.getElementById("terminal-output");const termIn=document.getElementById("terminal-input");const commands={help:()=>"Available commands:\n  help        - show this help\n  about       - info on xCLOUD\n  chain       - show chain config\n  record      - simulate record on chain\n  stats       - show local analytics summary\n  clear       - clear screen",about:()=>"xCLOUD · ZDOS Enterprise\nBusiness layer, DSN-ready, modular CRM & workflows.",chain:()=>JSON.stringify(CHAIN_CONFIG,null,2),stats:()=>{try{const a=JSON.parse(localStorage.getItem("xcloud_analytics")||"[]");return"Local analytics events: "+a.length}catch(e){return"No analytics"}},record:async()=>{const res=await recordOnChain("TEST_EVENT",{sample:"data",user:"admin"});return res.ok?"Recorded (simulated) on chain: "+JSON.stringify(res.envelope):"Record skipped: "+res.reason},clear:()=>{termOut.textContent="";return""}};termIn.addEventListener("keydown",async e=>{if(e.key!=="Enter")return;const v=termIn.value.trim();if(!v)return;const prompt="cloudx@xdos:~$ "+v+"\n";let response="";if(commands[v]){const res=commands[v];response=typeof res==="function"?await res():res;if(response===undefined)response=""}else{response=`Command not found: ${v}`}if(v!=="clear")termOut.textContent+="\n"+prompt+response+"\n";termIn.value="";const body=document.getElementById("terminal-body");body.scrollTop=body.scrollHeight});document.getElementById("nexus").addEventListener("click",function(e){e.preventDefault();const portal=document.createElement("div");portal.className="portal-flash";document.body.appendChild(portal);portal.animate([{opacity:0,transform:"scale(0.2)"},{opacity:1,transform:"scale(1.8)"},{opacity:0,transform:"scale(3)"}],{duration:700,easing:"ease-out",fill:"forwards"});try{const ev={type:"nexus_click",ts:new Date().toISOString(),path:location.pathname};const a=JSON.parse(localStorage.getItem("xcloud_analytics")||"[]");a.push(ev);localStorage.setItem("xcloud_analytics",JSON.stringify(a))}catch(e){}setTimeout(()=>{window.location.href=this.href},520)});window.addEventListener("load",()=>{setTimeout(()=>{const intro=document.getElementById("intro");const text=document.getElementById("introText");const rect=text.getBoundingClientRect();for(let i=0;i<60;i++){const p=document.createElement("div");p.classList.add("particle");document.body.appendChild(p);p.style.left=rect.left+rect.width/2+"px";p.style.top=rect.top+rect.height/2+"px";const angle=Math.random()*Math.PI*2;const distance=80+Math.random()*120;const x=Math.cos(angle)*distance;const y=Math.sin(angle)*distance;p.animate([{transform:"translate(0,0)",opacity:1},{transform:`translate(${x}px,${y}px)`,opacity:0}],{duration:900+Math.random()*400,easing:"ease-out",fill:"forwards"})}text.style.opacity=0;setTimeout(()=>{intro.style.opacity=0;intro.style.transition="opacity .8s ease"},300);setTimeout(()=>{intro.remove()},1200)},2200);(async function demoRecord(){await recordOnChain("PAGE_LOADED",{path:location.pathname,user:"anonymous"})})});const modal=document.getElementById("modal-settings");document.getElementById("open-settings").addEventListener("click",()=>{document.getElementById("chain-enabled").value=String(CHAIN_CONFIG.enabled);document.getElementById("chain-network").value=CHAIN_CONFIG.network;document.getElementById("chain-rpc").value=CHAIN_CONFIG.rpcUrl;document.getElementById("chain-token").value=CHAIN_CONFIG.dsnTokenAddress;modal.classList.add("open");modal.setAttribute("aria-hidden","false")});document.getElementById("close-chain").addEventListener("click",()=>{modal.classList.remove("open");modal.setAttribute("aria-hidden","true")});document.getElementById("save-chain").addEventListener("click",()=>{CHAIN_CONFIG.enabled=document.getElementById("chain-enabled").value==="true";CHAIN_CONFIG.network=document.getElementById("chain-network").value;CHAIN_CONFIG.rpcUrl=document.getElementById("chain-rpc").value||CHAIN_CONFIG.rpcUrl;CHAIN_CONFIG.dsnTokenAddress=document.getElementById("chain-token").value||CHAIN_CONFIG.dsnTokenAddress;saveChainConfig();modal.classList.remove("open");modal.setAttribute("aria-hidden","true");alert("Configurazione blockchain salvata localmente. Per deploy enterprise, sincronizza con il tuo relayer.")});document.getElementById("btn-deploy").addEventListener("click",()=>{alert("Deploy triggered (simulazione). Integra CI/CD per deploy reale.")});document.getElementById("btn-logs").addEventListener("click",()=>{const logs=localStorage.getItem("xcloud_analytics")||"[]";alert("Analytics logs (local):\n\n"+logs)});document.getElementById("btn-settings").addEventListener("click",()=>{document.getElementById("open-settings").click()});</script></body></html>
++Type "help" for available commands.</div><div class="terminal-input-line"><span class="terminal-prompt">cloudx@xdos:~$</span><input id="terminal-input" class="terminal-input" autocomplete="off"/></div><de /div></div><div class="nexus-wrapper"><a class="nexus-button" id="nexus" href="https://x-zdos.it"><span class="nexus-core"></span><span class="nexus-label">ENTER CLOUDX</span></a></div><div class="repo-card"><a href="https://github.com/high-cde/xCLOUD-by-zdos" target="_blank" class="repo-card-inner"><div class="repo-card-header"><div class="repo-dot"></div><span>xCLOUD · Enterprise Repo</span></div><div class="repo-card-body"><p>Fork potenziato · CloudX × ZDOS · DSN Ready · Business Layer modulare.</p><div class="repo-badges"><span class="badge">MIT</span><span class="badge">Enterprise</span><span class="badge">Blockchain Ready</span><span class="badge">CloudX Native</span></div></div></a></div><div class="modules-grid"><div class="module-card"><strong>CRM</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Gestione clienti, pipeline, integrazione DSN per audit.</div></div><div class="module-card"><strong>Billing</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Fatturazione, integrazione gateway, tracciabilità transazioni.</div></div><div class="module-card"><strong>Inventory</strong><div style="color:var(--muted);font-size:13px;margin-top:6px">Magazzino, lotti, seriali e audit chain‑ready.</div></div></div></section><section id="about" style="margin-top:22px"><div style="max-width:900px;margin:0 auto;padding:18px;border-radius:12px;background:linear-gradient(180deg,#07101a,#050509);border:1px solid rgba(255,255,255,0.04)"><h2 style="color:var(--accent);margin:0 0 8px">About CloudX</h2><p style="color:var(--text-soft);margin:0 0 8px">xCLOUD è progettato per aziende che richiedono interoperabilità, audit e governance. Architettura modulare, API first, DSN‑ready per registrare eventi critici in modo immutabile.</p><ul style="color:var(--muted);margin:8px 0 0;padding-left:18px"><li>Moduli plug‑and‑play</li><li>Audit e tracciabilità su DSN</li><li>CI/CD ready per deploy enterprise</li></ul></div></section><footer>xCLOUD · ZDOS Ecosystem · Enterprise Premium — Auditabile, modulare, DSN‑ready.</footer></main><div class="admin-bar"><button class="admin-btn" id="btn-deploy">Deploy</button><button class="admin-btn" id="btn-logs">Logs</button><button class="admin-btn" id="btn-settings">Chain</button></div><div class="modal" id="modal-settings"><div class="modal-card"><h3 style="margin:0 0 8px;color:var(--accent)">Impostazioni Blockchain</h3><div style="color:var(--muted);font-size:13px;margin-bottom:12px">Configura la rete DSN e i riferimenti aziendali (salvati in locale per questa istanza).</div><div class="form-row"><label>Abilita</label><select id="chain-enabled"><option value="true">Sì</option><option value="false">No</option></select></div><div class="form-row"><label>Rete</label><select id="chain-network"><option value="polygon">Polygon</option><option value="mumbai">Mumbai (test)</option></select></div><div class="form-row"><label>RPC URL</label><input id="chain-rpc" placeholder="https://polygon.drpc.org"/></div><div class="form-row"><label>DSN Token</label><input id="chain-token" placeholder="0x..."/></div><div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><button id="save-chain" class="admin-btn">Salva</button><button id="close-chain" class="admin-btn">Chiudi</button></div></div></div>
++<script>const CHAIN_CONFIG={enabled:true,network:"polygon",chainId: 137, dsnDecimals: 18, dsnPortal: "https://x-zdos.it/dsn",rpcUrl:"https://polygon.drpc.org",explorerBase:"https://polygonscan.com/tx/",dsnTokenAddress:"0xfc90516a1f736FaC557e09D8853dB80dA192c296",businessRegistryAddress:""};function loadChainConfig(){try{const raw=localStorage.getItem("xcloud_chain_config");if(raw){Object.assign(CHAIN_CONFIG,JSON.parse(raw));}}catch(e){}}function saveChainConfig(){try{localStorage.setItem("xcloud_chain_config",JSON.stringify(CHAIN_CONFIG));}catch(e){}}loadChainConfig();async function recordOnChain(eventType,payload){if(!CHAIN_CONFIG.enabled)return{ok:false,reason:"disabled"};const envelope={ts:new Date().toISOString(),network:CHAIN_CONFIG.network,event:eventType,payload};console.log("[CHAIN ADAPTER]",envelope);return{ok:true,envelope}};const termOut=document.getElementById("terminal-output");const termIn=document.getElementById("terminal-input");const commands={help:()=>"Available commands:\n  help        - show this help\n  about       - info on xCLOUD\n  chain       - show chain config\n  record      - simulate record on chain\n  stats       - show local analytics summary\n  clear       - clear screen",about:()=>"xCLOUD · ZDOS Enterprise\nBusiness layer, DSN-ready, modular CRM & workflows.",chain:()=>JSON.stringify(CHAIN_CONFIG,null,2),stats:()=>{try{const a=JSON.parse(localStorage.getItem("xcloud_analytics")||"[]");return"Local analytics events: "+a.length}catch(e){return"No analytics"}},record:async()=>{const res=await recordOnChain("TEST_EVENT",{sample:"data",user:"admin"});return res.ok?"Recorded (simulated) on chain: "+JSON.stringify(res.envelope):"Record skipped: "+res.reason},clear:()=>{termOut.textContent="";return""}};termIn.addEventListener("keydown",async e=>{if(e.key!=="Enter")return;const v=termIn.value.trim();if(!v)return;const prompt="cloudx@xdos:~$ "+v+"\n";let response="";if(commands[v]){const res=commands[v];response=typeof res==="function"?await res():res;if(response===undefined)response=""}else{response=`Command not found: ${v}`}if(v!=="clear")termOut.textContent+="\n"+prompt+response+"\n";termIn.value="";const body=document.getElementById("terminal-body");body.scrollTop=body.scrollHeight});document.getElementById("nexus").addEventListener("click",function(e){e.preventDefault();const portal=document.createElement("div");portal.className="portal-flash";document.body.appendChild(portal);portal.animate([{opacity:0,transform:"scale(0.2)"},{opacity:1,transform:"scale(1.8)"},{opacity:0,transform:"scale(3)"}],{duration:700,easing:"ease-out",fill:"forwards"});try{const ev={type:"nexus_click",ts:new Date().toISOString(),path:location.pathname};const a=JSON.parse(localStorage.getItem("xcloud_analytics")||"[]");a.push(ev);localStorage.setItem("xcloud_analytics",JSON.stringify(a))}catch(e){}setTimeout(()=>{window.location.href=this.href},520)});window.addEventListener("load",()=>{setTimeout(()=>{const intro=document.getElementById("intro");const text=document.getElementById("introText");const rect=text.getBoundingClientRect();for(let i=0;i<60;i++){const p=document.createElement("div");p.classList.add("particle");document.body.appendChild(p);p.style.left=rect.left+rect.width/2+"px";p.style.top=rect.top+rect.height/2+"px";const angle=Math.random()*Math.PI*2;const distance=80+Math.random()*120;const x=Math.cos(angle)*distance;const y=Math.sin(angle)*distance;p.animate([{transform:"translate(0,0)",opacity:1},{transform:`translate(${x}px,${y}px)`,opacity:0}],{duration:900+Math.random()*400,easing:"ease-out",fill:"forwards"})}text.style.opacity=0;setTimeout(()=>{intro.style.opacity=0;intro.style.transition="opacity .8s ease"},300);setTimeout(()=>{intro.remove()},1200)},2200);(async function demoRecord(){await recordOnChain("PAGE_LOADED",{path:location.pathname,user:"anonymous"})})});const modal=document.getElementById("modal-settings");document.getElementById("open-settings").addEventListener("click",()=>{document.getElementById("chain-enabled").value=String(CHAIN_CONFIG.enabled);document.getElementById("chain-network").value=CHAIN_CONFIG.network;document.getElementById("chain-rpc").value=CHAIN_CONFIG.rpcUrl;document.getElementById("chain-token").value=CHAIN_CONFIG.dsnTokenAddress;modal.classList.add("open");modal.setAttribute("aria-hidden","false")});document.getElementById("close-chain").addEventListener("click",()=>{modal.classList.remove("open");modal.setAttribute("aria-hidden","true")});document.getElementById("save-chain").addEventListener("click",()=>{CHAIN_CONFIG.enabled=document.getElementById("chain-enabled").value==="true";CHAIN_CONFIG.network=document.getElementById("chain-network").value;CHAIN_CONFIG.rpcUrl=document.getElementById("chain-rpc").value||CHAIN_CONFIG.rpcUrl;CHAIN_CONFIG.dsnTokenAddress=document.getElementById("chain-token").value||CHAIN_CONFIG.dsnTokenAddress;saveChainConfig();modal.classList.remove("open");modal.setAttribute("aria-hidden","true");alert("Configurazione blockchain salvata localmente. Per deploy enterprise, sincronizza con il tuo relayer.")});document.getElementById("btn-deploy").addEventListener("click",()=>{alert("Deploy triggered (simulazione). Integra CI/CD per deploy reale.")});document.getElementById("btn-logs").addEventListener("click",()=>{const logs=localStorage.getItem("xcloud_analytics")||"[]";alert("Analytics logs (local):\n\n"+logs)});document.getElementById("btn-settings").addEventListener("click",()=>{document.getElementById("open-settings").click()});</script></body></html>
+ EOT
+[1;36m[dsn-code][0m == zdos-hybrid
+/tmp/tmp.KKmGog7lCw/wt/zdos-hybrid/zdos-autobuild.sh: line 357: warning: here-document at line 103 delimited by end-of-file (wanted `EOF')
+ .env.example      | 9 +++++++++
+ .gitignore        | 2 ++
+ README.md         | 2 +-
+ zdos-autobuild.sh | 2 +-
+ zdos_omni_os.py   | 2 +-
+ 5 files changed, 14 insertions(+), 3 deletions(-)
+diff --git a/.env.example b/.env.example
+new file mode 100644
+index 0000000..f8cf4df
+--- /dev/null
++++ b/.env.example
+@@ -0,0 +1,9 @@
++# >>> ZDOS:DSN-CODE-ALIGN v1 — $DSN / NETkali (access layer). Generato da zdos-dsn-code-align.sh
++# Riferimento: https://x-zdos.it/dsn · https://polygonscan.com/token/0xfc90516a1f736FaC557e09D8853dB80dA192c296
++DSN_CONTRACT=0xfc90516a1f736FaC557e09D8853dB80dA192c296
++DSN_CHAIN_ID=137
++DSN_DECIMALS=18
++POLYGON_RPC=https://polygon-bor-rpc.publicnode.com
++POLYGON_RPC_FALLBACK=https://polygon.drpc.org
++DSN_PORTAL_URL=https://x-zdos.it/dsn
++# <<< ZDOS:DSN-CODE-ALIGN
+diff --git a/.gitignore b/.gitignore
+index 52ffa97..a4e6d49 100755
+--- a/.gitignore
++++ b/.gitignore
+@@ -27,3 +27,5 @@ fitness.txt
+ /site/.build/
+ .zdos-migration-backups/
+ zdos_boot.img
++# zdos-dsn-code-align v1: virtualenv e cache
++zdos-llm/
+diff --git a/README.md b/README.md
+index 59cd6ed..6274745 100644
+--- a/README.md
++++ b/README.md
+@@ -8,7 +8,7 @@
+ ---
+ 
+ ## 🌐 Panoramica Architetturale
+-Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-metal e cloud distribuiti, questo modulo elimina completamente qualsiasi dipendenza da librerie di terze parti o simulazioni legacy, adottando un approccio strict-sovereign basato su **ZLang** e la Data Sovereignty Network (**DSN**).
++Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-metal e cloud distribuiti, questo modulo elimina completamente qualsiasi dipendenza da librerie di terze parti o simulazioni legacy, adottando un approccio strict-sovereign basato su **ZLang** e la rete di accesso NETkali (**DSN**).
+ 
+ ### ✨ Specifiche Tecniche
+ * **Esecuzione Bare-Metal:** Ottimizzato per la massima efficienza delle risorse hardware.
+diff --git a/zdos-autobuild.sh b/zdos-autobuild.sh
+index 4e61405..7286689 100755
+--- a/zdos-autobuild.sh
++++ b/zdos-autobuild.sh
+@@ -116,7 +116,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
+ from urllib.parse import urlparse, parse_qs
+ from PIL import Image, ImageTk
+ 
+-TOKEN_ADDRESS = "0xfc90516a1f736fac557e09d8853db80da192c296"
++TOKEN_ADDRESS = "0xfc90516a1f736FaC557e09D8853dB80dA192c296"
+ BRIDGE_PORT = 8888
+ 
+ class BridgeState:
+diff --git a/zdos_omni_os.py b/zdos_omni_os.py
+index efc330b..07f293d 100644
+--- a/zdos_omni_os.py
++++ b/zdos_omni_os.py
+@@ -13,7 +13,7 @@ from urllib.request import urlopen, Request
+ from http.server import HTTPServer, BaseHTTPRequestHandler
+ from urllib.parse import urlparse, parse_qs
+ 
+-TOKEN_ADDRESS = "0xfc90516a1f736fac557e09d8853db80da192c296"
++TOKEN_ADDRESS = "0xfc90516a1f736FaC557e09D8853dB80dA192c296"
+ BRIDGE_PORT = 8888
+ XCLOUD_REPO_URL = "https://github.com/high-cde/xCLOUD-by-zdos.git"
+ 
+[1;36m[dsn-code][0m == Z-GENESIS-OS (fork: solo plugin)
+ index.html | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+diff --git a/index.html b/index.html
+index db92be9..093943d 100644
+--- a/index.html
++++ b/index.html
+@@ -260,10 +260,10 @@
+       try {
+         // Sostituibile con una vera API se vuoi
+         box.innerHTML =
+-          "<p><strong>Prezzo:</strong> 0.0000X USD</p>" +
+-          "<p><strong>Volume 24h:</strong> 0.00 USD</p>" +
+-          "<p><strong>Liquidity:</strong> in fase di evocazione...</p>" +
+-          "<p><strong>Stato:</strong> monitor concettuale attivo.</p>";
++          "<p><strong>Token:</strong> $DSN / NETkali · ERC-20 su Polygon PoS (chain 137), 18 decimali</p>" +
++          "<p><strong>Contratto:</strong> <code>0xfc90516a1f736FaC557e09D8853dB80dA192c296</code></p>" +
++          "<p><strong>Explorer:</strong> <a href=\"https://polygonscan.com/token/0xfc90516a1f736FaC557e09D8853dB80dA192c296\">Polygonscan</a> · <a href=\"https://x-zdos.it/dsn\">x-zdos.it/dsn</a></p>" +
++          "<p><strong>Ruolo:</strong> layer di accesso e identità (nessun dato di prezzo mostrato).</p>"; // zdos-dsn-code-align v1
+       } catch (e) {
+         box.innerHTML = "<p>Errore nel caricamento dati.</p>";
+       }
+[1;36m[dsn-code][0m == Zlang
+ .gitignore | 5 +++++
+ 1 file changed, 5 insertions(+)
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..4cd17dc
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,5 @@
++# zdos-dsn-code-align v1: wallet generato a runtime da `create-wallet`, mai in git
++node_wallet.zbag
++*.zbag.key
++# zdos-dsn-code-align v1: build Rust
++target/
+[1;36m[dsn-code][0m == Zdos-K.I.R.A
+ backend/.env.example | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+diff --git a/backend/.env.example b/backend/.env.example
+index ef6c35c..2da6ba3 100644
+--- a/backend/.env.example
++++ b/backend/.env.example
+@@ -11,3 +11,15 @@ LLM_MODEL=gpt-4o-mini
+ ALLOWED_ORIGINS=https://high-cde.github.io
+ TRUST_PROXY_HOPS=1
+ PUBLIC_CHAT_COOLDOWN_MS=15000
++
++# >>> ZDOS:DSN-CODE-ALIGN v1 — $DSN / NETkali (access layer). Generato da zdos-dsn-code-align.sh
++# Riferimento: https://x-zdos.it/dsn · https://polygonscan.com/token/0xfc90516a1f736FaC557e09D8853dB80dA192c296
++DSN_CONTRACT=0xfc90516a1f736FaC557e09D8853dB80dA192c296
++DSN_CHAIN_ID=137
++DSN_DECIMALS=18
++POLYGON_RPC=https://polygon-bor-rpc.publicnode.com
++POLYGON_RPC_FALLBACK=https://polygon.drpc.org
++DSN_PORTAL_URL=https://x-zdos.it/dsn
++DSN_GATE_ENABLED=false
++DSN_MIN_BALANCE_WEI=1000000000000000000
++# <<< ZDOS:DSN-CODE-ALIGN
+[1;36m[dsn-code][0m == zdos-organism
+ .gitignore | 2 ++
+ 1 file changed, 2 insertions(+)
+diff --git a/.gitignore b/.gitignore
+index dd9f9a4..68ea0e0 100755
+--- a/.gitignore
++++ b/.gitignore
+@@ -25,3 +25,5 @@ fitness.txt
+ # Generated site/build output
+ /public/
+ /site/.build/
++# zdos-dsn-code-align v1: virtualenv e cache
++zdos-llm/
+[1;36m[dsn-code][0m == z-valut
+ src/valut_core.zl | 1 +
+ 1 file changed, 1 insertion(+)
+diff --git a/src/valut_core.zl b/src/valut_core.zl
+index a344790..2f1e91a 100644
+--- a/src/valut_core.zl
++++ b/src/valut_core.zl
+@@ -7,6 +7,7 @@ module ZValut {
+     struct WalletAccount {
+         string address;
+         u64 balance_zvt;
++        // zdos-dsn-code-align v1: $DSN ha 18 decimali (ERC-20, Polygon 137): u64 in wei copre max ~18.44 DSN -> serve u128/u256 o unità ridotte; il valore 54000 è statico, non letto on-chain
+         u64 balance_dsn;
+         bool is_locked;
+     }
+[1;36m[dsn-code][0m == zBAG (fork: solo plugin)
+ src/chain_client.zl | 1 +
+ 1 file changed, 1 insertion(+)
+diff --git a/src/chain_client.zl b/src/chain_client.zl
+index 588bdbd8e..7d5d7ec74 100644
+--- a/src/chain_client.zl
++++ b/src/chain_client.zl
+@@ -14,6 +14,7 @@ module ZBagChainClient {
+     pub fn connect_to_sovereign_chain(url: string) -> RPCNodeConnection {
+         let conn = RPCNodeConnection {
+             endpoint_url: url,
++            // zdos-dsn-code-align v1: $DSN vive su Polygon PoS chain 137 (contratto 0xfc90516a1f736FaC557e09D8853dB80dA192c296); 7777 è una chain ZDOS ipotetica, il saldo ZVT/DSN qui è simulato
+             chain_id: 7777, // ZDOS Sovereign ID
+             is_connected: true
+         };
+[1;36m[dsn-code][0m == zdos-core
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+diff --git a/README.md b/README.md
+index 59cd6ed..6274745 100644
+--- a/README.md
++++ b/README.md
+@@ -8,7 +8,7 @@
+ ---
+ 
+ ## 🌐 Panoramica Architetturale
+-Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-metal e cloud distribuiti, questo modulo elimina completamente qualsiasi dipendenza da librerie di terze parti o simulazioni legacy, adottando un approccio strict-sovereign basato su **ZLang** e la Data Sovereignty Network (**DSN**).
++Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-metal e cloud distribuiti, questo modulo elimina completamente qualsiasi dipendenza da librerie di terze parti o simulazioni legacy, adottando un approccio strict-sovereign basato su **ZLang** e la rete di accesso NETkali (**DSN**).
+ 
+ ### ✨ Specifiche Tecniche
+ * **Esecuzione Bare-Metal:** Ottimizzato per la massima efficienza delle risorse hardware.
+[1;36m[dsn-code][0m == xzdos-unified-webapp
+ README.md | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+diff --git a/README.md b/README.md
+index 59cd6ed..6274745 100644
+--- a/README.md
++++ b/README.md
+@@ -8,7 +8,7 @@
+ ---
+ 
+ ## 🌐 Panoramica Architetturale
+-Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-metal e cloud distribuiti, questo modulo elimina completamente qualsiasi dipendenza da librerie di terze parti o simulazioni legacy, adottando un approccio strict-sovereign basato su **ZLang** e la Data Sovereignty Network (**DSN**).
++Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-metal e cloud distribuiti, questo modulo elimina completamente qualsiasi dipendenza da librerie di terze parti o simulazioni legacy, adottando un approccio strict-sovereign basato su **ZLang** e la rete di accesso NETkali (**DSN**).
+ 
+ ### ✨ Specifiche Tecniche
+ * **Esecuzione Bare-Metal:** Ottimizzato per la massima efficienza delle risorse hardware.
+[1;36m[dsn-code][0m == x-zdos.it
+[1;32m[ ok ][0m x-zdos.it: già allineato (nessuna modifica)
+[1;36m[dsn-code][0m == zlang-core
+[1;32m[ ok ][0m zlang-core: già allineato (nessuna modifica)
+
+[1;36m[dsn-code][0m MANIFEST: /root/zdos-dsn-work/MANIFEST-CODE.md
+# MANIFEST — zdos-dsn-code-align v1
+
+- data: 2026-11-05 11:58 CET
+- modo: dry-run
+- contratto: 0xfc90516a1f736FaC557e09D8853dB80dA192c296 (chain 137, 18 decimali)
+- RPC: https://polygon-bor-rpc.publicnode.com · https://polygon.drpc.org
+
+## aesir
+
+- base: `origin/main` @ b3a36be
+- file modificati: 7
+  - `dsn_gate.py` [aesir:gate-rewrite] RPC publicnode/dRPC, errore JSON-RPC ≠ saldo 0, check chainId 137, DSN_ENV, /root non leggibile gestito
+  - `aesir-advance.sh` [aesir:heredoc-gate] heredoc dsn_gate.py = nuovo template (altrimenti rieseguire advance annullerebbe il fix)
+  - `dsn.env` [rpc:ankr->publicnode] POLYGON_RPC=https://rpc.ankr.com/polygon  =>  POLYGON_RPC=https://polygon-bor-rpc.publicnode.com
+  - `dsn.env` [env-template] blocco canonico: DSN_CHAIN_ID, DSN_DECIMALS, POLYGON_RPC_FALLBACK, DSN_PORTAL_URL
+  - `status_server.py` [aesir:import-path] dsn_gate importabile da qualsiasi path di installazione
+  - `zlang_dsn_helper.py` [aesir:import-path] dsn_gate importabile da qualsiasi path di installazione
+  - `hybrid/hybrid_core.py` [aesir:import-path] dsn_gate importabile da qualsiasi path di installazione
+  - `.gitignore` [gitignore] __pycache__/, *.pyc, policy/target/
+
+## ZDOS
+
+- base: `origin/main` @ 162a855
+- file modificati: 4
+  - `distro/rootfs/etc/zdos/dsn-release` [zdos:dsn-release] creato
+  - `distro/build.sh` [zdos:iso-path] dsn-release copiato in /etc/zdos dell'ISO (+chmod 0644)
+  - `distro/test-dsn-release.sh` [zdos:contract-test] test contratto dsn-release
+  - `tools/zdos-selftest.sh` [zdos:selftest-hook] esegue test-dsn-release.sh
+
+## xCLOUD-by-zdos
+
+- base: `origin/main` @ 1d1c00d · fork: regole generiche disattivate
+- file modificati: 3
+  - `config/chain.config.js` [rpc:polygon-rpc.com->drpc] rpcUrl: "https://polygon-rpc.com",  =>  rpcUrl: "https://polygon.drpc.org",  // zdos-dsn-code-align v1
+  - `config/chain.config.js` [placeholder->contratto] dsnTokenAddress: "0xDSN_TOKEN_ADDRESS",  =>  dsnTokenAddress: "0xfc90516a1f736FaC557e09D8853dB80dA192c296",
+  - `config/chain.config.js` [xcloud:chain-config] aggiunti chainId 137, dsnDecimals 18, dsnPortal
+  - `update.sh` [rpc:polygon-rpc.com->drpc] Type "help" for available commands.</div><div class="terminal-input-line"><span class="terminal-prompt">cloudx  =>  Type "help" for available commands.</div><div class="terminal-input-line"><span class="terminal-prompt">cloudx
+  - `update.sh` [rpc:polygon-rpc.com->drpc+placeholder->contratto] <script>const CHAIN_CONFIG={enabled:true,network:"polygon",rpcUrl:"https://polygon-rpc.com",explorerBase:"http  =>  <script>const CHAIN_CONFIG={enabled:true,network:"polygon",rpcUrl:"https://polygon.drpc.org",explorerBase:"htt
+  - `update.sh` [xcloud:chain-config] aggiunti chainId 137, dsnDecimals 18, dsnPortal
+  - `.env.example` [env-template] blocco canonico: DSN_CONTRACT, DSN_CHAIN_ID, DSN_DECIMALS, POLYGON_RPC, POLYGON_RPC_FALLBACK, DSN_PORTAL_URL
+
+## zdos-hybrid
+
+- base: `origin/feat/zdos-hybrid-security-20261001-230859` @ 24c5569
+- file modificati: 5
+  - `.env.example` [env-template] creato: DSN_CONTRACT, DSN_CHAIN_ID, DSN_DECIMALS, POLYGON_RPC, POLYGON_RPC_FALLBACK, DSN_PORTAL_URL
+  - `.gitignore` [gitignore] zdos-llm/
+  - `README.md` [wording NETkali] Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-meta  =>  Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-meta
+  - `zdos-autobuild.sh` [checksum EIP-55] TOKEN_ADDRESS = "0xfc90516a1f736fac557e09d8853db80da192c296"  =>  TOKEN_ADDRESS = "0xfc90516a1f736FaC557e09D8853dB80dA192c296"
+  - `zdos_omni_os.py` [checksum EIP-55] TOKEN_ADDRESS = "0xfc90516a1f736fac557e09d8853db80da192c296"  =>  TOKEN_ADDRESS = "0xfc90516a1f736FaC557e09D8853dB80dA192c296"
+
+## Z-GENESIS-OS
+
+- base: `origin/main` @ 46a7900 · fork: regole generiche disattivate
+- file modificati: 1
+  - `index.html` [genesis:dsn-monitor] prezzo/volume fittizi -> dati canonici statici
+
+## Zlang
+
+- base: `origin/main` @ 55bae74
+- file modificati: 1
+  - `.gitignore` [gitignore] node_wallet.zbag, *.zbag.key
+  - `.gitignore` [gitignore] target/
+
+## Zdos-K.I.R.A
+
+- base: `origin/main` @ 2491272
+- file modificati: 1
+  - `backend/.env.example` [env-template] blocco canonico: DSN_CONTRACT, DSN_CHAIN_ID, DSN_DECIMALS, POLYGON_RPC, POLYGON_RPC_FALLBACK, DSN_PORTAL_URL, DSN_GATE_ENABLED, DSN_MIN_BALANCE_WEI
+
+## zdos-organism
+
+- base: `origin/main` @ 255a85b
+- file modificati: 1
+  - `.gitignore` [gitignore] zdos-llm/
+
+## z-valut
+
+- base: `origin/main` @ 43cb911
+- file modificati: 1
+  - `src/valut_core.zl` [annotazione] $DSN ha 18 decimali (ERC-20, Polygon 137): u64 in wei copre max ~18.44 DSN -> serve u128/u256 o unit
+
+## zBAG
+
+- base: `origin/develop` @ c07b3194f · fork: regole generiche disattivate
+- file modificati: 1
+  - `src/chain_client.zl` [annotazione] $DSN vive su Polygon PoS chain 137 (contratto 0xfc90516a1f736FaC557e09D8853dB80dA192c296); 7777 è un
+
+## zdos-core
+
+- base: `origin/main` @ d74fb93
+- file modificati: 1
+  - `README.md` [wording NETkali] Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-meta  =>  Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-meta
+
+## xzdos-unified-webapp
+
+- base: `origin/main` @ 39e2c5f
+- file modificati: 1
+  - `README.md` [wording NETkali] Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-meta  =>  Componente ufficiale, nativo e autonomo dell'ecosistema **ZDOS**. Progettato per operare in ambienti bare-meta
+
+## x-zdos.it
+
+- base: `origin/main` @ 422dc6c
+- file modificati: 0
+
+## zlang-core
+
+- base: `origin/main` @ 11b7680
+- file modificati: 0
+
+## AUDIT — non automatizzabile in modo sicuro (serve una persona o un cloud agent)
+
+- [CRIT] **Zlang** `node_wallet.zbag` wallet con chiave privata e mnemonic committato in repo PUBBLICO: considerarlo compromesso, ruotare, non usarlo. Rimozione dalla storia = force-push (decisione umana)
+- [CRIT] **Zlang** mnemonic in chiaro (valore NON mostrato): node_wallet.zbag(1)
+- [HIGH] **zdos-hybrid** `zdos_omni_os.py` risposta 'AUTHORIZED' senza verifica balanceOf: gate finto, da collegare a un vero controllo
+- [HIGH] **z-valut** `src/valut_core.zl` balance_dsn hardcoded (54000) e tipo u64: non rappresenta un saldo reale
+- [MED] **aesir** 170 file di artefatti (target/__pycache__) committati (usa --untrack-artifacts)
+- [MED] **ZDOS** logica simulata (non on-chain): core/memory/docs/index.html(1), core/memory/mempalace/general_extractor.py(1), evidence/test_attest_zlang.py(1), microcosm/catalog.json(1), zlang_core/zdos_engine.zl(1)
+- [MED] **xCLOUD-by-zdos** `config/chain.config.js` businessRegistryAddress è un placeholder: nessun contratto reale noto, NON inventato
+- [MED] **xCLOUD-by-zdos** `services/chainAdapter.js` recordOnChain è uno stub (solo log): nessuna scrittura on-chain reale
+- [MED] **xCLOUD-by-zdos** logica simulata (non on-chain): README.md(1), update.sh(1), zlang_core/xcloud-by-zdos_engine.zl(1)
+- [MED] **xCLOUD-by-zdos** placeholder di indirizzo senza valore reale: config/chain.config.js(1)
+- [MED] **zdos-hybrid** 699 file di virtualenv Python (zdos-llm/) committati (usa --untrack-artifacts)
+- [MED] **zdos-hybrid** logica simulata (non on-chain): README.md(1), docs/wiki/Architecture.md(1), llm-mock.py(1), z_kali_megadrive.py(1), zlang_core/zdos-hybrid_engine.zl(1)
+- [MED] **Z-GENESIS-OS** logica simulata (non on-chain): README.md(1), index.html(2), zlang_core/z-genesis-os_engine.zl(1)
+- [MED] **Zlang** 467 file di build Rust (target/) committati (usa --untrack-artifacts)
+- [MED] **Zlang** logica simulata (non on-chain): docs/index.html(1), docs/web_cli/index.html(1), index.html(1), src/main.rs(1), zlang_core/zlang_engine.zl(1)
+- [MED] **zdos-organism** 699 file di virtualenv/cache committati (usa --untrack-artifacts)
+- [MED] **zdos-organism** logica simulata (non on-chain): .zdos_hashmap(1), docs/wiki/Architecture.md(1), llm-mock.py(1), zlang_core/zdos-organism_engine.zl(1)
+- [MED] **zBAG** logica simulata (non on-chain): 123 file, es. .github/actions/ios-build/action.yaml(1), CHANGELOG.md(2), README.md(1), config/test/native.ts(14)
+- [MED] **zBAG** chain 7777 ≠ Polygon 137 dove vive $DSN: src/chain_client.zl(1)
+- [MED] **zdos-core** logica simulata (non on-chain): README.md(1), zlang_core/zdos-core_engine.zl(1)
+- [MED] **xzdos-unified-webapp** logica simulata (non on-chain): README.md(1), zlang_core/xzdos-unified-webapp_engine.zl(1)
+- [MED] **zlang-core** logica simulata (non on-chain): compiler/zlang_pipeline.zlang(1), security/zlang_test_runner.zlang(1)
+- [LOW] **ZDOS** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: ARCHITECTURE.md(2), core/cortex/cortex/utils/config.py(1), core/cortex/cortex/utils/palace.py(1), core/cortex/zgen-flyrouter-backend.py(1), core/cortex/zgen-flyrouter-panel.html(2), core/memory/CHANGELOG.md(1), core/memory/README.md(2), core/memory/scripts/zgen-activate-all.sh(1) (+6)
+- [LOW] **xCLOUD-by-zdos** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: README.md(1), zlang_core/xcloud-by-zdos_engine.zl(2)
+- [LOW] **zdos-hybrid** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: README.md(1), zlang_core/zdos-hybrid_engine.zl(2)
+- [LOW] **zdos-hybrid** ticker di prezzo: tono/area finanziaria, decisione umana: zdos-autobuild.sh(1), zdos_omni_os.py(1)
+- [LOW] **Z-GENESIS-OS** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: README.md(1), zlang_core/z-genesis-os_engine.zl(2)
+- [LOW] **Z-GENESIS-OS** ticker di prezzo: tono/area finanziaria, decisione umana: index.html(1)
+- [LOW] **Zlang** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: zlang_core/zlang_engine.zl(2)
+- [LOW] **Zdos-K.I.R.A** `backend/` il backend non legge ancora DSN_*: il gate va implementato (lavoro di sviluppo, non meccanico)
+- [LOW] **zdos-organism** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: zlang_core/zdos-organism_engine.zl(2)
+- [LOW] **zBAG** ticker di prezzo: tono/area finanziaria, decisione umana: CHANGELOG.md(1)
+- [LOW] **zBAG** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: zlang_core/zbag_engine.zl(2)
+- [LOW] **zdos-core** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: README.md(1), zlang_core/zdos-core_engine.zl(2)
+- [LOW] **xzdos-unified-webapp** nome 'DSN' interno con significato diverso dal token: NON rinominato automaticamente: README.md(1), zlang_core/xzdos-unified-webapp_engine.zl(2)
+
+Totale file modificati: 27 · repo: aesir ZDOS xCLOUD-by-zdos zdos-hybrid Z-GENESIS-OS Zlang Zdos-K.I.R.A zdos-organism z-valut zBAG zdos-core xzdos-unified-webapp
+
+[1;36m[dsn-code][0m dry-run: nulla committato. Per applicare: /opt/x-zdos-dsn/zdos-dsn-code-align.sh --apply   (poi --apply --push --ssh per pubblicare il branch zdos/dsn-code-align)

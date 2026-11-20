@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>OurVelvet – Mini App 18+</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <style>
+    :root {
+      --bg: #0d0614;
+      --card: #1a0a22;
+      --accent: #ff2d7b;
+      --accent2: #c026d3;
+      --text: #f5e6ff;
+      --muted: #a78bfa;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+    header {
+      background: linear-gradient(135deg, #2a0a1f, #4a0a3a);
+      padding: 16px;
+      text-align: center;
+      border-bottom: 2px solid var(--accent);
+    }
+    header h1 { font-size: 1.4rem; letter-spacing: 1px; }
+    .badge-18 {
+      display: inline-block;
+      background: #dc2626;
+      color: white;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 999px;
+      margin-left: 8px;
+    }
+    .balance {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+    nav {
+      display: flex;
+      overflow-x: auto;
+      gap: 8px;
+      padding: 12px;
+      background: #120818;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav button {
+      flex-shrink: 0;
+      background: var(--card);
+      border: 1px solid #3b1a4a;
+      color: var(--text);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+    }
+    nav button.active {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .section { display: none; padding: 16px; }
+    .section.active { display: block; }
+    .card {
+      background: var(--card);
+      border: 1px solid #3b1a4a;
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+    textarea, input, select {
+      width: 100%;
+      background: #0f0618;
+      border: 1px solid #3b1a4a;
+      color: var(--text);
+      padding: 12px;
+      border-radius: 10px;
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+    button.primary {
+      width: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border: none;
+      color: white;
+      padding: 14px;
+      border-radius: 12px;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-top: 8px;
+    }
+    .result {
+      margin-top: 12px;
+      padding: 12px;
+      background: #120818;
+      border-radius: 10px;
+      word-break: break-all;
+    }
+    .warning {
+      background: #450a0a;
+      color: #fca5a5;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #120818;
+      padding: 10px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid #3b1a4a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>OURVELVET <span class="badge-18">18+</span></h1>
+    <div class="balance" id="balance">$OV: --</div>
+  </header>
+
+  <nav>
+    <button class="active" data-tab="agi">AGI 18+</button>
+    <button data-tab="hub">Creator Hub</button>
+    <button data-tab="radar">Radar Carne</button>
+    <button data-tab="chat">Safe Chat</button>
+    <button data-tab="video">Videoteca</button>
+    <button data-tab="feed">Feed</button>
+  </nav>
+
+  <!-- AGI -->
+  <div id="agi" class="section active">
+    <div class="warning">Contenuti espliciti / 18+ / Uncensored. Solo adulti.</div>
+    <div class="card">
+      <h3>OurVelvet AGI Engine</h3>
+      <textarea id="prompt" rows="4" placeholder="Es: Ragazza cyberpunk con lingerie in lattice nero, sudata, stile fumetto noir 8k..."></textarea>
+      <select id="ctype">
+        <option value="PHOTO">Foto 8K</option>
+        <option value="VIDEO">Micro Video</option>
+        <option value="COMIC">Fumetto</option>
+      </select>
+      <select id="style">
+        <option>Hardcore & Latex</option>
+        <option>Noir 8K</option>
+        <option>BDSM Immersivo</option>
+        <option>Cyber-Gothic</option>
+      </select>
+      <button class="primary" onclick="generate()">GENERA UNSUPPRESSED</button>
+      <div id="gen-result" class="result" style="display:none;"></div>
+    </div>
+  </div>
+
+  <!-- Hub -->
+  <div id="hub" class="section">
+    <div class="card">
+      <h3>Creator & Fan Hub – $OV</h3>
+      <input id="post-title" placeholder="Titolo del post / opera..." />
+      <textarea id="post-desc" rows="3" placeholder="Descrizione o link media..."></textarea>
+      <button class="primary" onclick="publishPost()">Pubblica nel Feed Fan</button>
+    </div>
+    <div class="card">
+      <h3>Dona $OV</h3>
+      <input id="donate-user" type="number" placeholder="ID utente destinatario" />
+      <input id="donate-amount" type="number" step="0.01" placeholder="Importo $OV" />
+      <button class="primary" onclick="donate()">Donaci $OV</button>
+    </div>
+    <div id="posts-list"></div>
+  </div>
+
+  <!-- Radar -->
+  <div id="radar" class="section">
+    <div class="warning">Radar della Carne – 1 km matchmaking adulti</div>
+    <div class="card">
+      <button class="primary" onclick="scanRadar()">SCANSIONE RADAR (1 km)</button>
+      <div id="radar-result" class="result" style="display:none;"></div>
+    </div>
+  </div>
+
+  <!-- Chat -->
+  <div id="chat" class="section">
+    <div class="card">
+      <h3>K.I.R.A. Shield – Chat Protetta 18+</h3>
+      <div id="chat-messages" style="max-height:300px;overflow-y:auto;margin-bottom:12px;"></div>
+      <input id="chat-input" placeholder="Condividi le tue voglie..." />
+      <button class="primary" onclick="sendChat()">Invia</button>
+    </div>
+  </div>
+
+  <!-- Video -->
+  <div id="video" class="section">
+    <div class="card">
+      <h3>Videoteca Reale 4K</h3>
+      <div id="video-list"></div>
+    </div>
+  </div>
+
+  <!-- Feed -->
+  <div id="feed" class="section">
+    <div class="card">
+      <h3>Notizie al Femminile + Extreme</h3>
+      <div id="feed-list"></div>
+    </div>
+  </div>
+
+  <footer>OurVelvet & Rose // $OV Ecosystem • 18+ • velvet.x-zdos.it</footer>
+
+  <script>
+    const tg = window.Telegram?.WebApp;
+    if (tg) {
+      tg.ready();
+      tg.expand();
+      tg.setHeaderColor('#0d0614');
+      tg.setBackgroundColor('#0d0614');
+    }
+
+    const API = 'https://velvet.x-zdos.it/api'; // dominio produzione
+    let token = localStorage.getItem('ov_token') || '';
+
+    async function api(path, opts = {}) {
+      const headers = { 'Content-Type': 'application/json', ...(opts.headers || {}) };
+      if (token) headers['Authorization'] = 'Bearer ' + token;
+      const res = await fetch(API + path, { ...opts, headers });
+      if (!res.ok) throw new Error(await res.text());
+      return res.json();
+    }
+
+    async function auth() {
+      if (!tg?.initData) return;
+      try {
+        const data = await api('/auth/telegram', {
+          method: 'POST',
+          body: JSON.stringify({ init_data: tg.initData })
+        });
+        token = data.access_token;
+        localStorage.setItem('ov_token', token);
+        document.getElementById('balance').textContent = `$OV: ${data.balance_ov.toFixed(2)}`;
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    async function generate() {
+      const prompt = document.getElementById('prompt').value;
+      const ctype = document.getElementById('ctype').value;
+      const style = document.getElementById('style').value;
+      if (!prompt) return alert('Inserisci un prompt');
+      const el = document.getElementById('gen-result');
+      el.style.display = 'block';
+      el.textContent = 'Generazione in corso...';
+      try {
+        const gen = await api('/agi/generate', {
+          method: 'POST',
+          body: JSON.stringify({ prompt, content_type: ctype, style })
+        });
+        el.innerHTML = `<strong>ID ${gen.id}</strong><br>Status: ${gen.status}<br>${gen.result_url || 'In elaborazione...'}`;
+      } catch (e) {
+        el.textContent = 'Errore: ' + e.message;
+      }
+    }
+
+    async function publishPost() {
+      const title = document.getElementById('post-title').value;
+      const description = document.getElementById('post-desc').value;
+      if (!title) return;
+      await api('/hub/posts', {
+        method: 'POST',
+        body: JSON.stringify({ title, description })
+      });
+      alert('Pubblicato');
+      loadPosts();
+    }
+
+    async function donate() {
+      const to_user_id = parseInt(document.getElementById('donate-user').value);
+      const amount_ov = parseFloat(document.getElementById('donate-amount').value);
+      if (!to_user_id || !amount_ov) return;
+      await api('/hub/donate', {
+        method: 'POST',
+        body: JSON.stringify({ to_user_id, amount_ov, currency: 'OV' })
+      });
+      alert('Donazione $OV inviata');
+      auth();
+    }
+
+    async function loadPosts() {
+      try {
+        const posts = await api('/hub/posts');
+        document.getElementById('posts-list').innerHTML = posts.map(p =>
+          `<div class="card"><strong>${p.title}</strong><br>${p.description || ''}</div>`
+        ).join('') || '<p>Nessun post</p>';
+      } catch (e) {}
+    }
+
+    async function scanRadar() {
+      const el = document.getElementById('radar-result');
+      el.style.display = 'block';
+      el.textContent = 'Scansione...';
+      try {
+        const data = await api('/radar/scan', { method: 'POST' });
+        el.innerHTML = data.results.map(r =>
+          `<div>${r.username} – ${r.distance_km} km</div>`
+        ).join('') || data.message;
+      } catch (e) {
+        el.textContent = e.message;
+      }
+    }
+
+    async function loadChat() {
+      try {
+        const msgs = await api('/chat/messages');
+        document.getElementById('chat-messages').innerHTML = msgs.map(m =>
+          `<div style="margin:6px 0;"><small>${m.user_id}</small>: ${m.message}</div>`
+        ).join('');
+      } catch (e) {}
+    }
+
+    async function sendChat() {
+      const message = document.getElementById('chat-input').value;
+      if (!message) return;
+      await api('/chat/send', {
+        method: 'POST',
+        body: JSON.stringify({ message })
+      });
+      document.getElementById('chat-input').value = '';
+      loadChat();
+    }
+
+    async function loadVideo() {
+      const data = await api('/video/library');
+      document.getElementById('video-list').innerHTML = data.titles.map(t =>
+        `<div class="card"><strong>${t.title}</strong> ${t.age ? '<span class="badge-18">18+</span>' : ''}</div>`
+      ).join('');
+    }
+
+    async function loadFeed() {
+      const articles = await api('/feed/articles');
+      document.getElementById('feed-list').innerHTML = articles.map(a =>
+        `<div class="card"><small>${a.category}</small><br><strong>${a.title}</strong><br>${a.excerpt}</div>`
+      ).join('');
+    }
+
+    // Tabs
+    document.querySelectorAll('nav button').forEach(btn => {
+      btn.onclick = () => {
+        document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+        if (btn.dataset.tab === 'hub') loadPosts();
+        if (btn.dataset.tab === 'chat') loadChat();
+        if (btn.dataset.tab === 'video') loadVideo();
+        if (btn.dataset.tab === 'feed') loadFeed();
+      };
+    });
+
+    auth().then(() => {
+      loadPosts();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+(node:3433014) Warning: Passing "color" to RoleManager#create() is deprecated. Use "colors" instead.
+(Use `node --trace-warnings ...` to show where the warning was created)

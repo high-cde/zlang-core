@@ -1,0 +1,16 @@
+server {
+    listen 80;
+    server_name enet.x-zdos.it;
+    return 301 https://$host$request_uri;
+}
+server {
+    listen 443 ssl;
+    server_name enet.x-zdos.it;
+    ssl_certificate /etc/letsencrypt/live/x-zdos.it/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/x-zdos.it/privkey.pem;
+    root /var/www/enet-live;
+    index index.html;
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

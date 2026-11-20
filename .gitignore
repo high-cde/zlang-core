@@ -1,0 +1,9 @@
+.gradle/
+.rustup/
+node_modules/
+velvet-daemon/node_modules/
+*.aar
+*.jar
+*.so
+*.rmeta
+*.db

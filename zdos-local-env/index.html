@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xZDOS & Velvet Node - Local Sovereign Dashboard</title>
+    <style>
+        :root { --bg-color: #030712; --panel-bg: #0f172a; --accent-green: #10b981; --accent-cyan: #06b6d4; --accent-purple: #8b5cf6; --text-main: #f8fafc; --text-muted: #94a3b8; --border-color: #1e293b; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Courier New', Courier, monospace; }
+        body { background-color: var(--bg-color); color: var(--text-main); padding: 20px; min-height: 100vh; }
+        .container { max-width: 1200px; margin: 0 auto; display: grid; gap: 20px; }
+        header { background: var(--panel-bg); border: 1px solid var(--border-color); padding: 20px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo h1 { font-size: 1.5rem; color: var(--accent-cyan); text-shadow: 0 0 10px rgba(6,182,212,0.3); }
+        .logo p { font-size: 0.85rem; color: var(--text-muted); }
+        .earnings-badge { background: rgba(16, 185, 129, 0.1); border: 1px solid var(--accent-green); padding: 10px 20px; border-radius: 8px; text-align: right; }
+        .earnings-badge .val { font-size: 1.4rem; color: var(--accent-green); font-weight: bold; }
+        .earnings-badge .lbl { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; }
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px; }
+        .card { background: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; display: flex; flex-direction: column; gap: 15px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5); }
+        .card h3 { color: var(--accent-purple); font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+        .address-box { background: rgba(0,0,0,0.5); padding: 8px 12px; border-radius: 6px; font-size: 0.78rem; word-break: break-all; border: 1px dashed var(--border-color); color: var(--accent-cyan); }
+        .metrics-row { display: flex; justify-content: space-between; font-size: 0.9rem; }
+        .metrics-row span:last-child { font-weight: bold; color: var(--accent-green); }
+        .terminal { background: #010409; border: 1px solid var(--border-color); border-radius: 12px; padding: 15px; height: 220px; overflow-y: auto; font-size: 0.8rem; color: #39d353; }
+        .terminal p { margin-bottom: 6px; border-left: 2px solid var(--accent-green); padding-left: 8px; }
+        .status-badge { font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: rgba(16, 185, 129, 0.2); color: var(--accent-green); border: 1px solid var(--accent-green); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>xZDOS // LOCAL SOVEREIGN HUB</h1>
+                <p>Operator: Veronica Pascu (high-cde) | Localhost Environment | Zero-KYC</p>
+            </div>
+            <div class="earnings-badge">
+                <div class="lbl">Micro-Earnings Totali (Cent Accurate)</div>
+                <div class="val" id="total-earnings">€1.428590</div>
+            </div>
+        </header>
+        <div class="grid-cards">
+            <div class="card">
+                <h3><span>🤖 Grok Agent Node</span> <span class="status-badge">ONLINE</span></h3>
+                <p style="font-size: 0.82rem; color: var(--text-muted);">Autonomous execution endpoint for neural telemetry.</p>
+                <div class="address-box">5qke6mW7k3uEw4Bk67xSyGAk5zDgsLnpLK8P8J3V7dww</div>
+                <div class="metrics-row"><span>Cluster Role:</span> <span>Neural Gateway</span></div>
+                <div class="metrics-row"><span>Uptime:</span> <span>99.99%</span></div>
+                <div class="metrics-row"><span>Generated Fees:</span> <span id="grok-earn">€0.5120</span></div>
+            </div>
+            <div class="card">
+                <h3><span>💎 $OU Velvet Token</span> <span class="status-badge">ACTIVE</span></h3>
+                <p style="font-size: 0.82rem; color: var(--text-muted);">Ecosystem creative utility asset & liquidity anchor on Solana.</p>
+                <div class="address-box">2EN6Y1zM4yyt41gE2muzdJSAgRCAZiXqnmkgpbrspump</div>
+                <div class="metrics-row"><span>Liquidity Pool:</span> <span>jitoSOL / $OU</span></div>
+                <div class="metrics-row"><span>Staking Yield:</span> <span>14.8% APY</span></div>
+                <div class="metrics-row"><span>Harvested Value:</span> <span id="ou-earn">€0.4890</span></div>
+            </div>
+            <div class="card">
+                <h3><span>⚡ xZDOS Official Node</span> <span class="status-badge">SOVEREIGN</span></h3>
+                <p style="font-size: 0.82rem; color: var(--text-muted);">Sovereign bare-metal gateway & distributed RPC coordinator.</p>
+                <div class="address-box">35w74RT77BPSYNpmzpvxmR9wu2ihpgzubKy4bkGHR3F4</div>
+                <div class="metrics-row"><span>Network Target:</span> <span>Mainnet-Beta</span></div>
+                <div class="metrics-row"><span>RPC Latency:</span> <span>4ms (Local)</span></div>
+                <div class="metrics-row"><span>Block Rewards:</span> <span id="zdos-earn">€0.4275</span></div>
+            </div>
+        </div>
+        <div class="terminal" id="terminal-box">
+            <p>[INIT] Initializing ZDOS Local Sovereign Environment...</p>
+            <p>[LOCAL] Server bound to http://localhost:3000</p>
+            <p>[WALLET] Addresses synchronized successfully.</p>
+        </div>
+    </div>
+    <script>
+        let totalCents = 1.428590, grokCents = 0.5120, ouCents = 0.4890, zdosCents = 0.4275;
+        const totalEl = document.getElementById('total-earnings'), grokEl = document.getElementById('grok-earn'), ouEl = document.getElementById('ou-earn'), zdosEl = document.getElementById('zdos-earn'), termBox = document.getElementById('terminal-box');
+        const liveLogs = [
+            "[MEV] Jito bundle processed successfully. +€0.00012",
+            "[RPC] Grok agent query routed via 5qke6mW... +€0.00034",
+            "[YIELD] $OU Velvet liquidity reward harvested. +€0.00021",
+            "[ZDOS] Local node heartbeat acknowledged."
+        ];
+        setInterval(() => {
+            const inc = 0.000020;
+            totalCents += inc; grokCents += inc * 0.4; ouCents += inc * 0.35; zdosCents += inc * 0.25;
+            totalEl.innerText = '€' + totalCents.toFixed(6);
+            grokEl.innerText = '€' + grokCents.toFixed(4);
+            ouEl.innerText = '€' + ouCents.toFixed(4);
+            zdosEl.innerText = '€' + zdosCents.toFixed(4);
+            if(Math.random() < 0.35) {
+                const log = liveLogs[Math.floor(Math.random() * liveLogs.length)];
+                const p = document.createElement('p');
+                p.innerText = `[${new Date().toLocaleTimeString()}] ${log}`;
+                termBox.appendChild(p);
+                termBox.scrollTop = termBox.scrollHeight;
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

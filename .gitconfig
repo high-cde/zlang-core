@@ -1,0 +1,31 @@
+[user]
+	name = high-cde
+	email = highkali13@proton.me
+[safe]
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /var/www/velvet.art
+	directory = /srv/zv40/releases/zv40-20261014T223552Z
+	directory = /home/xdosdev/work/x-zdos-20261018-172012
+	directory = /root/zdos/github_workspace/ZDOS
+	directory = *
+	directory = *
+	directory = *
+[credential]
+	helper = store

@@ -1,0 +1,13 @@
+DiscordjsError [TokenInvalid]: An invalid token was provided.
+    at WebSocketManager.connect (/root/velvet-daemon/node_modules/discord.js/src/client/websocket/WebSocketManager.js:140:26)
+    at Client.login (/root/velvet-daemon/node_modules/discord.js/src/client/Client.js:229:21)
+    at Object.<anonymous> (/root/velvet-daemon/sovereign_master.js:58:8)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10)
+    at Module.load (node:internal/modules/cjs/loader:1505:32)
+    at Function._load (node:internal/modules/cjs/loader:1309:12)
+    at Object.<anonymous> (/usr/lib/node_modules/pm2/lib/ProcessContainerFork.js:33:23)
+    at Module._compile (node:internal/modules/cjs/loader:1781:14)
+    at Object..js (node:internal/modules/cjs/loader:1913:10) {
+  code: 'TokenInvalid'
+}

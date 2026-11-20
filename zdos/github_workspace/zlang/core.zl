@@ -1,0 +1,4 @@
+// zlang - ZDOS Sovereign Engine
+module zlang {
+    init_secure_node();
+}

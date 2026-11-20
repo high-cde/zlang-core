@@ -1,0 +1,9 @@
+{
+  "webroot": "/var/www/x-zdos-portal/releases/20261027T131307Z-337196",
+  "existed": {
+    "evolution": false,
+    "dsn/zdos-evolution-deploy.sh": false,
+    "dsn/zdos-evolution-pack.tar.gz": false,
+    "index.html": true
+  }
+}
