@@ -7,3 +7,30 @@ velvet-daemon/node_modules/
 *.so
 *.rmeta
 *.db
+
+# Credenziali, chiavi e sessioni
+.git-credentials
+.config/gh/hosts.yml
+.ssh/id_rsa
+.ssh/id_ed25519
+*.env
+*.env.*
+!*.env.example
+zdos-wa-phone/auth/creds.json
+
+# Backup, dump, log e cache
+zdos_secure_backup/
+backups*/
+nginx*bak*
+vps-cleanup-backup-*/
+*.bak
+*.bak_*
+*.db
+*.sqlite
+.pm2/
+.cache/
+.cargo/
+.rustup/
+.android/
+.local/share/pnpm/
+.yarn/berry/cache/
